@@ -87,6 +87,7 @@
                   class="w-[22px] h-[22px] bg-slate-100 rounded-full flex items-center justify-center transition-all duration-[750ms]"
                   id="toggleDiv"
                   data-serviceToggleDiv=""
+                  data-toggleDiv=""
                 >
                   <i
                     class="fa-solid fa-moon text-yellow-400 transition-all"
@@ -173,6 +174,7 @@
                 class="w-[22px] h-[22px] bg-slate-100 rounded-full flex items-center justify-center transition-all duration-[750ms]"
                 data-serviceToggleDiv=""
                 id="toggleDiv"
+                data-toggleDiv=""
               >
                 <i
                   class="fa-solid fa-moon text-yellow-400 transition-all"
@@ -270,16 +272,14 @@
         <div
           class="flex mx-auto w-fit items-center justify-center relative mb-12"
         >
-          <h1 class="text-4xl lg:text-5xl" id="servicesHeading">Services</h1>
+          <h1 class="text-4xl lg:text-5xl text-white" id="servicesHeading">
+            Services
+          </h1>
         </div>
         <div
-          class="flex justify-center items-center bg-zinc-800 w-fit mx-auto text-white"
+          class="flex justify-center items-center bg-zinc-800 w-fit mx-auto text-white rounded-[4px]"
           data-allService=""
         >
-          <!-- <div
-            id="serviceInfoBox"
-            class="hidden mt-6 p-6 bg-white text-gray-800 shadow-lg rounded-lg border border-gray-200 max-w-2xl mx-auto"
-          ></div> -->
           <span
             data-services=""
             data-primary=""
@@ -304,7 +304,7 @@
           data-tabs=""
         >
           <div
-            class="flex flex-col lg:w-full lg:text-start lg:items-start lg:px-5 lg:bg-zinc-800 lg:rounded-l-[4px]"
+            class="flex flex-col lg:w-full lg:text-start lg:items-start lg:px-5 lg:bg-zinc-800 text-white lg:rounded-l-[4px]"
             data-changeColorLeft=""
           >
             <img
@@ -319,7 +319,7 @@
             </p>
           </div>
           <div
-            class="flex lg:w-full flex-col gap-y-5 px-5 py-[20px] my-5 lg:my-0 lg:border-none rounded-[4px] border border-Accent lg:rounded-none lg:rounded-r-[4px] bg-zinc-800"
+            class="flex lg:w-full flex-col gap-y-5 px-5 py-[20px] my-5 lg:my-0 lg:border-none rounded-[4px] border border-Accent lg:rounded-none lg:rounded-r-[4px] text-white bg-zinc-800"
             data-changeColor=""
           >
             <form class="" id="buildingForm">
@@ -694,6 +694,7 @@
   </body>
   <script>
     const toggler = document.querySelectorAll("[data-languageSelection]");
+
     const buildingForm = document.getElementById("buildingForm");
     const tabs = document.querySelectorAll("[data-tabs]");
     const services = document.querySelectorAll("[data-services]");
@@ -702,185 +703,384 @@
     const toggleBtn = document.querySelectorAll("#toggleBtn");
     toggleBtn.forEach((items, index) => {
       items.addEventListener("click", (e) => {
-        document
-          .querySelectorAll("#toggleDiv")
-          [index].classList.toggle("translate-x-[40px]");
+        if (!(localStorage.getItem("theme") === "dark")) {
+          document
+            .querySelector("#servicesHeading")
+            .classList.toggle("text-black");
+          document
+            .querySelector("#servicesHeading")
+            .classList.toggle("text-white");
+          document
+            .querySelector("#servicesHeading")
+            .classList.toggle("text-black");
 
-        document.querySelectorAll("#moonsun")[index].classList.toggle("fa-sun");
-        document
-          .querySelectorAll("#moonsun")
-          [index].classList.toggle("fa-moon");
+          document.querySelectorAll("[data-toggleDiv]").forEach((items2) => {
+            items2.classList.toggle("translate-x-[40px]");
+            items2.classList.add("bg-white");
+            items2.classList.remove("bg-slate-900");
+          });
+          document.querySelectorAll("#moonsun").forEach((items) => {
+            items.classList.toggle("fa-sun");
+          });
+          document.querySelectorAll("#moonsun").forEach((items) => {
+            items.classList.toggle("fa-moon");
+          });
 
-        document
-          .querySelectorAll("#moonsun")
-          [index].classList.add("animate-[spin_.6s_ease-out]");
-        setTimeout(() => {
+          toggleBtn.forEach((items2) => {
+            items2.classList.remove("bg-slate-300");
+          });
+          toggleBtn.forEach((items2) => {
+            items2.classList.add("bg-slate-900");
+          });
           document
             .querySelectorAll("#moonsun")
-            [index].classList.remove("animate-[spin_.6s_ease-out]");
-        }, 600);
-        document
-          .querySelectorAll("#toggleDiv")
-          [index].classList.toggle("bg-slate-900");
-        document
-          .querySelectorAll("#toggleDiv")
-          [index].classList.toggle("bg-orange-500");
-        items.classList.toggle("bg-slate-900");
-        items.classList.toggle("bg-slate-300");
-        document.querySelectorAll("[data-bggray500]").forEach((items) => {
-          items.classList.toggle("bg-gray-500");
-        });
-        document.querySelectorAll("[data-bggray500]").forEach((items) => {
-          items.classList.toggle("bg-zinc-800");
-        });
-        document.querySelectorAll("[data-bgzinc100]").forEach((items) => {
-          items.classList.toggle("bg-zinc-100");
-        });
-        document.querySelectorAll("[data-bgzinc100]").forEach((items) => {
-          items.classList.toggle("bg-zinc-800");
-        });
-        document.querySelector("[data-body]").classList.toggle("bg-white");
-        document.querySelector("[data-body]").classList.toggle("bg-black");
-        document.querySelectorAll("[data-textblack]").forEach((items) => {
-          items.classList.toggle("text-black");
-        });
-        document.querySelectorAll("[data-textblack]").forEach((items) => {
-          items.classList.toggle("text-white");
-        });
-        document.querySelectorAll("[data-textzinc700]").forEach((items) => {
-          items.classList.toggle("text-zinc-700");
-        });
-        document.querySelectorAll("[data-textzinc700]").forEach((items) => {
-          items.classList.toggle("text-[#d6d6d6]");
-        });
-
-        document
-          .querySelector("[data-bgzinc400]")
-          .classList.toggle("bg-zinc-400");
-        document
-          .querySelector("[data-bgzinc400]")
-          .classList.toggle("bg-zinc-800");
-        document
-          .querySelector("[data-bgzinc400]")
-          .classList.toggle("shadow-[0_0px_20px_0px_hsl(233_8%_62%)]");
-
-        document
-          .querySelectorAll("[data-languageSelection]")
-          .forEach((items) => {
-            items.classList.toggle("bg-slate-900");
+            [index].classList.add("animate-[spin_.6s_ease-out]");
+          setTimeout(() => {
+            document
+              .querySelectorAll("#moonsun")
+              [index].classList.remove("animate-[spin_.6s_ease-out]");
+          }, 600);
+          document.querySelectorAll("[data-bggray500]").forEach((items) => {
+            items.classList.toggle("bg-gray-500");
           });
-        document
-          .querySelectorAll("[data-languageSelection]")
-          .forEach((items) => {
-            items.classList.toggle("bg-white");
+          document.querySelectorAll("[data-bggray500]").forEach((items) => {
+            items.classList.toggle("bg-zinc-800");
           });
-        document
-          .querySelectorAll("[data-languageSelection]")
-          .forEach((items) => {
+          document.querySelectorAll("[data-bgzinc100]").forEach((items) => {
+            items.classList.toggle("bg-zinc-100");
+          });
+          document.querySelectorAll("[data-bgzinc100]").forEach((items) => {
+            items.classList.toggle("bg-zinc-800");
+          });
+          document.querySelector("[data-body]").classList.toggle("bg-white");
+          document.querySelector("[data-body]").classList.toggle("bg-black");
+          document.querySelectorAll("[data-textblack]").forEach((items) => {
             items.classList.toggle("text-black");
           });
-        document
-          .querySelectorAll("[data-languageSelection]")
-          .forEach((items) => {
+          document.querySelectorAll("[data-textblack]").forEach((items) => {
             items.classList.toggle("text-white");
           });
-        document.querySelectorAll("#service").forEach((items) => {
-          items.classList.toggle("text-white");
-        });
-        document.querySelectorAll("#service").forEach((items) => {
-          items.classList.toggle("text-black");
-        });
-        document.querySelectorAll("[data-changeColor]").forEach((items) => {
-          // console.log(items);
+          document.querySelectorAll("[data-textzinc700]").forEach((items) => {
+            items.classList.toggle("text-zinc-700");
+          });
+          document.querySelectorAll("[data-textzinc700]").forEach((items) => {
+            items.classList.toggle("text-[#d6d6d6]");
+          });
 
-          items.classList.toggle("bg-zinc-800");
-          items.classList.toggle("bg-slate-300");
-        });
-        document.querySelectorAll("[data-changeColorLeft]").forEach((items) => {
-          items.classList.toggle("lg:bg-slate-300");
-          items.classList.toggle("lg:bg-zinc-800");
-        });
-        document.querySelectorAll("[data-tabs]").forEach((items) => {
-          items.classList.toggle("lg:border-Accent");
-          items.classList.toggle("lg:border-Primary");
-        });
+          document
+            .querySelector("[data-bgzinc400]")
+            .classList.toggle("bg-zinc-400");
+          document
+            .querySelector("[data-bgzinc400]")
+            .classList.toggle("bg-zinc-800");
+          document
+            .querySelector("[data-bgzinc400]")
+            .classList.toggle("shadow-[0_0px_20px_0px_hsl(233_8%_62%)]");
 
-        document.querySelector("#footer").classList.toggle("bg-zinc-800");
-        document.querySelector("#footer").classList.toggle("bg-gray-500");
+          document
+            .querySelectorAll("[data-languageSelection]")
+            .forEach((items) => {
+              items.classList.toggle("bg-slate-900");
+            });
+          document
+            .querySelectorAll("[data-languageSelection]")
+            .forEach((items) => {
+              items.classList.toggle("bg-white");
+            });
+          document
+            .querySelectorAll("[data-languageSelection]")
+            .forEach((items) => {
+              items.classList.toggle("text-black");
+            });
+          document
+            .querySelectorAll("[data-languageSelection]")
+            .forEach((items) => {
+              items.classList.toggle("text-white");
+            });
+          document.querySelectorAll("#service").forEach((items) => {
+            items.classList.toggle("text-white");
+          });
+          document.querySelectorAll("#service").forEach((items) => {
+            items.classList.toggle("text-black");
+          });
+          document.querySelectorAll("[data-changeColor]").forEach((items) => {
+            items.classList.toggle("bg-zinc-800");
+            items.classList.toggle("bg-slate-300");
+          });
+          document
+            .querySelectorAll("[data-changeColorLeft]")
+            .forEach((items) => {
+              items.classList.toggle("lg:bg-slate-300");
+              items.classList.toggle("lg:bg-zinc-800");
+            });
+          document.querySelectorAll("[data-tabs]").forEach((items) => {
+            items.classList.toggle("lg:border-Accent");
+            items.classList.toggle("lg:border-Primary");
+          });
 
-        document
-          .querySelectorAll("[data-serviceToggleDiv]")
-          .forEach((items) => {
-            console.log(items.classList.contains("translate-x-[40px]"));
-            if (items.classList.contains("translate-x-[40px]")) {
-              services.forEach((items) => {
-                if (items.classList.contains("bg-Accent")) {
-                  items.classList.toggle("bg-Primary");
-                  items.classList.toggle("bg-Accent");
-                } else if (items.classList.contains("bg-Primary")) {
-                  items.classList.toggle("bg-Primary");
-                  items.classList.toggle("bg-Accent");
-                }
-              });
+          document.querySelector("#footer").classList.toggle("bg-zinc-800");
+          document.querySelector("#footer").classList.toggle("bg-gray-500");
+
+          document
+            .querySelector("[data-allService]")
+            .classList.add("text-white");
+
+          document
+            .querySelector("[data-allService]")
+            .classList.remove("text-black");
+          document
+            .querySelector("[data-allService]")
+            .classList.add("bg-zinc-800");
+          document
+            .querySelector("[data-allService]")
+            .classList.remove("bg-slate-100");
+          document
+            .querySelector("#buildingButton")
+            .classList.toggle("bg-Primary");
+          document.querySelector("#buildingButton");
+          document
+            .querySelector("#buildingButton")
+            .classList.toggle("hover:shadow-[0px_0px_30px_0px_#ce0d5e");
+          document
+            .querySelector("#buildingButton")
+            .classList.toggle("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+          document
+            .querySelector("#upgradesButton")
+            .classList.toggle("bg-Primary");
+          document.querySelector("#buildingButton");
+          document
+            .querySelector("#upgradesButton")
+            .classList.toggle("hover:shadow-[0px_0px_30px_0px_#ce0d5e");
+          document
+            .querySelector("#upgradesButton")
+            .classList.toggle("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+          document
+            .querySelector("#repairsButton")
+            .classList.toggle("bg-Primary");
+          document.querySelector("#buildingButton");
+          document
+            .querySelector("#repairsButton")
+            .classList.toggle("hover:shadow-[0px_0px_30px_0px_#ce0d5e");
+          document
+            .querySelector("#repairsButton")
+            .classList.toggle("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+          services.forEach((items) => {
+            if (items.classList.contains("bg-Accent")) {
+              items.classList.add("bg-Primary");
+              items.classList.remove("bg-Accent");
+            } else if (items.classList.contains("bg-Primary")) {
+              items.classList.remove("bg-Primary");
+              items.classList.add("bg-Accent");
             }
           });
-        document
-          .querySelector("[data-allService]")
-          .classList.toggle("text-white");
-        document
-          .querySelector("[data-allService]")
-          .classList.toggle("text-black");
-        document
-          .querySelector("[data-allService]")
-          .classList.toggle("bg-zinc-800");
-        document
-          .querySelector("[data-allService]")
-          .classList.toggle("bg-slate-100");
-        document
-          .querySelector("#buildingButton")
-          .classList.toggle("bg-Primary");
-        document.querySelector("#buildingButton");
-        document
-          .querySelector("#buildingButton")
-          .classList.toggle("hover:shadow-[0px_0px_30px_0px_#ce0d5e");
-        document
-          .querySelector("#buildingButton")
-          .classList.toggle("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
-        document
-          .querySelector("#upgradesButton")
-          .classList.toggle("bg-Primary");
-        document.querySelector("#buildingButton");
-        document
-          .querySelector("#upgradesButton")
-          .classList.toggle("hover:shadow-[0px_0px_30px_0px_#ce0d5e");
-        document
-          .querySelector("#upgradesButton")
-          .classList.toggle("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
-        document.querySelector("#repairsButton").classList.toggle("bg-Primary");
-        document.querySelector("#buildingButton");
-        document
-          .querySelector("#repairsButton")
-          .classList.toggle("hover:shadow-[0px_0px_30px_0px_#ce0d5e");
-        document
-          .querySelector("#repairsButton")
-          .classList.toggle("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
-        // getItems(document.body.classList.contains("bg-white"));
+          document
+            .querySelectorAll("[data-changecolorLeft]")
+            .forEach((items2) => {
+              items2.classList.toggle("text-white");
+              items2.classList.toggle("text-black");
+            });
+          document.querySelectorAll("label").forEach((items2) => {
+            items2.classList.remove("text-black");
+            items2.classList.add("text-white");
+          });
+        } else {
+          document
+            .querySelectorAll("[data-changecolorLeft]")
+            .forEach((items2) => {
+              items2.classList.toggle("text-white");
+              items2.classList.toggle("text-black");
+            });
+          document
+            .querySelectorAll("[data-services]")[0]
+            .classList.add("rounded-l-sm");
+          document
+            .querySelectorAll("[data-services]")[2]
+            .classList.add("rounded-r-sm");
+          document
+            .querySelector("#servicesHeading")
+            .classList.toggle("text-black");
+          document
+            .querySelector("#servicesHeading")
+            .classList.toggle("text-white");
+          document.querySelectorAll("[data-toggleDiv]").forEach((items2) => {
+            items2.classList.toggle("translate-x-[40px]");
+            items2.classList.remove("bg-white");
+            items2.classList.add("bg-slate-900");
+          });
+          document.querySelectorAll("#moonsun").forEach((items) => {
+            items.classList.toggle("fa-sun");
+          });
+          document.querySelectorAll("#moonsun").forEach((items) => {
+            items.classList.toggle("fa-moon");
+          });
+
+          toggleBtn.forEach((items2) => {
+            items2.classList.add("bg-slate-300");
+          });
+          toggleBtn.forEach((items2) => {
+            items2.classList.remove("bg-slate-900");
+          });
+          document
+            .querySelectorAll("#moonsun")
+            [index].classList.add("animate-[spin_.6s_ease-out]");
+          setTimeout(() => {
+            document
+              .querySelectorAll("#moonsun")
+              [index].classList.remove("animate-[spin_.6s_ease-out]");
+          }, 600);
+
+          document.querySelectorAll("[data-bggray500]").forEach((items) => {
+            items.classList.toggle("bg-gray-500");
+          });
+          document.querySelectorAll("[data-bggray500]").forEach((items) => {
+            items.classList.toggle("bg-zinc-800");
+          });
+          document.querySelectorAll("[data-bgzinc100]").forEach((items) => {
+            items.classList.toggle("bg-zinc-100");
+          });
+          document.querySelectorAll("[data-bgzinc100]").forEach((items) => {
+            items.classList.toggle("bg-zinc-800");
+          });
+          document.querySelector("[data-body]").classList.toggle("bg-white");
+          document.querySelector("[data-body]").classList.toggle("bg-black");
+          document.querySelectorAll("[data-textblack]").forEach((items) => {
+            items.classList.toggle("text-black");
+          });
+          document.querySelectorAll("[data-textblack]").forEach((items) => {
+            items.classList.toggle("text-white");
+          });
+          document.querySelectorAll("[data-textzinc700]").forEach((items) => {
+            items.classList.toggle("text-zinc-700");
+          });
+          document.querySelectorAll("[data-textzinc700]").forEach((items) => {
+            items.classList.toggle("text-[#d6d6d6]");
+          });
+
+          document
+            .querySelector("[data-bgzinc400]")
+            .classList.toggle("bg-zinc-400");
+          document
+            .querySelector("[data-bgzinc400]")
+            .classList.toggle("bg-zinc-800");
+          document
+            .querySelector("[data-bgzinc400]")
+            .classList.toggle("shadow-[0_0px_20px_0px_hsl(233_8%_62%)]");
+
+          document
+            .querySelectorAll("[data-languageSelection]")
+            .forEach((items) => {
+              items.classList.toggle("bg-slate-900");
+            });
+          document
+            .querySelectorAll("[data-languageSelection]")
+            .forEach((items) => {
+              items.classList.toggle("bg-white");
+            });
+          document
+            .querySelectorAll("[data-languageSelection]")
+            .forEach((items) => {
+              items.classList.toggle("text-black");
+            });
+          document
+            .querySelectorAll("[data-languageSelection]")
+            .forEach((items) => {
+              items.classList.toggle("text-white");
+            });
+          document.querySelectorAll("#service").forEach((items) => {
+            items.classList.toggle("text-white");
+          });
+          document.querySelectorAll("#service").forEach((items) => {
+            items.classList.toggle("text-black");
+          });
+          document.querySelectorAll("[data-changeColor]").forEach((items) => {
+            // console.log(items);
+
+            items.classList.toggle("bg-zinc-800");
+            items.classList.toggle("bg-slate-300");
+          });
+          document
+            .querySelectorAll("[data-changeColorLeft]")
+            .forEach((items) => {
+              items.classList.toggle("lg:bg-slate-300");
+              items.classList.toggle("lg:bg-zinc-800");
+            });
+          document.querySelectorAll("[data-tabs]").forEach((items) => {
+            items.classList.toggle("lg:border-Accent");
+            items.classList.toggle("lg:border-Primary");
+          });
+
+          document.querySelector("#footer").classList.toggle("bg-zinc-800");
+          document.querySelector("#footer").classList.toggle("bg-gray-500");
+          document.querySelectorAll("label").forEach((items2) => {
+            items2.classList.add("text-black");
+            items2.classList.remove("text-white");
+          });
+          document
+            .querySelector("[data-allService]")
+            .classList.remove("text-white");
+          document
+            .querySelector("[data-allService]")
+            .classList.add("text-black");
+          document
+            .querySelector("[data-allService]")
+            .classList.remove("bg-zinc-800");
+          document
+            .querySelector("[data-allService]")
+            .classList.add("bg-slate-100");
+          document
+            .querySelector("#buildingButton")
+            .classList.toggle("bg-Primary");
+          document.querySelector("#buildingButton");
+          document
+            .querySelector("#buildingButton")
+            .classList.toggle("hover:shadow-[0px_0px_30px_0px_#ce0d5e");
+          document
+            .querySelector("#buildingButton")
+            .classList.toggle("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+          document
+            .querySelector("#upgradesButton")
+            .classList.toggle("bg-Primary");
+          document.querySelector("#buildingButton");
+          document
+            .querySelector("#upgradesButton")
+            .classList.toggle("hover:shadow-[0px_0px_30px_0px_#ce0d5e");
+          document
+            .querySelector("#upgradesButton")
+            .classList.toggle("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+          document
+            .querySelector("#repairsButton")
+            .classList.toggle("bg-Primary");
+          document.querySelector("#buildingButton");
+          document
+            .querySelector("#repairsButton")
+            .classList.toggle("hover:shadow-[0px_0px_30px_0px_#ce0d5e");
+          document
+            .querySelector("#repairsButton")
+            .classList.toggle("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+          services.forEach((items) => {
+            if (items.classList.contains("bg-Accent")) {
+              items.classList.add("bg-Primary");
+              items.classList.remove("bg-Accent");
+            } else if (items.classList.contains("bg-Primary")) {
+              items.classList.remove("bg-Primary");
+              items.classList.add("bg-Accent");
+            }
+          });
+          // getItems();
+        }
       });
     });
-    document.querySelectorAll("[data-serviceToggleDiv]").forEach((items) => {
-      if (items.classList.contains("translate-x-[40px]")) {
-        services.forEach((items) => {
-          if (items.classList.contains("bg-Accent")) {
-            items.classList.toggle("bg-Primary");
-            items.classList.toggle("bg-Accent");
-          } else if (items.classList.contains("bg-Primary")) {
-            items.classList.toggle("bg-Primary");
-            items.classList.toggle("bg-Accent");
-          }
-        });
-      }
-    });
-
+    // if (document.body.classList.contains("bg-black")) {
+    //   services.forEach((items) => {
+    //     if (items.classList.contains("bg-Accent")) {
+    //       items.classList.remove("bg-Primary");
+    //       items.classList.add("bg-Accent");
+    //     } else if (items.classList.contains("bg-Primary")) {
+    //       items.classList.remove("bg-Primary");
+    //       items.classList.add("bg-Accent");
+    //     }
+    //   });
+    // }
     function sendEmail(category) {
       let params = {
         subject: "Get a quote",
@@ -990,6 +1190,17 @@
       });
     });
 
+    // if (!localStorage.getItem("theme") === "dark") {
+    //   document.querySelector("[data-allService]").classList.add("text-white");
+    //   document
+    //     .querySelector("[data-allService]")
+    //     .classList.remove("text-black");
+    //   document
+    //     .querySelector("[data-allService]")
+    //     .classList.remove("bg-zinc-800");
+    //   document.querySelector("[data-allService]").classList.add("bg-slate-100");
+    // }
+
     toggler.forEach((items) => {
       items.addEventListener("change", () => {
         if (items.value == "Deutsch") {
@@ -1072,7 +1283,7 @@
       });
     });
 
-    (function getItems() {
+    function getItems() {
       services.forEach((items) => {
         items.addEventListener("click", (e) => {
           gtItems(items.innerText.replace(" ", "").toLowerCase());
@@ -1091,7 +1302,8 @@
           });
         });
       });
-    })();
+    }
+    getItems();
 
     function gtItems(items) {
       tabs.forEach((tabItems) => {

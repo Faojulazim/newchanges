@@ -46,8 +46,9 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link href="style.css" rel="stylesheet" />
+    <link href="dist/style.css" rel="stylesheet" />
     <script defer src="script.js"></script>
+    <!-- <script defer src="toggle.js"></script> -->
     <script defer src="changeNav.js"></script>
     <script defer src="toggleOthers.js"></script>
     <title>Document</title>
@@ -77,6 +78,7 @@
                 <div
                   class="w-[22px] h-[22px] bg-slate-100 rounded-full flex items-center justify-center transition-all duration-[750ms]"
                   id="toggleDiv"
+                  data-toggleDiv=""
                 >
                   <i
                     class="fa-solid fa-moon text-yellow-400 transition-all"
@@ -162,6 +164,7 @@
               <div
                 class="w-[22px] h-[22px] bg-slate-100 rounded-full flex items-center justify-center transition-all duration-[750ms]"
                 id="toggleDiv"
+                data-toggleDiv=""
               >
                 <i
                   class="fa-solid fa-moon text-yellow-400 transition-all"
@@ -174,8 +177,8 @@
               data-languageSelection=""
               class="py-2 bg-slate-800 outline-none text-white px-1 rounded-md"
             >
-              <option class="outline-none" value="English">English</option>
               <option class="outline-none" value="Deutsch">Deutsch</option>
+              <option class="outline-none" value="English">English</option>
             </select>
             <i class="fa-solid fa-bars text-2xl lg:hidden" id="hamburger"></i>
           </div>
@@ -305,8 +308,11 @@
         />
       </div>
       <div class="flex items-center mt-52 px-5 500:px-7 md:px-12 lg:px-0">
-        <div class="w-full h-[4px] bg-white"></div>
-        <i class="fa-solid fa-arrow-right text-[30px] text-white"></i>
+        <div class="w-full h-[4px] bg-white" data-sameClr=""></div>
+        <i
+          class="fa-solid fa-arrow-right text-[30px] text-white"
+          data-arrow=""
+        ></i>
       </div>
       <!-- <div
         class="relative px-5 500:px-7 md:px-12 lg:px-0 mt-32 lg:mt-60 rounded-md"

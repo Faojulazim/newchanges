@@ -76,6 +76,7 @@
                 <div
                   class="w-[22px] h-[22px] bg-slate-100 rounded-full flex items-center justify-center transition-all duration-[750ms]"
                   id="toggleDiv"
+                  data-toggleDiv=""
                 >
                   <i
                     class="fa-solid fa-moon text-yellow-400 transition-all"
@@ -89,8 +90,8 @@
               data-languageSelection=""
               class="py-2 bg-white text-black px-1 rounded-md"
             >
-              <option class="" value="English">English</option>
               <option class="" value="Deutsch">Deutsch</option>
+              <option class="" value="English">English</option>
             </select>
             <i
               class="fa-solid fa-bars text-white text-2xl lg:hidden"
@@ -161,6 +162,7 @@
               <div
                 class="w-[22px] h-[22px] bg-slate-100 rounded-full flex items-center justify-center transition-all duration-[750ms]"
                 id="toggleDiv"
+                data-toggleDiv=""
               >
                 <i
                   class="fa-solid fa-moon text-yellow-400 transition-all"
@@ -173,8 +175,8 @@
               data-languageSelection=""
               class="py-2 bg-slate-800 outline-none text-white px-1 rounded-md"
             >
-              <option class="outline-none" value="English">English</option>
               <option class="outline-none" value="Deutsch">Deutsch</option>
+              <option class="outline-none" value="English">English</option>
             </select>
             <i class="fa-solid fa-bars text-2xl lg:hidden" id="hamburger"></i>
           </div>
@@ -450,6 +452,37 @@
     <script>
       const toggler = document.querySelectorAll("[data-languageSelection]");
       toggler.forEach((items) => {
+        if (items.value == "Deutsch") {
+          document.querySelector("#aboutmeText").innerText = "Über mich";
+          document.querySelector("#aboutmePara").innerHTML =
+            "Ich hatte eine Leidenschaft dafür<strong> PC-Bau und technische Reparaturen</strong> seit ich jung war. Was als Hobby begann, entwickelte sich schnell zu etwas mehr, als mir klar wurde, wie überteuert vorgefertigte Systeme waren. Ich wollte anbieten <strong>erschwingliche, hochwertige und maßgeschneiderte Lösungen</strong> für Menschen, die einen zuverlässigen PC benötigen, der genau ihren Anforderungen entspricht.";
+          document.querySelector("#aboutmeParaTwo").innerHTML =
+            "Im Gegensatz zu großen Einzelhändlern arbeite ich eng mit meinen Kunden zusammen, um sicherzustellen, dass sie ein personalisiertes Erlebnis erhalten. Ganz gleich, ob Sie PC-Neuling oder Technikbegeisterter sind, ich bin für Sie da <strong>Fachkundige Beratung, ehrliche Preise und praktische Unterstützung</strong> für Ihr System. Lasst uns gemeinsam etwas Großartiges aufbauen!";
+          document.querySelector("#aboutusTouchBtn").innerHTML =
+            "Nehmen Sie Kontakt auf";
+          document.querySelector("#warrantyText").innerHTML =
+            "Garantie und Support";
+          document.querySelector("#warrantyPara").innerHTML =
+            "Ich biete ein <strong>Zweijährige allgemeine Garantie</strong> auf jedem PC, den ich baue, und stelle sicher, dass ich mich darum kümmere, wenn innerhalb dieser Zeit etwas schief geht. Zu jeder Komponente gehört auch ihre eigene <strong>Eigene Herstellergarantie,</strong> Und wenn für ein Teil wie Ihren RAM, Ihre CPU oder Ihre GPU eine erweiterte Garantie gilt (in manchen Fällen bis zu 5 Jahre), helfe ich Ihnen persönlich bei der Abwicklung des Garantieprozesses.";
+          document.querySelector("#warrantyParaTwo").innerHTML =
+            "Mein Engagement endet nicht, wenn meine eigene Garantie endet. Wenn etwas passiert, werde ich beim **Hersteller oder Händler** nachfragen, ob Sie noch Anspruch auf Ersatz oder Reparatur haben. Keine unnötigen Komplikationen – nur ehrlicher und zuverlässiger Support, um sicherzustellen, dass Ihr System reibungslos läuft.";
+          document.querySelector("#warrantyBtn").innerHTML =
+            "Holen Sie sich Unterstützung";
+        } else {
+          document.querySelector("#aboutmeText").innerText = "About Me";
+          document.querySelector("#aboutmePara").innerHTML =
+            "I've been passionate about <strong> PC building and tech repairs</strong>since I was young. What started as a hobby quickly turned into something more when I realized how overpriced pre-built systems were. I wanted to offer <strong>affordable, high-quality, and customized solutions</strong> or people who need a reliable PC that fits their exact needs.";
+          document.querySelector("#aboutmeParaTwo").innerHTML =
+            "Unlike big retailers, I work closely with my customers to ensure they get a personalized experience. Whether you're new to PCs or a tech enthusiast, I'm here to provide <strong>expert guidance, honest pricing, and hands-on support</strong> for your system. Let’s build something great together!";
+          document.querySelector("#aboutusTouchBtn").innerHTML = "Get in Touch";
+          document.querySelector("#warrantyText").innerHTML =
+            "Warranty & Support";
+          document.querySelector("#warrantyPara").innerHTML =
+            "I offer a <strong>two-year general warranty</strong> on every PC I build, ensuring that if anything goes wrong within that time, I will take care of it. Every component also comes with its <strong>own manufacturer warranty,</strong> and if a part like your RAM, CPU, or GPU has extended coverage (up to 5 years in some cases), I will personally assist in navigating the warranty process.";
+          document.querySelector("#warrantyParaTwo").innerHTML =
+            "My commitment doesn’t stop when my own warranty ends. If something happens, I will check with the **manufacturer or retailer** to see if you’re still eligible for a replacement or repair. No unnecessary complications—just honest and reliable support to ensure your system runs smoothly.";
+          document.querySelector("#warrantyBtn").innerHTML = "Get Support";
+        }
         items.addEventListener("change", () => {
           if (items.value == "Deutsch") {
             document.querySelector("#aboutmeText").innerText = "Über mich";
@@ -485,107 +518,211 @@
           }
         });
       });
+
       const toggleBtn = document.querySelectorAll("#toggleBtn");
       toggleBtn.forEach((items, index) => {
         items.addEventListener("click", (e) => {
-          document
-            .querySelectorAll("#toggleDiv")
-            [index].classList.toggle("translate-x-[40px]");
+          if (localStorage.getItem("theme") === "dark") {
+            document.querySelectorAll("[data-toggleDiv]").forEach((items2) => {
+              items2.classList.toggle("translate-x-[40px]");
+              items2.classList.remove("bg-white");
+              items2.classList.add("bg-slate-900");
+            });
+            document.querySelectorAll("#moonsun").forEach((items) => {
+              items.classList.toggle("fa-sun");
+            });
+            document.querySelectorAll("#moonsun").forEach((items) => {
+              items.classList.toggle("fa-moon");
+            });
 
-          document
-            .querySelectorAll("#moonsun")
-            [index].classList.toggle("fa-sun");
-          document
-            .querySelectorAll("#moonsun")
-            [index].classList.toggle("fa-moon");
-
-          document
-            .querySelectorAll("#moonsun")
-            [index].classList.add("animate-[spin_.6s_ease-out]");
-          setTimeout(() => {
+            toggleBtn.forEach((items2) => {
+              items2.classList.add("bg-slate-300");
+            });
+            toggleBtn.forEach((items2) => {
+              items2.classList.remove("bg-slate-900");
+            });
             document
               .querySelectorAll("#moonsun")
-              [index].classList.remove("animate-[spin_.6s_ease-out]");
-          }, 600);
-          document
-            .querySelectorAll("#toggleDiv")
-            [index].classList.toggle("bg-slate-900");
-          document
-            .querySelectorAll("#toggleDiv")
-            [index].classList.toggle("bg-orange-500");
-          items.classList.toggle("bg-slate-900");
-          items.classList.toggle("bg-slate-300");
-          document.querySelectorAll("[data-bggray500]").forEach((items) => {
-            items.classList.toggle("bg-gray-500");
-          });
-          document.querySelectorAll("[data-bggray500]").forEach((items) => {
-            items.classList.toggle("bg-zinc-800");
-          });
-          document.querySelectorAll("[data-bgzinc100]").forEach((items) => {
-            items.classList.toggle("bg-zinc-100");
-          });
-          document.querySelectorAll("[data-bgzinc100]").forEach((items) => {
-            items.classList.toggle("bg-zinc-800");
-          });
-          document.querySelector("[data-body]").classList.toggle("bg-white");
-          document.querySelector("[data-body]").classList.toggle("bg-black");
-          document.querySelectorAll("[data-textblack]").forEach((items) => {
-            items.classList.toggle("text-black");
-          });
-          document.querySelectorAll("[data-textblack]").forEach((items) => {
-            items.classList.toggle("text-white");
-          });
-          document.querySelectorAll("[data-textzinc700]").forEach((items) => {
-            items.classList.toggle("text-zinc-700");
-          });
-          document.querySelectorAll("[data-textzinc700]").forEach((items) => {
-            items.classList.toggle("text-[#d6d6d6]");
-          });
+              [index].classList.add("animate-[spin_.6s_ease-out]");
+            setTimeout(() => {
+              document
+                .querySelectorAll("#moonsun")
+                [index].classList.remove("animate-[spin_.6s_ease-out]");
+            }, 600);
 
-          document
-            .querySelector("[data-bgzinc400]")
-            .classList.toggle("bg-zinc-400");
-          document
-            .querySelector("[data-bgzinc400]")
-            .classList.toggle("bg-zinc-800");
-          document
-            .querySelector("[data-bgzinc400]")
-            .classList.toggle("shadow-[0_0px_20px_0px_hsl(233_8%_62%)]");
-
-          document
-            .querySelectorAll("[data-languageSelection]")
-            .forEach((items) => {
-              items.classList.toggle("bg-slate-900");
+            document.querySelectorAll("[data-bggray500]").forEach((items) => {
+              items.classList.toggle("bg-gray-500");
             });
-          document
-            .querySelectorAll("[data-languageSelection]")
-            .forEach((items) => {
-              items.classList.toggle("bg-white");
+            document.querySelectorAll("[data-bggray500]").forEach((items) => {
+              items.classList.toggle("bg-zinc-800");
             });
-          document
-            .querySelectorAll("[data-languageSelection]")
-            .forEach((items) => {
+            document.querySelectorAll("[data-bgzinc100]").forEach((items) => {
+              items.classList.toggle("bg-zinc-100");
+            });
+            document.querySelectorAll("[data-bgzinc100]").forEach((items) => {
+              items.classList.toggle("bg-zinc-800");
+            });
+            document.querySelector("[data-body]").classList.toggle("bg-white");
+            document.querySelector("[data-body]").classList.toggle("bg-black");
+            document.querySelectorAll("[data-textblack]").forEach((items) => {
               items.classList.toggle("text-black");
             });
-          document
-            .querySelectorAll("[data-languageSelection]")
-            .forEach((items) => {
+            document.querySelectorAll("[data-textblack]").forEach((items) => {
               items.classList.toggle("text-white");
             });
-          document.querySelectorAll("[data-whitemode]").forEach((items) => {
-            items.classList.toggle("text-white");
-            items.classList.toggle("text-black");
-          });
-          document.querySelectorAll("[data-whitemodePara]").forEach((items) => {
-            items.classList.toggle("text-gray-200");
-            items.classList.toggle("text-black");
-          });
-          document.querySelectorAll("[data-sectionColor]").forEach((items) => {
-            items.classList.toggle("bg-zinc-800");
-            items.classList.toggle("bg-slate-200");
-          });
-          document.querySelector("#footer").classList.toggle("bg-zinc-800");
-          document.querySelector("#footer").classList.toggle("bg-gray-500");
+            document.querySelectorAll("[data-textzinc700]").forEach((items) => {
+              items.classList.toggle("text-zinc-700");
+            });
+            document.querySelectorAll("[data-textzinc700]").forEach((items) => {
+              items.classList.toggle("text-[#d6d6d6]");
+            });
+
+            document
+              .querySelector("[data-bgzinc400]")
+              .classList.toggle("bg-zinc-400");
+            document
+              .querySelector("[data-bgzinc400]")
+              .classList.toggle("bg-zinc-800");
+            document
+              .querySelector("[data-bgzinc400]")
+              .classList.toggle("shadow-[0_0px_20px_0px_hsl(233_8%_62%)]");
+
+            document
+              .querySelectorAll("[data-languageSelection]")
+              .forEach((items) => {
+                items.classList.toggle("bg-slate-900");
+              });
+            document
+              .querySelectorAll("[data-languageSelection]")
+              .forEach((items) => {
+                items.classList.toggle("bg-white");
+              });
+            document
+              .querySelectorAll("[data-languageSelection]")
+              .forEach((items) => {
+                items.classList.toggle("text-black");
+              });
+            document
+              .querySelectorAll("[data-languageSelection]")
+              .forEach((items) => {
+                items.classList.toggle("text-white");
+              });
+            document.querySelectorAll("[data-whitemode]").forEach((items) => {
+              items.classList.toggle("text-white");
+              items.classList.toggle("text-black");
+            });
+            document
+              .querySelectorAll("[data-whitemodePara]")
+              .forEach((items) => {
+                items.classList.toggle("text-gray-200");
+                items.classList.toggle("text-black");
+              });
+            document
+              .querySelectorAll("[data-sectionColor]")
+              .forEach((items) => {
+                items.classList.toggle("bg-zinc-800");
+                items.classList.toggle("bg-slate-200");
+              });
+            document.querySelector("#footer").classList.toggle("bg-zinc-800");
+            document.querySelector("#footer").classList.toggle("bg-gray-500");
+          } else {
+            document.querySelectorAll("[data-toggleDiv]").forEach((items2) => {
+              items2.classList.toggle("translate-x-[40px]");
+              items2.classList.add("bg-white");
+              items2.classList.remove("bg-slate-900");
+            });
+            document.querySelectorAll("#moonsun").forEach((items) => {
+              items.classList.toggle("fa-sun");
+            });
+            document.querySelectorAll("#moonsun").forEach((items) => {
+              items.classList.toggle("fa-moon");
+            });
+
+            toggleBtn.forEach((items2) => {
+              items2.classList.remove("bg-slate-300");
+            });
+            toggleBtn.forEach((items2) => {
+              items2.classList.add("bg-slate-900");
+            });
+
+            document
+              .querySelectorAll("#moonsun")
+              [index].classList.add("animate-[spin_.6s_ease-out]");
+            setTimeout(() => {
+              document
+                .querySelectorAll("#moonsun")
+                [index].classList.remove("animate-[spin_.6s_ease-out]");
+            }, 600);
+
+            document.querySelectorAll("[data-bggray500]").forEach((items) => {
+              items.classList.toggle("bg-gray-500");
+            });
+            document.querySelectorAll("[data-bggray500]").forEach((items) => {
+              items.classList.toggle("bg-zinc-800");
+            });
+            document.querySelectorAll("[data-bgzinc100]").forEach((items) => {
+              items.classList.toggle("bg-zinc-100");
+            });
+            document.querySelectorAll("[data-bgzinc100]").forEach((items) => {
+              items.classList.toggle("bg-zinc-800");
+            });
+            document.querySelector("[data-body]").classList.toggle("bg-white");
+            document.querySelector("[data-body]").classList.toggle("bg-black");
+            document.querySelectorAll("[data-textblack]").forEach((items) => {
+              items.classList.toggle("text-black");
+            });
+            document.querySelectorAll("[data-textblack]").forEach((items) => {
+              items.classList.toggle("text-white");
+            });
+            document.querySelectorAll("[data-textzinc700]").forEach((items) => {
+              items.classList.toggle("text-zinc-700");
+            });
+            document.querySelectorAll("[data-textzinc700]").forEach((items) => {
+              items.classList.toggle("text-[#d6d6d6]");
+            });
+
+            document
+              .querySelector("[data-bgzinc400]")
+              .classList.toggle("bg-zinc-400");
+            document
+              .querySelector("[data-bgzinc400]")
+              .classList.toggle("bg-zinc-800");
+            document
+              .querySelector("[data-bgzinc400]")
+              .classList.toggle("shadow-[0_0px_20px_0px_hsl(233_8%_62%)]");
+
+            document
+              .querySelectorAll("[data-languageSelection]")
+              .forEach((items) => {});
+
+            document
+              .querySelectorAll("[data-languageSelection]")
+              .forEach((items) => {
+                items.classList.toggle("text-black");
+                items.classList.toggle("bg-slate-900");
+                items.classList.toggle("bg-white");
+                items.classList.toggle("text-white");
+              });
+
+            document.querySelectorAll("[data-whitemode]").forEach((items) => {
+              items.classList.toggle("text-white");
+              items.classList.toggle("text-black");
+            });
+            document
+              .querySelectorAll("[data-whitemodePara]")
+              .forEach((items) => {
+                items.classList.toggle("text-gray-200");
+                items.classList.toggle("text-black");
+              });
+            document
+              .querySelectorAll("[data-sectionColor]")
+              .forEach((items) => {
+                items.classList.toggle("bg-zinc-800");
+                items.classList.toggle("bg-slate-200");
+              });
+            document.querySelector("#footer").classList.toggle("bg-zinc-800");
+            document.querySelector("#footer").classList.toggle("bg-gray-500");
+          }
         });
       });
     </script>
