@@ -42,11 +42,14 @@
       referrerpolicy="no-referrer"
     />
 
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
-    <script defer src="changeNav.js"></script>
     <script type="text/javascript">
       (function () {
         emailjs.init({
@@ -54,10 +57,7 @@
         });
       })();
     </script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <script defer src="toggleOthers.js"></script>
     <link href="dist/style.css" rel="stylesheet" />
     <title>Document</title>
   </head>
@@ -86,6 +86,7 @@
                 <div
                   class="w-[22px] h-[22px] bg-slate-100 rounded-full flex items-center justify-center transition-all duration-[750ms]"
                   id="toggleDiv"
+                  data-serviceToggleDiv=""
                 >
                   <i
                     class="fa-solid fa-moon text-yellow-400 transition-all"
@@ -170,6 +171,7 @@
             >
               <div
                 class="w-[22px] h-[22px] bg-slate-100 rounded-full flex items-center justify-center transition-all duration-[750ms]"
+                data-serviceToggleDiv=""
                 id="toggleDiv"
               >
                 <i
@@ -799,23 +801,29 @@
           items.classList.toggle("lg:bg-zinc-800");
         });
         document.querySelectorAll("[data-tabs]").forEach((items) => {
-          console.log(items);
-
           items.classList.toggle("lg:border-Accent");
           items.classList.toggle("lg:border-Primary");
         });
 
         document.querySelector("#footer").classList.toggle("bg-zinc-800");
         document.querySelector("#footer").classList.toggle("bg-gray-500");
-        services.forEach((items) => {
-          if (items.classList.contains("bg-Accent")) {
-            items.classList.toggle("bg-Primary");
-            items.classList.toggle("bg-Accent");
-          } else if (items.classList.contains("bg-Primary")) {
-            items.classList.toggle("bg-Primary");
-            items.classList.toggle("bg-Accent");
-          }
-        });
+
+        document
+          .querySelectorAll("[data-serviceToggleDiv]")
+          .forEach((items) => {
+            console.log(items.classList.contains("translate-x-[40px]"));
+            if (items.classList.contains("translate-x-[40px]")) {
+              services.forEach((items) => {
+                if (items.classList.contains("bg-Accent")) {
+                  items.classList.toggle("bg-Primary");
+                  items.classList.toggle("bg-Accent");
+                } else if (items.classList.contains("bg-Primary")) {
+                  items.classList.toggle("bg-Primary");
+                  items.classList.toggle("bg-Accent");
+                }
+              });
+            }
+          });
         document
           .querySelector("[data-allService]")
           .classList.toggle("text-white");
@@ -856,9 +864,21 @@
         document
           .querySelector("#repairsButton")
           .classList.toggle("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
-
-        getItems(document.body.classList.contains("bg-white"));
+        // getItems(document.body.classList.contains("bg-white"));
       });
+    });
+    document.querySelectorAll("[data-serviceToggleDiv]").forEach((items) => {
+      if (items.classList.contains("translate-x-[40px]")) {
+        services.forEach((items) => {
+          if (items.classList.contains("bg-Accent")) {
+            items.classList.toggle("bg-Primary");
+            items.classList.toggle("bg-Accent");
+          } else if (items.classList.contains("bg-Primary")) {
+            items.classList.toggle("bg-Primary");
+            items.classList.toggle("bg-Accent");
+          }
+        });
+      }
     });
 
     function sendEmail(category) {
@@ -948,6 +968,27 @@
         .send("service_tlxv4wh", "template_i41x9qp", params)
         .then((message) => alert("Email Sent"));
     }
+    buildingForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      sendEmail("PC-Building");
+      document.querySelectorAll("input").forEach((items) => {
+        items.value = "";
+      });
+    });
+    upgradesForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      sendEmail("Upgrades");
+      document.querySelectorAll("input").forEach((items) => {
+        items.value = "";
+      });
+    });
+    repairsForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      sendEmail("Small-Repairs");
+      document.querySelectorAll("input").forEach((items) => {
+        items.value = "";
+      });
+    });
 
     toggler.forEach((items) => {
       items.addEventListener("change", () => {
@@ -1031,11 +1072,11 @@
       });
     });
 
-    function getItems(isWidthTrue) {
+    (function getItems() {
       services.forEach((items) => {
         items.addEventListener("click", (e) => {
           gtItems(items.innerText.replace(" ", "").toLowerCase());
-          if (!isWidthTrue) {
+          if (!document.body.classList.contains("bg-white")) {
             items.classList.remove("bg-Primary");
             items.classList.add("bg-Accent");
           } else {
@@ -1050,8 +1091,7 @@
           });
         });
       });
-    }
-    getItems();
+    })();
 
     function gtItems(items) {
       tabs.forEach((tabItems) => {

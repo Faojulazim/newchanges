@@ -42,23 +42,12 @@
       referrerpolicy="no-referrer"
     />
 
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init({
-          publicKey: "TLT5RV3zQccRt4jjY",
-        });
-      })();
-    </script>
-
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link href="dist/style.css" rel="stylesheet" />
+    <script defer src="toggleOthers.js"></script>
+    <link href="style.css" rel="stylesheet" />
     <script defer src="changeNav.js"></script>
     <script defer src="script.js"></script>
     <title>Document</title>
@@ -268,7 +257,7 @@
       <!--Impressum Section-->
 
       <section
-        class="flex items-center justify-center mt-5 lg:mt-10 px-6 py-20"
+        class="flex flex-col items-center justify-center mt-5 lg:mt-10 px-6 py-20"
       >
         <div
           class="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full text-gray-800"
@@ -278,43 +267,21 @@
           >
             Impressum
           </h1>
-
-          <div class="mt-6">
-            <h2 class="text-xl font-semibold text-gray-700">Anschrift</h2>
-            <p class="text-lg text-gray-600 mt-2">
-              Elwan Bowens<br />
-              Röthenbacher Hauptstr. 31<br />
-              90449 Nürnberg
-            </p>
-          </div>
-
-          <div class="mt-6">
-            <h2 class="text-xl font-semibold text-gray-700">Kontakt</h2>
-            <p class="text-lg text-gray-600 mt-2">
-              <strong>Telefon:</strong>
-              <a href="tel:+4917641742121" class="text-blue-600 hover:underline"
-                >+49 176 41742121</a
-              ><br />
-              <strong>E-Mail:</strong>
-              <a
-                href="mailto:info@epc-tech.de"
-                class="text-blue-600 hover:underline"
-                >info@epc-tech.de</a
-              >
-            </p>
-          </div>
-
-          <div class="mt-6 border-t pt-4 text-center">
-            <p class="text-sm text-gray-500">
-              Quelle:
-              <a
-                href="https://www.e-recht24.de"
-                class="text-blue-600 hover:underline"
-                >e-recht24.de</a
-              >
-            </p>
+          <div class="mt-5">
+            <div
+              class="itrk-legaltext"
+              data-itrk-legaltext-url="https://itrk.legal/PDp.0.JlS-iframe.html"
+            ></div>
+            <script src="https://www.it-recht-kanzlei.de/js/itrk-legaltext.js"></script>
           </div>
         </div>
+        <a href="datenschutz.html">
+          <button
+            class="text-white bg-Primary px-10 py-3 mt-5 rounded-md font-[500]"
+          >
+            Datenschutz
+          </button></a
+        >
       </section>
     </main>
     <!-- Footer Section -->

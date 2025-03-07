@@ -42,25 +42,14 @@
       referrerpolicy="no-referrer"
     />
 
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init({
-          publicKey: "TLT5RV3zQccRt4jjY",
-        });
-      })();
-    </script>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link href="dist/style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
     <script defer src="script.js"></script>
     <script defer src="changeNav.js"></script>
-
+    <script defer src="toggleOthers.js"></script>
     <title>Document</title>
   </head>
   <body class="bg-black scroll-smooth transition-all duration-300" data-body="">
@@ -101,8 +90,8 @@
               data-languageSelection=""
               class="py-2 bg-white text-black px-1 rounded-md"
             >
-              <option class="" value="English">English</option>
               <option class="" value="Deutsch">Deutsch</option>
+              <option class="" value="English">English</option>
             </select>
             <i
               class="fa-solid fa-bars text-white text-2xl lg:hidden"
@@ -274,9 +263,7 @@
             id="heading"
             data-textblack=""
           >
-            <span class="text-newAccent font-[600]" id="spans"
-              >Custom PC's</span
-            >
+            <span class="text-Accent font-[600]" id="spans">Custom PC's</span>
             are on the Horizon
           </h1>
           <p
@@ -290,7 +277,7 @@
           <div class="mt-5 relative w-fit h-full group">
             <a
               href="service.html#service"
-              class="bg-newAccent block font-[500] px-16 py-4 text-md text-lg rounded-md"
+              class="bg-Accent block font-[500] px-16 py-4 text-md text-lg rounded-md"
               id="quoteBtn"
             >
               Get a quote
@@ -306,15 +293,22 @@
             </a>
           </div>
         </div>
-        <div class="w-full h-[2px] bg-white mt-10 lg:hidden" id="black"></div>
+        <div
+          class="w-full h-[4px] rounded-lg bg-Accent mt-10 lg:hidden"
+          id="black"
+        ></div>
         <img
-          class="mt-10 mb-6 border-white lg:border-l-2 lg:pl-24 lg:w-[50%] 2xl:w-[50%] 2xl:max-w-[1300px]"
+          class="mt-10 mb-6 border-Accent lg:border-l-4 lg:rounded-sm lg:pl-24 lg:w-[50%] 2xl:w-[50%] 2xl:max-w-[1300px]"
           id="borderleftcolor"
           src="assets/homepage-image.png"
           alt=""
         />
       </div>
-      <div
+      <div class="flex items-center mt-52 px-5 500:px-7 md:px-12 lg:px-0">
+        <div class="w-full h-[4px] bg-white"></div>
+        <i class="fa-solid fa-arrow-right text-[30px] text-white"></i>
+      </div>
+      <!-- <div
         class="relative px-5 500:px-7 md:px-12 lg:px-0 mt-32 lg:mt-60 rounded-md"
       >
         <div
@@ -333,7 +327,7 @@
             Timeline Coming Soon
           </h1>
         </div>
-      </div>
+      </div> -->
 
       <!-- services we provide -->
       <div
@@ -352,7 +346,7 @@
           class="flex items-center flex-col lg:w-full justify-center text-center gap-y-7 mt-10 mx-auto md:gap-y-10 lg:gap-x-5 xl:gap-x-10 font-Overpass lg:max-w-[800px] xl:max-w-[1000px] sm:text-start lg:gap-y-14"
         >
           <div
-            class="rounded-lg flex flex-col items-center sm:items-stretch justify-center border-2 border-newAccent sm:flex-row transition-all hover:scale-105"
+            class="rounded-lg flex flex-col items-center sm:items-stretch justify-center border-4 border-newAccent sm:flex-row transition-all hover:scale-105"
           >
             <img
               class="rounded-t-md w-full sm:w-[300px] xl:w-[350px] sm:rounded-none sm:rounded-l-md"
@@ -388,7 +382,7 @@
             </div>
           </div>
           <div
-            class="rounded-lg flex flex-col items-center sm:items-stretch justify-center border-2 border-newAccent sm:flex-row-reverse transition-all hover:scale-105"
+            class="rounded-lg flex flex-col items-center sm:items-stretch justify-center border-4 border-newAccent sm:flex-row-reverse transition-all hover:scale-105"
           >
             <img
               class="rounded-t-md w-full sm:w-[300px] xl:w-[350px] sm:rounded-none sm:rounded-r-md"
@@ -424,7 +418,7 @@
             </div>
           </div>
           <div
-            class="rounded-lg flex flex-col items-center sm:items-stretch justify-center border-2 border-newAccent sm:flex-row transition-all hover:scale-105"
+            class="rounded-lg flex flex-col items-center sm:items-stretch justify-center border-4 border-newAccent sm:flex-row transition-all hover:scale-105"
           >
             <img
               class="rounded-t-md w-full sm:w-[300px] xl:w-[350px] sm:rounded-none sm:rounded-l-md"
@@ -597,7 +591,7 @@
     </main>
     <footer class="bg-zinc-800 mt-20 text-white" data-bggray500="" id="footer">
       <div class="flex gap-x-5 flex-col px-5 justify-center py-5 md:px-10">
-        <div class="font-Inter flex items-start md:gap-x-5 2xl:gap-x-10">
+        <div class="font-Overpass flex items-start md:gap-x-5 2xl:gap-x-10">
           <div class="">
             <a href="#home">
               <img
@@ -660,7 +654,7 @@
               </div>
             </div>
           </div>
-          <h1 class="mt-5 sm:mt-0 mx-auto sm:mx-0 font-Inter">
+          <h1 class="mt-5 sm:mt-0 mx-auto sm:mx-0 font-Overpass">
             <span>&#169;</span> Copyright 2025 EPC-Tech
           </h1>
         </div>
