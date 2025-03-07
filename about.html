@@ -48,7 +48,7 @@
     />
     <script defer src="toggleOthers.js"></script>
     <script defer src="changeNav.js"></script>
-    <link href="dist/style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
     <title>Document</title>
   </head>
   <body class="bg-black scroll-smooth transition-all duration-300" data-body="">
@@ -620,8 +620,8 @@
             document
               .querySelectorAll("[data-sectionColor]")
               .forEach((items) => {
-                items.classList.add("bg-zinc-800");
-                items.classList.remove("bg-slate-200");
+                items.classList.toggle("bg-slate-200");
+                items.classList.toggle("bg-zinc-800");
               });
             document.querySelector("#footer").classList.toggle("bg-zinc-800");
             document.querySelector("#footer").classList.toggle("bg-gray-500");
@@ -717,8 +717,10 @@
             document
               .querySelectorAll("[data-sectionColor]")
               .forEach((items) => {
-                items.classList.remove("bg-zinc-800");
-                items.classList.add("bg-slate-200");
+                console.log(items);
+
+                items.classList.toggle("bg-slate-200");
+                items.classList.toggle("bg-zinc-800");
               });
             document.querySelector("#footer").classList.toggle("bg-zinc-800");
             document.querySelector("#footer").classList.toggle("bg-gray-500");

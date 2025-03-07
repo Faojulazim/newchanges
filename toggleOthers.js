@@ -109,8 +109,8 @@ async function returnElems() {
     }
     if (document.baseURI === "http://localhost:5173/about.html") {
       document.querySelectorAll("[data-sectionColor]").forEach((items) => {
-        items.classList.remove("bg-slate-200");
         items.classList.add("bg-zinc-800");
+        items.classList.remove("bg-slate-200");
       });
       document.querySelectorAll("[data-whiteMode]").forEach((items) => {
         items.classList.remove("text-black");
@@ -221,8 +221,8 @@ async function returnElems() {
     }
     if (document.baseURI === "http://localhost:5173/about.html") {
       document.querySelectorAll("[data-sectionColor]").forEach((items) => {
-        items.classList.add("bg-slate-200");
         items.classList.remove("bg-zinc-800");
+        items.classList.add("bg-slate-200");
       });
       document.querySelectorAll("[data-whiteMode]").forEach((items) => {
         items.classList.add("text-black");
