@@ -64,7 +64,7 @@
   <body class="bg-black scroll-smooth transition-all duration-300" data-body="">
     <main class="font-Overpass relative lg:px-10 xl:px-20 2xl:px-40" id="home">
       <nav
-        class="flex items-center px-5 z-[200] justify-start lg:gap-x-10 sticky top-0 text-white py-5 w-full lg:sticky bg-zinc-800 lg:left-0 lg:rounded-full lg:top-[25px] lg:py-3 lg:mt-0 lg:px-10"
+        class="flex items-center px-5 z-[200] justify-start lg:gap-x-0 2xl:gap-x-10 sticky top-0 text-white py-5 w-full lg:sticky bg-zinc-800 lg:left-0 lg:rounded-full lg:top-[25px] lg:py-3 lg:mt-0 lg:px-5 xl:px-10"
         data-bgzinc400=""
       >
         <div
@@ -86,7 +86,6 @@
                 <div
                   class="w-[22px] h-[22px] bg-slate-100 rounded-full flex items-center justify-center transition-all duration-[750ms]"
                   id="toggleDiv"
-                  data-serviceToggleDiv=""
                   data-toggleDiv=""
                 >
                   <i
@@ -112,63 +111,75 @@
           </div>
         </div>
         <div class="flex items-center lg:w-full justify-between">
-          <ul class="hidden lg:block lg:flex lg:gap-x-5 2xl:gap-x-7" id="list">
-            <a href="index.html#home">
+          <ul class="hidden lg:flex lg:gap-x-5 2xl:gap-x-7" id="list">
+            <a href="index.html">
               <li
-                class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
                 data-home=""
               >
                 Home
               </li>
             </a>
-            <a href="gallery.html">
-              <li
-                class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
-                data-allListItems=""
-                data-gallery=""
-              >
-                Gallery
-              </li>
-            </a>
             <a href="service.html#service">
               <li
-                class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
                 data-service=""
               >
                 Services
               </li>
             </a>
-            <a href="impressum.html">
+            <a href="gallery.html">
               <li
-                class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
+                data-gallery=""
               >
-                Impressum
+                Gallery
+              </li>
+            </a>
+            <a href="non.html">
+              <li
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                data-allListItems=""
+                data-accounce=""
+              >
+                Announcements
               </li>
             </a>
 
-            <a href="non.html">
-              <li
-                class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
-                data-allListItems=""
-              >
-                Non's 3D Printing Corner
-              </li>
-            </a>
             <a href="about.html">
               <li
-                class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
                 data-aboutus=""
               >
                 About Us
               </li>
             </a>
+
+            <a href="impressum.html">
+              <li
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                data-allListItems=""
+                data-legal=""
+              >
+                Legal Notice
+              </li>
+            </a>
+            <a href="impressum.html">
+              <li
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                data-allListItems=""
+                data-impressum=""
+              >
+                Impressum
+              </li>
+            </a>
           </ul>
           <div
-            class="flex gap-x-5 sm:gap-x-10 lg:ml-5 hidden lg:block xl:ml-10 lg:flex lg:items-center"
+            class="flex gap-x-5 sm:gap-x-5 2xl:gap-x-10 lg:ml-5 hidden lg:block xl:ml-10 lg:flex lg:items-center"
           >
             <div
               class="bg-slate-900 w-[70px] h-[30px] flex items-center px-1 rounded-full transition-all"
@@ -176,7 +187,6 @@
             >
               <div
                 class="w-[22px] h-[22px] bg-slate-100 rounded-full flex items-center justify-center transition-all duration-[750ms]"
-                data-serviceToggleDiv=""
                 id="toggleDiv"
                 data-toggleDiv=""
               >
@@ -219,57 +229,60 @@
             ></i>
           </div>
           <ul class="flex flex-col gap-y-5">
-            <a href="index.html#home">
+            <a href="index.html">
               <li
-                class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
                 data-home=""
               >
                 Home
               </li>
             </a>
-            <a href="gallery.html">
-              <li
-                class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
-                data-allListItems=""
-                data-gallery=""
-              >
-                Gallery
-              </li>
-            </a>
             <a href="service.html#service">
               <li
-                class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
                 data-service=""
               >
                 Services
               </li>
             </a>
-            <a href="impressum.html">
+            <a href="gallery.html">
               <li
-                class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
+                data-gallery=""
               >
-                Impressum
+                Gallery
+              </li>
+            </a>
+            <a href="non.html">
+              <li
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                data-allListItems=""
+                data-accounce=""
+              >
+                Announcements
               </li>
             </a>
 
-            <a href="non.html">
-              <li
-                class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
-                data-allListItems=""
-              >
-                Non's 3D Printing Corner
-              </li>
-            </a>
             <a href="about.html">
               <li
-                class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
                 data-aboutus=""
               >
                 About Us
+              </li>
+            </a>
+
+            <a href="impressum.html">
+              <li
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                data-allListItems=""
+                data-legal=""
+              >
+                Legal Notice
               </li>
             </a>
           </ul>
@@ -624,37 +637,96 @@
     </main>
 
     <!-- Footer Section -->
-    <footer class="bg-zinc-800 mt-20" id="footer">
+    <footer class="bg-zinc-800 mt-20 text-white" data-bggray500="" id="footer">
       <div class="flex gap-x-5 flex-col px-5 justify-center py-5 md:px-10">
-        <div class="flex font-Overpass items-start md:gap-x-5 2xl:gap-x-10">
+        <div
+          class="font-Overpass flex flex-col items-start md:gap-x-5 2xl:gap-x-10"
+        >
           <div class="">
-            <a href="#home">
+            <a href="">
               <img
                 class="rounded-md w-[85px]"
                 src="assets/Logos/rounded-logo.jpg"
                 alt=""
             /></a>
             <div class="mt-5">
-              <a
-                href="mailto:info@epc-tech.de"
-                class="flex items-start gap-x-2 text-white"
-                ><i
-                  class="fa-solid mt-1 fa-envelope text-white text-[16px]"
-                ></i>
+              <a href="mailto:info@epc-tech.de" class="flex items-start gap-x-2"
+                ><i class="fa-solid mt-1 fa-envelope text-[16px]"></i>
                 <p class="425:text-[17px]">info@epc-tech.de</p></a
               >
               <a
                 href="tel: +49 176 41742121"
-                class="flex items-start gap-x-2 mt-3 text-white"
-                ><i class="fa-solid fa-phone mt-1 text-white text-[16px]"></i>
+                class="flex items-start gap-x-2 mt-3"
+                ><i class="fa-solid fa-phone mt-1 text-[16px]"></i>
                 <p class="425:text-[17px]">+49 176 41742121</p></a
               >
             </div>
           </div>
+          <div class="mt-5">
+            <h1 class="font-[500] text-xl tracking-wide">Links</h1>
+
+            <ul class="flex flex-col md:flex-row gap-y-2 gap-x-5 mt-2">
+              <a href="index.html">
+                <li
+                  class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
+                  data-allListItems=""
+                  data-home=""
+                >
+                  Home
+                </li>
+              </a>
+              <a href="service.html#service">
+                <li
+                  class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
+                  data-allListItems=""
+                  data-service=""
+                >
+                  Services
+                </li>
+              </a>
+              <a href="gallery.html">
+                <li
+                  class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
+                  data-allListItems=""
+                  data-gallery=""
+                >
+                  Gallery
+                </li>
+              </a>
+              <a href="non.html">
+                <li
+                  class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
+                  data-allListItems=""
+                  data-accounce=""
+                >
+                  Announcements
+                </li>
+              </a>
+
+              <a href="impressum.html">
+                <li
+                  class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
+                  data-allListItems=""
+                  data-impressum=""
+                >
+                  Impressum
+                </li>
+              </a>
+              <a href="datenschutz.html">
+                <li
+                  class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
+                  data-allListItems=""
+                  data-daten=""
+                >
+                  Datenschutz
+                </li>
+              </a>
+            </ul>
+          </div>
         </div>
-        <div class="w-full h-[2px] bg-slate-300 mt-5 hidden sm:block"></div>
+        <div class="w-full h-[2px] bg-white mt-5 hidden sm:block"></div>
         <div
-          class="flex gap-x-5 flex-col sm:flex-row-reverse items-center justify-between mt-7 sm:mt-5 text-white"
+          class="flex gap-x-5 flex-col sm:flex-row-reverse items-center justify-between mt-7 sm:mt-5"
         >
           <div class="flex gap-x-5">
             <div>
@@ -693,7 +765,7 @@
               </div>
             </div>
           </div>
-          <h1 class="mt-5 sm:mt-0 mx-auto sm:mx-0 text-white font-Overpass">
+          <h1 class="mt-5 sm:mt-0 mx-auto sm:mx-0 font-Overpass">
             <span>&#169;</span> Copyright 2025 EPC-Tech
           </h1>
         </div>
@@ -825,9 +897,6 @@
             items.classList.toggle("lg:border-Accent");
             items.classList.toggle("lg:border-Primary");
           });
-
-          document.querySelector("#footer").classList.toggle("bg-zinc-800");
-          document.querySelector("#footer").classList.toggle("bg-gray-500");
 
           document
             .querySelector("[data-allService]")
@@ -1017,8 +1086,6 @@
             items.classList.toggle("lg:border-Primary");
           });
 
-          document.querySelector("#footer").classList.toggle("bg-zinc-800");
-          document.querySelector("#footer").classList.toggle("bg-gray-500");
           document.querySelectorAll("label").forEach((items2) => {
             items2.classList.add("text-black");
             items2.classList.remove("text-white");
@@ -1189,16 +1256,22 @@
     toggler.forEach((items) => {
       if (items.value == "Deutsch") {
         document.querySelectorAll("[data-home]").forEach((items, i) => {
-          items.innerText = "Hime";
+          items.innerText = "Startseite";
         });
         document.querySelectorAll("[data-gallery]").forEach((items) => {
           items.innerText = "Galerie";
         });
         document.querySelectorAll("[data-service]").forEach((items, i) => {
-          items.innerText = "Dienstleistungen";
+          items.innerText = "Unsere Leistungen";
+        });
+        document.querySelectorAll("[data-accounce]").forEach((items, i) => {
+          items.innerText = "Aktuelles";
         });
         document.querySelectorAll("[data-aboutus]").forEach((items, i) => {
           items.innerText = "Über uns";
+        });
+        document.querySelectorAll("[data-legal]").forEach((items, i) => {
+          items.innerText = "Rechtlicher Hinweis";
         });
 
         document.querySelectorAll("[data-tabs]")[0].id = "pcgebäude";
@@ -1251,6 +1324,14 @@
         document.querySelectorAll("[data-aboutus]").forEach((items, i) => {
           items.innerText = "About Us";
         });
+
+        document.querySelectorAll("[data-accounce]").forEach((items, i) => {
+          items.innerText = "Announcements";
+        });
+
+        document.querySelectorAll("[data-legal]").forEach((items, i) => {
+          items.innerText = "Legal Notice";
+        });
         document.querySelectorAll("[data-tabs]")[0].id = "pcbuilding";
         document.querySelectorAll("[data-tabs]")[2].id = "smallrepairs";
         document.querySelector("#pcbuildingText").innerText = "PC Building";
@@ -1287,16 +1368,22 @@
       items.addEventListener("change", () => {
         if (items.value == "Deutsch") {
           document.querySelectorAll("[data-home]").forEach((items, i) => {
-            items.innerText = "Hime";
+            items.innerText = "Startseite";
           });
           document.querySelectorAll("[data-gallery]").forEach((items) => {
             items.innerText = "Galerie";
           });
           document.querySelectorAll("[data-service]").forEach((items, i) => {
-            items.innerText = "Dienstleistungen";
+            items.innerText = "Unsere Leistungen";
+          });
+          document.querySelectorAll("[data-accounce]").forEach((items, i) => {
+            items.innerText = "Aktuelles";
           });
           document.querySelectorAll("[data-aboutus]").forEach((items, i) => {
             items.innerText = "Über uns";
+          });
+          document.querySelectorAll("[data-legal]").forEach((items, i) => {
+            items.innerText = "Rechtlicher Hinweis";
           });
           document.querySelectorAll("[data-tabs]")[0].id = "pcgebäude";
           document.querySelectorAll("[data-tabs]")[2].id = "kleinereparaturen";
@@ -1349,6 +1436,14 @@
           });
           document.querySelectorAll("[data-aboutus]").forEach((items, i) => {
             items.innerText = "About Us";
+          });
+
+          document.querySelectorAll("[data-accounce]").forEach((items, i) => {
+            items.innerText = "Announcements";
+          });
+
+          document.querySelectorAll("[data-legal]").forEach((items, i) => {
+            items.innerText = "Legal Notice";
           });
           document.querySelectorAll("[data-tabs]")[0].id = "pcbuilding";
           document.querySelectorAll("[data-tabs]")[2].id = "smallrepairs";
