@@ -4,7 +4,7 @@ const toggler = document.querySelectorAll("[data-languageSelection]");
 toggler.forEach((items) => {
   if (items.value == "Deutsch") {
     document.querySelector("#heading").innerHTML =
-      "<span class='text-Accent font-[600]'>Benutzerdefinierte PCs</span> sind in Sicht";
+      "<span class='text-Accent font-[600]' id='spans'>Benutzerdefinierte PCs</span> sind in Sicht";
     document.querySelector("#titleP").innerText =
       "Keine Notwendigkeit für überteuerte Sonderanfertigungen. Pro Kunde erstellt, keine versteckten Kosten.";
     document.querySelector("#quoteBtn").innerText =
@@ -35,7 +35,7 @@ toggler.forEach((items) => {
     document.querySelector("#contactBtn").innerText = "einreichen";
   } else {
     document.querySelector("#heading").innerHTML =
-      "<span class='text-Accent font-[600]'>Custom PC's </span> are on the Horizon";
+      "<span class='text-Accent font-[600]' id='spans'>Custom PC's </span> are on the Horizon";
     document.querySelector("#titleP").innerText =
       "No need for overpriced custom builds. Built per customer, no hidden costs.";
     document.querySelector("#quoteBtn").innerText = "Get a quote";

@@ -101,8 +101,8 @@
               data-languageSelection=""
               class="py-2 bg-white text-black px-1 rounded-md"
             >
-              <option class="" value="English">English</option>
               <option class="" value="Deutsch">Deutsch</option>
+              <option class="" value="English">English</option>
             </select>
             <i
               class="fa-solid fa-bars text-white text-2xl lg:hidden"
@@ -187,8 +187,8 @@
               data-languageSelection=""
               class="py-2 bg-slate-800 outline-none text-white px-1 rounded-md"
             >
-              <option class="outline-none" value="English">English</option>
               <option class="outline-none" value="Deutsch">Deutsch</option>
+              <option class="outline-none" value="English">English</option>
             </select>
             <i class="fa-solid fa-bars text-2xl lg:hidden" id="hamburger"></i>
           </div>
@@ -1202,6 +1202,78 @@
     // }
 
     toggler.forEach((items) => {
+      if (items.value == "Deutsch") {
+        document.querySelectorAll("[data-tabs]")[0].id = "pcgebäude";
+        document.querySelectorAll("[data-tabs]")[2].id = "kleinereparaturen";
+        document.querySelector("#pcbuildingText").innerText = "PC Gebäude";
+        document.querySelector("#pcbuildingPageText").innerText = "PC Gebäude";
+        document.querySelector("#repairText").innerText = "Kleine Reparaturen";
+        document.querySelector("#pcbuildingPagePara").innerText =
+          "Sie können Ihren ersten PC nicht bauen? Bauen Sie Ihren ersten PC bei uns und wir kümmern uns um den Rest.";
+        document.querySelector("#emailfirst").placeholder = "Email Adresse";
+        document.querySelector("#priceCatLabel").innerText =
+          "Wählen Sie die Preiskategorie aus";
+        document.querySelector("#customReqText").innerText =
+          "Benutzerdefinierte Anfragen";
+        document.querySelector("#custom").placeholder =
+          "Benutzerdefinierte Anfragen";
+        document.querySelector("#priorExpText").innerText =
+          "Haben Sie bereits Erfahrungen mit PCs?";
+        document.querySelector("#upgradesPara").innerText =
+          "Warum bringen Sie Ihren Computer nicht zu uns? So können wir Ihren PC nach Ihren Wünschen aufrüsten.";
+        document.querySelector("#emailsecond").placeholder = "Email Adresse";
+        document.querySelector("#enterbudgetText").innerText =
+          "Geben Sie Ihr Budget ein";
+        document.querySelector("#budget").placeholder =
+          "Geben Sie Ihr Budget ein";
+        document.querySelector("#upgradesButton").innerText =
+          "Holen Sie sich ein Angebot";
+        document.querySelector("#smallrepairsTxt").innerText =
+          "Kleine Reparaturen";
+        document.querySelector("#smallrepairsPara").innerText =
+          "Haben Sie ein Telefon, Tablet oder Laptop, das überprüft werden muss? Kontaktieren Sie uns oder bringen Sie Ihr Gerät zu uns.";
+        document.querySelector("#emailthird").placeholder = "Email Adresse";
+        document.querySelector("#deviceText").innerText = "Gerät";
+        document.querySelector("#describeissueText").innerText =
+          "Beschreiben Sie das Problem";
+        document.querySelector("#issue").placeholder =
+          "Beschreiben Sie das Problem";
+        document.querySelector("#repairsButton").innerText =
+          "Holen Sie sich ein Angebot";
+      } else {
+        document.querySelectorAll("[data-tabs]")[0].id = "pcbuilding";
+        document.querySelectorAll("[data-tabs]")[2].id = "smallrepairs";
+        document.querySelector("#pcbuildingText").innerText = "PC Building";
+        document.querySelector("#repairText").innerText = "Small Repairs";
+        document.querySelector("#pcbuildingPageText").innerText = "PC Building";
+        document.querySelector("#pcbuildingPagePara").innerText =
+          "Unable to build your first PC? Build your first pc from us and we'll take care of the rest.";
+        document.querySelector("#emailfirst").placeholder = "Email Address";
+        document.querySelector("#priceCatLabel").innerText =
+          "Select Price Category";
+        document.querySelector("#customReqText").innerText = "Custom Requests";
+        document.querySelector("#priorExpText").innerText =
+          "Do your have prior experience of PCs?";
+        document.querySelector("#custom").placeholder = "Custom Request";
+        document.querySelector("#upgradesPara").innerText =
+          "Why not bring your computer to us? So, we can upgrade your pc to your liking.";
+        document.querySelector("#emailsecond").placeholder = "Email Address";
+        document.querySelector("#enterbudgetText").innerText =
+          "Enter Your Budget";
+        document.querySelector("#budget").placeholder =
+          "Geben Sie Ihr Budget ein";
+        document.querySelector("#upgradesButton").innerText = "Get a quote";
+
+        document.querySelector("#smallrepairsTxt").innerText = "Small Repaires";
+        document.querySelector("#smallrepairsPara").text =
+          "Have a phone, tablet or laptop that needs some checkup? Contact us or bring your device to us.";
+        document.querySelector("#emailthird").placeholder = "Email Address";
+        document.querySelector("#deviceText").innerText = "Device";
+        document.querySelector("#describeissueText").innerText =
+          "Describe the issue";
+        document.querySelector("#issue").placeholder = "Describe the issue";
+        document.querySelector("#repairsButton").innerText = "Get a quote";
+      }
       items.addEventListener("change", () => {
         if (items.value == "Deutsch") {
           document.querySelectorAll("[data-tabs]")[0].id = "pcgebäude";

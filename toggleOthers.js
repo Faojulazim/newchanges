@@ -8,7 +8,6 @@ async function returnElems() {
   const galleryText = await gallery.text();
   const serviceText = await service.text();
   const impressumText = await impressum.text();
-  const aboutusText = await aboutus.text();
   const tempDiv = document.createElement("div");
   tempDiv.innerHTML = indexText + galleryText + serviceText + impressumText;
   const fetchedToggleElems = tempDiv.querySelectorAll("#toggleBtn");
@@ -20,7 +19,6 @@ async function returnElems() {
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.remove("bg-white");
     document.body.classList.add("bg-black");
-
     document
       .querySelector("[data-body]")
       .querySelector("[data-bgzinc400]")
@@ -34,7 +32,6 @@ async function returnElems() {
       items.classList.add("text-white");
     });
     document.querySelectorAll("[data-bgzinc100]").forEach((items) => {
-      // console.log(items);
       items.classList.add("bg-zinc-800");
       items.classList.remove("bg-zinc-100");
     });
@@ -60,23 +57,13 @@ async function returnElems() {
     document.querySelector("#footer").classList.remove("bg-gray-500");
     document.querySelector("#footer").classList.add("bg-zinc-800");
 
-    if (document.baseURI == "http://localhost:5173/index.html#home") {
-      document.querySelector("[data-sameClr]").classList.add("bg-Accent");
-      document.querySelector("[data-arrow]").classList.add("text-Accent");
-      document.querySelector("[data-sameClr]").classList.remove("bg-white");
-      document.querySelector("[data-arrow]").classList.remove("text-white");
-    }
-
-    if (document.baseURI == "http://localhost:5173/gallery.html") {
+    if (window.location.pathname.includes("gallery.html")) {
       document.querySelector("#galleryHeading").classList.remove("text-black");
       document.querySelector("#galleryHeading").classList.add("text-white");
       document.querySelector("#bgblackgallery").classList.remove("bg-white");
       document.querySelector("#bgblackgallery").classList.add("bg-black");
     }
-    if (
-      document.baseURI === "http://localhost:5173/service.html#service" ||
-      document.baseURI === "http://localhost:5173/service.html"
-    ) {
+    if (window.location.pathname.includes("service.html")) {
       document.querySelector("#servicesHeading").classList.remove("text-black");
       document.querySelector("#servicesHeading").classList.add("text-white");
 
@@ -107,7 +94,9 @@ async function returnElems() {
         items.classList.add("text-white");
       });
     }
-    if (document.baseURI === "http://localhost:5173/about.html") {
+    // console.log(window.location.pathname);
+
+    if (window.location.pathname.includes("about.html")) {
       document.querySelectorAll("[data-sectionColor]").forEach((items) => {
         items.classList.add("bg-zinc-800");
         items.classList.remove("bg-slate-200");
@@ -168,22 +157,13 @@ async function returnElems() {
     document.querySelector("#footer").classList.toggle("bg-gray-500");
     document.querySelector("#footer").classList.toggle("bg-zinc-800");
 
-    if (document.baseURI == "http://localhost:5173/index.html#home") {
-      document.querySelector("[data-sameClr]").classList.add("bg-Accent");
-      document.querySelector("[data-arrow]").classList.add("text-Accent");
-      document.querySelector("[data-sameClr]").classList.remove("bg-white");
-      document.querySelector("[data-arrow]").classList.remove("text-white");
-    }
-    if (document.baseURI == "http://localhost:5173/gallery.html") {
+    if (window.location.pathname.includes("gallery.html")) {
       document.querySelector("#galleryHeading").classList.add("text-black");
       document.querySelector("#galleryHeading").classList.remove("text-white");
       document.querySelector("#bgblackgallery").classList.add("bg-white");
       document.querySelector("#bgblackgallery").classList.remove("bg-black");
     }
-    if (
-      document.baseURI == "http://localhost:5173/service.html#service" ||
-      document.baseURI == "http://localhost:5173/service.html"
-    ) {
+    if (window.location.pathname.includes("service.html")) {
       document.querySelector("#servicesHeading").classList.add("text-black");
       document.querySelector("#servicesHeading").classList.remove("text-white");
 
@@ -219,7 +199,7 @@ async function returnElems() {
         .classList.remove("bg-zinc-800");
       document.querySelector("[data-allService]").classList.add("bg-slate-100");
     }
-    if (document.baseURI === "http://localhost:5173/about.html") {
+    if (window.location.pathname.includes("about.html")) {
       document.querySelectorAll("[data-sectionColor]").forEach((items) => {
         items.classList.remove("bg-zinc-800");
         items.classList.add("bg-slate-200");
@@ -247,23 +227,102 @@ async function returnElems() {
   }
   allToggleElems.forEach((items) => {
     items.addEventListener("click", (e) => {
-      if (
-        !items
-          .querySelector("#toggleDiv")
-          .classList.contains("translate-x-[40px]")
-      ) {
-        localStorage.setItem("theme", "dark");
-        localStorage.setItem("toggle", "right");
-        document.body.classList.add("bg-black");
-        document.body.classList.remove("bg-white");
-      } else {
-        localStorage.removeItem("theme", "dark");
-        localStorage.removeItem("toggle", "right");
+      if (document.body.classList.contains("bg-white")) {
+        localStorage.setItem("theme", "white");
+        localStorage.setItem("accenttext", "text-Primary");
+        localStorage.setItem("accentbg", "bg-Primary");
+        localStorage.setItem("border", "border-Primary");
+        localStorage.setItem("bgblack", "bg-black");
         document.body.classList.remove("bg-black");
         document.body.classList.add("bg-white");
+        localStorage.setItem("tblack", "text-black");
+      } else {
+        localStorage.setItem("theme", "dark");
+        localStorage.setItem("accenttext", "text-Accent");
+        localStorage.setItem("accentbg", "bg-Accent");
+        localStorage.setItem("border", "border-Accent");
+        localStorage.setItem("bgblack", "bg-white");
+        document.body.classList.add("bg-black");
+        document.body.classList.remove("bg-white");
+        localStorage.setItem("tblack", "text-white");
       }
     });
   });
 }
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "white") {
+  const spansL = localStorage.getItem("accenttext");
+  const spansBg = localStorage.getItem("accentbg");
+  const bgblack = localStorage.getItem("bgblack");
+  const tblack = localStorage.getItem("tblack");
+  const border = localStorage.getItem("border");
+  document.body.classList.add("bg-white");
+  document.body.classList.remove("bg-black");
+  if (window.location.pathname.includes("index.html")) {
+    document.querySelector("#spans").classList.add(spansL);
+    document.querySelector("#quoteBtn").classList.add(spansBg);
+    document.querySelector("#black").classList.add(spansBg);
+    document.querySelector("[data-sameClr]").classList.remove("bg-white");
+    document.querySelector("[data-sameClr]").classList.add(bgblack);
+    document.querySelector("[data-arrow]").classList.remove("text-white");
+    document.querySelector("[data-arrow]").classList.add(tblack);
 
+    document.querySelectorAll("[data-borderPrimary]").forEach((items) => {
+      items.classList.remove("border-Accent");
+      items.classList.add(border);
+    });
+    document.querySelector("#touchBar").classList.remove("bg-Accent");
+    document.querySelector("#touchBar").classList.add(spansBg);
+    document.querySelector("#contactBtn").classList.remove("bg-Accent");
+    document.querySelector("#contactBtn").classList.add(spansBg);
+    document
+      .querySelector("#borderleftcolor")
+      .classList.remove("border-Accent");
+    document.querySelector("#borderleftcolor").classList.add(border);
+  }
+} else if (savedTheme === "dark") {
+  const spansL = localStorage.getItem("accenttext");
+  const spansBg = localStorage.getItem("accentbg");
+  const bgblack = localStorage.getItem("bgblack");
+  const tblack = localStorage.getItem("tblack");
+  const border = localStorage.getItem("border");
+  document.body.classList.add("bg-black");
+  document.body.classList.remove("bg-white");
+  if (window.location.pathname.includes("index.html")) {
+    document.querySelector("#spans").classList.add(spansL);
+    document.querySelector("#quoteBtn").classList.add(spansBg);
+    document.querySelector("#black").classList.add(spansBg);
+    document.querySelector("[data-sameClr]").classList.remove("bg-black");
+    document.querySelector("[data-sameClr]").classList.add(bgblack);
+    document.querySelector("[data-arrow]").classList.remove("text-black");
+    document.querySelector("[data-arrow]").classList.add(tblack);
+    document.querySelectorAll("[data-borderPrimary]").forEach((items) => {
+      items.classList.remove("border-Primary");
+      items.classList.add(border);
+    });
+    document.querySelector("#touchBar").classList.remove("bg-Primary");
+    document.querySelector("#touchBar").classList.add(spansBg);
+    document.querySelector("#contactBtn").classList.remove("bg-Primary");
+    document.querySelector("#contactBtn").classList.add(spansBg);
+    document
+      .querySelector("#borderleftcolor")
+      .classList.remove("border-Primary");
+    document.querySelector("#borderleftcolor").classList.add(border);
+  }
+}
+if (document.body.classList.contains("bg-white")) {
+  localStorage.setItem("theme", "white");
+  localStorage.setItem("accentbg", "bg-Primary");
+  localStorage.setItem("accenttext", "text-Primary");
+  localStorage.setItem("bgblack", "bg-black");
+  localStorage.setItem("tblack", "text-black");
+  localStorage.setItem("border", "border-Primary");
+} else {
+  localStorage.setItem("theme", "dark");
+  localStorage.setItem("accenttext", "text-Accent");
+  localStorage.setItem("accentbg", "bg-Accent");
+  localStorage.setItem("bgblack", "bg-white");
+  localStorage.setItem("tblack", "text-white");
+  localStorage.setItem("border", "border-Accent");
+}
 returnElems();
