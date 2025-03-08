@@ -21,3 +21,4 @@ closeIcon.addEventListener("click", (e) => {
   closeIcon.classList.add("rotate-[90deg]");
   left.classList.add("translate-x-[-150%]");
 });
+console.log("s");
