@@ -46,9 +46,19 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "t73ugZimhXqGDox_u",
+        });
+      })();
+    </script>
     <link href="dist/style.css" rel="stylesheet" />
     <script defer src="script.js"></script>
-    <!-- <script defer src="toggle.js"></script> -->
     <script defer src="changeNav.js"></script>
     <script defer src="toggleOthers.js"></script>
     <title>Document</title>
@@ -104,10 +114,11 @@
         </div>
         <div class="flex items-center lg:w-full justify-between">
           <ul class="hidden lg:block lg:flex lg:gap-x-5 2xl:gap-x-7" id="list">
-            <a href="index.html#home">
+            <a href="index.html">
               <li
                 class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
+                data-home=""
               >
                 Home
               </li>
@@ -116,6 +127,7 @@
               <li
                 class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
+                data-gallery=""
               >
                 Gallery
               </li>
@@ -124,6 +136,7 @@
               <li
                 class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
+                data-service=""
               >
                 Services
               </li>
@@ -132,6 +145,7 @@
               <li
                 class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
+                data-impressum=""
               >
                 Impressum
               </li>
@@ -149,6 +163,7 @@
               <li
                 class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
+                data-aboutus=""
               >
                 About Us
               </li>
@@ -205,10 +220,11 @@
             ></i>
           </div>
           <ul class="flex flex-col gap-y-5">
-            <a href="index.html#home">
+            <a href="index.html">
               <li
                 class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
                 data-allListItems=""
+                data-home=""
               >
                 Home
               </li>
@@ -217,6 +233,7 @@
               <li
                 class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
                 data-allListItems=""
+                data-gallery=""
               >
                 Gallery
               </li>
@@ -225,6 +242,7 @@
               <li
                 class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
                 data-allListItems=""
+                data-services=""
               >
                 Services
               </li>
@@ -250,6 +268,7 @@
               <li
                 class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
                 data-allListItems=""
+                data-aboutus=""
               >
                 About Us
               </li>
@@ -543,6 +562,7 @@
             </div>
             <form
               class="lg:w-full flex flex-col gap-y-3 mt-5 lg:mt-0 lg:gap-y-5 text-white"
+              id="formForContact"
               data-textblack=""
             >
               <div class="flex flex-col gap-y-1">
@@ -553,6 +573,7 @@
                   </label>
                 </div>
                 <input
+                  id="nameForContact"
                   type="text"
                   required
                   class="w-full py-2 rounded-[3px] text-black px-3 outline-Primary"
@@ -565,6 +586,7 @@
                 </div>
                 <input
                   type="email"
+                  id="emailForContact"
                   required
                   class="w-full py-2 rounded-[3px] text-black px-3 outline-Primary"
                 />
@@ -602,7 +624,7 @@
       <div class="flex gap-x-5 flex-col px-5 justify-center py-5 md:px-10">
         <div class="font-Overpass flex items-start md:gap-x-5 2xl:gap-x-10">
           <div class="">
-            <a href="#home">
+            <a href="">
               <img
                 class="rounded-md w-[85px]"
                 src="assets/Logos/rounded-logo.jpg"
@@ -669,9 +691,30 @@
         </div>
       </div>
     </footer>
-
     <script src="menu.js"></script>
     <script src="toggle.js"></script>
-    <script></script>
+    <script>
+      function sendEmail(category) {
+        let params = {
+          subject: "Get a quote",
+          from: "mkvcinemas945@gmail.com",
+          email: document.querySelector("#emailForContact").value,
+          name: document.querySelector("#nameForContact").value,
+          message: document.querySelector("#messagePlaceholder").value,
+        };
+        emailjs
+          .send("service_eeyxqg5", "<template-here-new>", params)
+          .then((message) => alert("Email Sent"));
+      }
+      document
+        .querySelector("#formForContact")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+          document.querySelector("#textareaContact").value = "";
+          document.querySelectorAll("input").forEach((items) => {
+            items.value = "";
+          });
+        });
+    </script>
   </body>
 </html>
