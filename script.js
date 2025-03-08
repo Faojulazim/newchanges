@@ -9,16 +9,22 @@ toggler.forEach((items) => {
         "<span class='text-Accent font-[600]' id='spans'>Benutzerdefinierte PCs</span> sind in Sicht";
     }
     document.querySelectorAll("[data-home]").forEach((items, i) => {
-      items.innerText = "Hime";
+      items.innerText = "Startseite";
     });
     document.querySelectorAll("[data-gallery]").forEach((items) => {
       items.innerText = "Galerie";
     });
     document.querySelectorAll("[data-service]").forEach((items, i) => {
-      items.innerText = "Dienstleistungen";
+      items.innerText = "Unsere Leistungen";
+    });
+    document.querySelectorAll("[data-accounce]").forEach((items, i) => {
+      items.innerText = "Aktuelles";
     });
     document.querySelectorAll("[data-aboutus]").forEach((items, i) => {
       items.innerText = "Über uns";
+    });
+    document.querySelectorAll("[data-legal]").forEach((items, i) => {
+      items.innerText = "Rechtlicher Hinweis";
     });
     document.querySelector("#titleP").innerText =
       "Keine Notwendigkeit für überteuerte Sonderanfertigungen. Pro Kunde erstellt, keine versteckten Kosten.";
@@ -68,6 +74,14 @@ toggler.forEach((items) => {
     document.querySelectorAll("[data-aboutus]").forEach((items, i) => {
       items.innerText = "About Us";
     });
+
+    document.querySelectorAll("[data-accounce]").forEach((items, i) => {
+      items.innerText = "Announcements";
+    });
+
+    document.querySelectorAll("[data-legal]").forEach((items, i) => {
+      items.innerText = "Legal Notice";
+    });
     document.querySelector("#titleP").innerText =
       "No need for overpriced custom builds. Built per customer, no hidden costs.";
     document.querySelector("#quoteBtn").innerText = "Get a quote";
@@ -108,21 +122,24 @@ toggler.forEach((items) => {
           "<span class='text-Accent font-[600]' id='spans'>Benutzerdefinierte PCs</span> sind in Sicht";
       }
       document.querySelectorAll("[data-home]").forEach((items, i) => {
-        items.innerText = "Hime";
+        items.innerText = "Startseite";
       });
       document.querySelectorAll("[data-gallery]").forEach((items) => {
         items.innerText = "Galerie";
       });
       document.querySelectorAll("[data-service]").forEach((items, i) => {
-        items.innerText = "Dienstleistungen";
+        items.innerText = "Unsere Leistungen";
+      });
+      document.querySelectorAll("[data-accounce]").forEach((items, i) => {
+        items.innerText = "Aktuelles";
       });
       document.querySelectorAll("[data-aboutus]").forEach((items, i) => {
         items.innerText = "Über uns";
       });
-      document.querySelector("[data-home]").innerText = "Hime";
-      document.querySelector("[data-gallery]").innerText = "Galerie";
-      document.querySelector("[data-service]").innerText = "Dienstleistungen";
-      document.querySelector("[data-aboutus]").innerText = "Über uns";
+      document.querySelectorAll("[data-legal]").forEach((items, i) => {
+        items.innerText = "Rechtlicher Hinweis";
+      });
+
       document.querySelector("#titleP").innerText =
         "Keine Notwendigkeit für überteuerte Sonderanfertigungen. Pro Kunde erstellt, keine versteckten Kosten.";
       document.querySelector("#quoteBtn").innerText =
@@ -172,6 +189,14 @@ toggler.forEach((items) => {
       });
       document.querySelectorAll("[data-aboutus]").forEach((items, i) => {
         items.innerText = "About Us";
+      });
+
+      document.querySelectorAll("[data-accounce]").forEach((items, i) => {
+        items.innerText = "Announcements";
+      });
+
+      document.querySelectorAll("[data-legal]").forEach((items, i) => {
+        items.innerText = "Legal Notice";
       });
       document.querySelector("#titleP").innerText =
         "No need for overpriced custom builds. Built per customer, no hidden costs.";

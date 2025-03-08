@@ -57,7 +57,7 @@
         });
       })();
     </script>
-    <link href="dist/style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
     <script defer src="script.js"></script>
     <script defer src="changeNav.js"></script>
     <script defer src="toggleOthers.js"></script>
@@ -66,7 +66,7 @@
   <body class="bg-black scroll-smooth transition-all duration-300" data-body="">
     <main class="font-Overpass relative lg:px-10 xl:px-20 2xl:px-40" id="home">
       <nav
-        class="flex items-center px-5 z-[200] justify-start lg:gap-x-10 sticky top-0 text-white py-5 w-full lg:sticky bg-zinc-800 lg:left-0 lg:rounded-full lg:top-[25px] lg:py-3 lg:mt-0 lg:px-10"
+        class="flex items-center px-5 z-[200] justify-start lg:gap-x-0 2xl:gap-x-10 sticky top-0 text-white py-5 w-full lg:sticky bg-zinc-800 lg:left-0 lg:rounded-full lg:top-[25px] lg:py-3 lg:mt-0 lg:px-5 xl:px-10"
         data-bgzinc400=""
       >
         <div
@@ -113,64 +113,66 @@
           </div>
         </div>
         <div class="flex items-center lg:w-full justify-between">
-          <ul class="hidden lg:block lg:flex lg:gap-x-5 2xl:gap-x-7" id="list">
+          <ul class="hidden lg:flex lg:gap-x-5 2xl:gap-x-7" id="list">
             <a href="index.html">
               <li
-                class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
                 data-home=""
               >
                 Home
               </li>
             </a>
-            <a href="gallery.html">
-              <li
-                class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
-                data-allListItems=""
-                data-gallery=""
-              >
-                Gallery
-              </li>
-            </a>
             <a href="service.html#service">
               <li
-                class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
                 data-service=""
               >
                 Services
               </li>
             </a>
-            <a href="impressum.html">
+            <a href="gallery.html">
               <li
-                class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
-                data-impressum=""
+                data-gallery=""
               >
-                Impressum
+                Gallery
+              </li>
+            </a>
+            <a href="non.html">
+              <li
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                data-allListItems=""
+                data-accounce=""
+              >
+                Announcements
               </li>
             </a>
 
-            <a href="non.html">
-              <li
-                class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
-                data-allListItems=""
-              >
-                Non's 3D Printing Corner
-              </li>
-            </a>
             <a href="about.html">
               <li
-                class="text-md 2xl:text-lg w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
                 data-aboutus=""
               >
                 About Us
               </li>
             </a>
+
+            <a href="impressum.html">
+              <li
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                data-allListItems=""
+                data-legal=""
+              >
+                Legal Notice
+              </li>
+            </a>
           </ul>
           <div
-            class="flex gap-x-5 sm:gap-x-10 lg:ml-5 hidden lg:block xl:ml-10 lg:flex lg:items-center"
+            class="flex gap-x-5 sm:gap-x-5 2xl:gap-x-10 lg:ml-5 hidden lg:block xl:ml-10 lg:flex lg:items-center"
           >
             <div
               class="bg-slate-900 w-[70px] h-[30px] flex items-center px-1 rounded-full transition-all"
@@ -222,55 +224,58 @@
           <ul class="flex flex-col gap-y-5">
             <a href="index.html">
               <li
-                class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
                 data-home=""
               >
                 Home
               </li>
             </a>
+            <a href="service.html#service">
+              <li
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                data-allListItems=""
+                data-service=""
+              >
+                Services
+              </li>
+            </a>
             <a href="gallery.html">
               <li
-                class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
                 data-gallery=""
               >
                 Gallery
               </li>
             </a>
-            <a href="service.html#service">
+            <a href="non.html">
               <li
-                class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
-                data-services=""
+                data-accounce=""
               >
-                Services
-              </li>
-            </a>
-            <a href="impressum.html">
-              <li
-                class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
-                data-allListItems=""
-              >
-                Impressum
+                Announcements
               </li>
             </a>
 
-            <a href="non.html">
-              <li
-                class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
-                data-allListItems=""
-              >
-                Non's 3D Printing Corner
-              </li>
-            </a>
             <a href="about.html">
               <li
-                class="text-xl w-fit b relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent"
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
                 data-aboutus=""
               >
                 About Us
+              </li>
+            </a>
+
+            <a href="impressum.html">
+              <li
+                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
+                data-allListItems=""
+                data-legal=""
+              >
+                Legal Notice
               </li>
             </a>
           </ul>
@@ -622,7 +627,9 @@
     </main>
     <footer class="bg-zinc-800 mt-20 text-white" data-bggray500="" id="footer">
       <div class="flex gap-x-5 flex-col px-5 justify-center py-5 md:px-10">
-        <div class="font-Overpass flex items-start md:gap-x-5 2xl:gap-x-10">
+        <div
+          class="font-Overpass flex flex-col items-start md:gap-x-5 2xl:gap-x-10"
+        >
           <div class="">
             <a href="">
               <img
@@ -642,6 +649,67 @@
                 <p class="425:text-[17px]">+49 176 41742121</p></a
               >
             </div>
+          </div>
+          <div class="mt-5">
+            <h1 class="font-[500] text-xl tracking-wide">Links</h1>
+
+            <ul class="flex flex-col md:flex-row gap-y-2 gap-x-5 mt-2">
+              <a href="index.html">
+                <li
+                  class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
+                  data-allListItems=""
+                  data-home=""
+                >
+                  Home
+                </li>
+              </a>
+              <a href="service.html#service">
+                <li
+                  class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
+                  data-allListItems=""
+                  data-service=""
+                >
+                  Services
+                </li>
+              </a>
+              <a href="gallery.html">
+                <li
+                  class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
+                  data-allListItems=""
+                  data-gallery=""
+                >
+                  Gallery
+                </li>
+              </a>
+              <a href="non.html">
+                <li
+                  class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
+                  data-allListItems=""
+                  data-accounce=""
+                >
+                  Announcements
+                </li>
+              </a>
+
+              <a href="impressum.html">
+                <li
+                  class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
+                  data-allListItems=""
+                  data-impressum=""
+                >
+                  Impressum
+                </li>
+              </a>
+              <a href="datenschutz.html">
+                <li
+                  class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
+                  data-allListItems=""
+                  data-daten=""
+                >
+                  Datenschutz
+                </li>
+              </a>
+            </ul>
           </div>
         </div>
         <div class="w-full h-[2px] bg-white mt-5 hidden sm:block"></div>
