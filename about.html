@@ -94,7 +94,7 @@
               <option class="" value="English">English</option>
             </select>
             <i
-              class="fa-solid fa-bars text-white text-2xl lg:hidden"
+              class="fa-solid fa-bars text-white text-2xl cursor-pointer lg:hidden"
               id="hamburger"
               data-textblack=""
             ></i>
@@ -158,15 +158,6 @@
                 Legal Notice
               </li>
             </a>
-            <a href="impressum.html#home">
-              <li
-                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
-                data-allListItems=""
-                data-impressum=""
-              >
-                Impressum
-              </li>
-            </a>
           </ul>
           <div
             class="flex gap-x-5 sm:gap-x-5 2xl:gap-x-10 lg:ml-5 hidden lg:block xl:ml-10 lg:flex lg:items-center"
@@ -213,7 +204,7 @@
               alt=""
             />
             <i
-              class="fa-solid fa-close text-white text-2xl transition-all duration-[300ms] ease-linear rotate-[90deg] lg:hidden"
+              class="fa-solid fa-close cursor-pointer text-white text-2xl transition-all duration-[300ms] ease-linear rotate-[90deg] lg:hidden"
               id="close"
               data-textblack=""
             ></i>
@@ -273,15 +264,6 @@
                 data-legal=""
               >
                 Legal Notice
-              </li>
-            </a>
-            <a href="impressum.html#home">
-              <li
-                class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
-                data-allListItems=""
-                data-impressum=""
-              >
-                Impressum
               </li>
             </a>
           </ul>
@@ -444,7 +426,7 @@
                   Home
                 </li>
               </a>
-              <a href="service.html#service">
+              <a href="service.html#home">
                 <li
                   class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
                   data-allListItems=""
@@ -476,9 +458,9 @@
                 <li
                   class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
                   data-allListItems=""
-                  data-impressum=""
+                  data-legal=""
                 >
-                  Impressum
+                  Legal Notice
                 </li>
               </a>
               <a href="datenschutz.html">
@@ -560,26 +542,10 @@
             items.innerText = "Über uns";
           });
           document.querySelectorAll("[data-legal]").forEach((items, i) => {
-            items.innerText = "Rechtlicher Hinweis";
+            items.innerText = "Legal Notice";
           });
-          document.querySelectorAll("[data-home]").forEach((items, i) => {
-            items.innerText = "Startseite";
-          });
-          document.querySelectorAll("[data-gallery]").forEach((items) => {
-            items.innerText = "Galerie";
-          });
-          document.querySelectorAll("[data-service]").forEach((items, i) => {
-            items.innerText = "Unsere Leistungen";
-          });
-          document.querySelectorAll("[data-accounce]").forEach((items, i) => {
-            items.innerText = "Aktuelles";
-          });
-          document.querySelectorAll("[data-aboutus]").forEach((items, i) => {
-            items.innerText = "Über uns";
-          });
-          document.querySelectorAll("[data-legal]").forEach((items, i) => {
-            items.innerText = "Rechtlicher Hinweis";
-          });
+
+          document.querySelector("[data-daten]").innerText = "Datenschutz";
           document.querySelector("#aboutmeText").innerText = "Über mich";
           document.querySelector("#aboutmePara").innerHTML =
             "Ich hatte eine Leidenschaft dafür<strong> PC-Bau und technische Reparaturen</strong> seit ich jung war. Was als Hobby begann, entwickelte sich schnell zu etwas mehr, als mir klar wurde, wie überteuert vorgefertigte Systeme waren. Ich wollte anbieten <strong>erschwingliche, hochwertige und maßgeschneiderte Lösungen</strong> für Menschen, die einen zuverlässigen PC benötigen, der genau ihren Anforderungen entspricht.";
@@ -614,8 +580,9 @@
           });
 
           document.querySelectorAll("[data-legal]").forEach((items, i) => {
-            items.innerText = "Legal Notice";
+            items.innerText = "Impressum";
           });
+          document.querySelector("[data-daten]").innerText = "Privacy Policy";
           document.querySelector("#aboutmeText").innerText = "About Me";
           document.querySelector("#aboutmePara").innerHTML =
             "I've been passionate about <strong> PC building and tech repairs</strong>since I was young. What started as a hobby quickly turned into something more when I realized how overpriced pre-built systems were. I wanted to offer <strong>affordable, high-quality, and customized solutions</strong> or people who need a reliable PC that fits their exact needs.";
@@ -648,8 +615,9 @@
               items.innerText = "Über uns";
             });
             document.querySelectorAll("[data-legal]").forEach((items, i) => {
-              items.innerText = "Rechtlicher Hinweis";
+              items.innerText = "Legal Notice";
             });
+            document.querySelector("[data-daten]").innerText = "Datenschutz";
             document.querySelector("#aboutmeText").innerText = "Über mich";
             document.querySelector("#aboutmePara").innerHTML =
               "Ich hatte eine Leidenschaft dafür<strong> PC-Bau und technische Reparaturen</strong> seit ich jung war. Was als Hobby begann, entwickelte sich schnell zu etwas mehr, als mir klar wurde, wie überteuert vorgefertigte Systeme waren. Ich wollte anbieten <strong>erschwingliche, hochwertige und maßgeschneiderte Lösungen</strong> für Menschen, die einen zuverlässigen PC benötigen, der genau ihren Anforderungen entspricht.";
@@ -684,8 +652,9 @@
             });
 
             document.querySelectorAll("[data-legal]").forEach((items, i) => {
-              items.innerText = "Legal Notice";
+              items.innerText = "Impressum";
             });
+            document.querySelector("[data-daten]").innerText = "Privacy Policy";
             document.querySelector("#aboutmeText").innerText = "About Me";
             document.querySelector("#aboutmePara").innerHTML =
               "I've been passionate about <strong> PC building and tech repairs</strong>since I was young. What started as a hobby quickly turned into something more when I realized how overpriced pre-built systems were. I wanted to offer <strong>affordable, high-quality, and customized solutions</strong> or people who need a reliable PC that fits their exact needs.";

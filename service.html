@@ -104,7 +104,7 @@
               <option class="" value="English">English</option>
             </select>
             <i
-              class="fa-solid fa-bars text-white text-2xl lg:hidden"
+              class="fa-solid fa-bars text-white text-2xl cursor-pointer lg:hidden"
               id="hamburger"
               data-textblack=""
             ></i>
@@ -204,7 +204,10 @@
               <option class="outline-none" value="Deutsch">Deutsch</option>
               <option class="outline-none" value="English">English</option>
             </select>
-            <i class="fa-solid fa-bars text-2xl lg:hidden" id="hamburger"></i>
+            <i
+              class="fa-solid fa-bars text-2xl lg:hidden cursor-pointer"
+              id="hamburger"
+            ></i>
           </div>
         </div>
       </nav>
@@ -223,7 +226,7 @@
               alt=""
             />
             <i
-              class="fa-solid fa-close text-white text-2xl transition-all duration-[300ms] ease-linear rotate-[90deg] lg:hidden"
+              class="fa-solid fa-close text-white text-2xl transition-all duration-[300ms] ease-linear rotate-[90deg] lg:hidden cursor-pointer"
               id="close"
               data-textblack=""
             ></i>
@@ -707,9 +710,9 @@
                 <li
                   class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
                   data-allListItems=""
-                  data-impressum=""
+                  data-legal=""
                 >
-                  Impressum
+                  Legal Notice
                 </li>
               </a>
               <a href="datenschutz.html">
@@ -1309,9 +1312,9 @@
           items.innerText = "Über uns";
         });
         document.querySelectorAll("[data-legal]").forEach((items, i) => {
-          items.innerText = "Rechtlicher Hinweis";
+          items.innerText = "Legal Notice";
         });
-
+        document.querySelector("[data-daten]").innerText = "Datenschutz";
         document.querySelectorAll("[data-tabs]")[0].id = "pcgebäude";
         document.querySelectorAll("[data-tabs]")[2].id = "kleinereparaturen";
         document.querySelector("#pcbuildingText").innerText = "PC Gebäude";
@@ -1350,6 +1353,7 @@
         document.querySelector("#repairsButton").innerText =
           "Holen Sie sich ein Angebot";
       } else {
+        document.querySelector("[data-daten]").innerText = "Privacy Policy";
         document.querySelectorAll("[data-home]").forEach((items, i) => {
           items.innerText = "Home";
         });
@@ -1368,7 +1372,7 @@
         });
 
         document.querySelectorAll("[data-legal]").forEach((items, i) => {
-          items.innerText = "Legal Notice";
+          items.innerText = "Impressum";
         });
         document.querySelectorAll("[data-tabs]")[0].id = "pcbuilding";
         document.querySelectorAll("[data-tabs]")[2].id = "smallrepairs";
@@ -1405,6 +1409,7 @@
       }
       items.addEventListener("change", () => {
         if (items.value == "Deutsch") {
+          document.querySelector("[data-daten]").innerText = "Datenschutz";
           document.querySelectorAll("[data-home]").forEach((items, i) => {
             items.innerText = "Startseite";
           });
@@ -1421,7 +1426,7 @@
             items.innerText = "Über uns";
           });
           document.querySelectorAll("[data-legal]").forEach((items, i) => {
-            items.innerText = "Rechtlicher Hinweis";
+            items.innerText = "Legal Notice";
           });
           document.querySelectorAll("[data-tabs]")[0].id = "pcgebäude";
           document.querySelectorAll("[data-tabs]")[2].id = "kleinereparaturen";
@@ -1463,6 +1468,7 @@
           document.querySelector("#repairsButton").innerText =
             "Holen Sie sich ein Angebot";
         } else {
+          document.querySelector("[data-daten]").innerText = "Privacy Policy";
           document.querySelectorAll("[data-home]").forEach((items, i) => {
             items.innerText = "Home";
           });
@@ -1481,7 +1487,7 @@
           });
 
           document.querySelectorAll("[data-legal]").forEach((items, i) => {
-            items.innerText = "Legal Notice";
+            items.innerText = "Impressum";
           });
           document.querySelectorAll("[data-tabs]")[0].id = "pcbuilding";
           document.querySelectorAll("[data-tabs]")[2].id = "smallrepairs";

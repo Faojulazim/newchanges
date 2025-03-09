@@ -24,8 +24,9 @@ toggler.forEach((items) => {
       items.innerText = "Über uns";
     });
     document.querySelectorAll("[data-legal]").forEach((items, i) => {
-      items.innerText = "Rechtlicher Hinweis";
+      items.innerText = "Legal Notice";
     });
+    document.querySelector("[data-daten]").innerText = "Datenschutz";
     document.querySelector("#titleP").innerText =
       "Keine Notwendigkeit für überteuerte Sonderanfertigungen. Pro Kunde erstellt, keine versteckten Kosten.";
     document.querySelector("#quoteBtn").innerText =
@@ -62,6 +63,7 @@ toggler.forEach((items) => {
       document.querySelector("#heading").innerHTML =
         "<span class='text-Accent font-[600]' id='spans'>Custom PCs</span> are on the horizon";
     }
+    document.querySelector("[data-daten]").innerText = "Privacy Policy";
     document.querySelectorAll("[data-home]").forEach((items, i) => {
       items.innerText = "Home";
     });
@@ -80,7 +82,7 @@ toggler.forEach((items) => {
     });
 
     document.querySelectorAll("[data-legal]").forEach((items, i) => {
-      items.innerText = "Legal Notice";
+      items.innerText = "Impressum";
     });
     document.querySelector("#titleP").innerText =
       "No need for overpriced custom builds. Built per customer, no hidden costs.";
@@ -114,6 +116,7 @@ toggler.forEach((items) => {
   }
   items.addEventListener("change", () => {
     if (items.value == "Deutsch") {
+      document.querySelector("[data-daten]").innerText = "Datenschutz";
       if (localStorage.getItem("theme") === "white") {
         document.querySelector("#heading").innerHTML =
           "<span class='text-Primary font-[600]' id='spans'>Benutzerdefinierte PCs</span> sind in Sicht";
@@ -137,7 +140,7 @@ toggler.forEach((items) => {
         items.innerText = "Über uns";
       });
       document.querySelectorAll("[data-legal]").forEach((items, i) => {
-        items.innerText = "Rechtlicher Hinweis";
+        items.innerText = "Legal Notice";
       });
 
       document.querySelector("#titleP").innerText =
@@ -178,6 +181,7 @@ toggler.forEach((items) => {
         document.querySelector("#heading").innerHTML =
           "<span class='text-Accent font-[600]' id='spans'>Custom PCs</span> are on the horizon";
       }
+      document.querySelector("[data-daten]").innerText = "Privacy Policy";
       document.querySelectorAll("[data-home]").forEach((items, i) => {
         items.innerText = "Home";
       });
@@ -196,7 +200,7 @@ toggler.forEach((items) => {
       });
 
       document.querySelectorAll("[data-legal]").forEach((items, i) => {
-        items.innerText = "Legal Notice";
+        items.innerText = "Impressum";
       });
       document.querySelector("#titleP").innerText =
         "No need for overpriced custom builds. Built per customer, no hidden costs.";
