@@ -3,10 +3,10 @@ toggler.forEach((items) => {
   if (items.value == "Deutsch") {
     if (localStorage.getItem("theme") === "white") {
       document.querySelector("#heading").innerHTML =
-        "<span class='text-Primary font-[600]' id='spans'>Benutzerdefinierte PCs</span> sind in Sicht";
+        "<span class='text-Primary font-[600]' id='spans'>Personalisierte PCs</span> für Sie";
     } else {
       document.querySelector("#heading").innerHTML =
-        "<span class='text-Accent font-[600]' id='spans'>Benutzerdefinierte PCs</span> sind in Sicht";
+        "<span class='text-Accent font-[600]' id='spans'>Personalisierte PCs </span> für Sie";
     }
     document.querySelectorAll("[data-home]").forEach((items, i) => {
       items.innerText = "Startseite";
@@ -24,37 +24,39 @@ toggler.forEach((items) => {
       items.innerText = "Über uns";
     });
     document.querySelectorAll("[data-legal]").forEach((items, i) => {
-      items.innerText = "Legal Notice";
+      items.innerText = "Impressum";
     });
     document.querySelector("[data-daten]").innerText = "Datenschutz";
     document.querySelector("#titleP").innerText =
-      "Keine Notwendigkeit für überteuerte Sonderanfertigungen. Pro Kunde erstellt, keine versteckten Kosten.";
+      "Nie wieder zu viel für einen PC bezahlen. Individuell zusammengestellt für jeden Kunden.";
     document.querySelector("#quoteBtn").innerText =
       "Holen Sie sich ein Angebot";
     document.querySelector("#serviceweprovideHeading").innerText =
-      "Dienstleistungen, die wir anbieten";
+      "Einblick in unsere Arbeit";
     document.querySelector("#ourservices").innerText = "unsere Leistungen";
     document.querySelector("#servicesPara").innerText =
-      "Wir bieten viele Dienstleistungen an. Sie können den Service auswählen, den Sie benötigen, indem Sie uns kontaktieren. Wir sind seit 2 Jahren im Einsatz.";
+      "Wir bieten eine Vielzahl an Reparatur- und Anpassungsservices. Egal, ob dueine schnelle Reparatur oder einen individuellen PC-Bau benötigst – wir helfendir weiter. Schau dir hier an, was wir anbieten, und finde die passende Lösung für dich.";
     document.querySelector("#servicesBtn").innerHTML =
       "Dienstleistungen<i class='fa-solid fa-arrow-right'></i>";
     document.querySelector("#ourgallery").innerHTML = "Unsere Galerie";
     document.querySelector("#galleryPara").innerHTML =
-      "Schauen Sie sich unsere Galerie an. Die Galerie zeigt die Projekte, die wir bisher realisiert haben. Unsere RIGs enthalten viele PCs.";
+      "Werfe einen Blick auf unsere bisherigen Projekte! Unsere Galerie zeigt die PCBuilds und Reparaturen, die wir bereits durchgeführt haben. Lass dich inspirieren!";
     document.querySelector("#galleryBtn").innerHTML =
       "Galerie<i class='fa-solid fa-arrow-right'></i>";
     document.querySelector("#aboutusText").innerHTML = "Über uns";
     document.querySelector("#aboutusPara").innerHTML =
-      "Wir sind EPC-Tech. Wir bauen seit 2019 PCs. Bisher haben wir über 3000 Kunden betreut.";
+      "Bei EPC-Tech bauen und reparieren wir PCs seit 2019. Mit jedem Projekt wächst unsere Erfahrung, sodass wir stets hochwertige Ergebnisse liefern können. Deine Technik ist bei uns in guten Händen.";
     document.querySelector("#aboutusBtn").innerHTML =
       "Über uns<i class='fa-solid fa-arrow-right'></i>";
     document.querySelector("#contacHeading").innerText = "Kontaktieren Sie uns";
     document.querySelector("#getintouch").innerText = "Nehmen Sie Kontakt auf";
     document.querySelector("#contactPara").innerText =
-      "Kontaktieren Sie uns über die unten angegebenen Methoden:";
+      "Kontaktieren Sie uns übe:";
+    document.querySelector("[data-call]").innerText = "Anruf";
+
     document.querySelector("#messagePlaceholder").innerText = "Nachricht";
-    document.querySelector("#textareaContact").placeholder = "Nachricht";
-    document.querySelector("#contactBtn").innerText = "einreichen";
+    document.querySelector("#textareaContact").placeholder = "Ihre Nachricht";
+    document.querySelector("#contactBtn").innerText = "Absenden";
   } else {
     if (localStorage.getItem("theme") === "white") {
       document.querySelector("#heading").innerHTML =
@@ -82,7 +84,7 @@ toggler.forEach((items) => {
     });
 
     document.querySelectorAll("[data-legal]").forEach((items, i) => {
-      items.innerText = "Impressum";
+      items.innerText = "Legal Notice";
     });
     document.querySelector("#titleP").innerText =
       "No need for overpriced custom builds. Built per customer, no hidden costs.";
@@ -108,21 +110,21 @@ toggler.forEach((items) => {
       "About Us<i class='fa-solid fa-arrow-right'></i>";
     document.querySelector("#contacHeading").innerText = "Contact Us";
     document.querySelector("#getintouch").innerText = "Get In Touch";
-    document.querySelector("#contactPara").innerText =
-      "Contact us via the methods provided below:";
+    document.querySelector("#contactPara").innerText = "Contact us via:";
     document.querySelector("#messagePlaceholder").innerText = "Message";
-    document.querySelector("#textareaContact").placeholder = "Message";
+    document.querySelector("#textareaContact").placeholder = "Your Message";
     document.querySelector("#contactBtn").innerText = "Submit";
+    document.querySelector("[data-call]").innerText = "Call";
   }
   items.addEventListener("change", () => {
     if (items.value == "Deutsch") {
       document.querySelector("[data-daten]").innerText = "Datenschutz";
       if (localStorage.getItem("theme") === "white") {
         document.querySelector("#heading").innerHTML =
-          "<span class='text-Primary font-[600]' id='spans'>Benutzerdefinierte PCs</span> sind in Sicht";
+          "<span class='text-Primary font-[600]' id='spans'>Personalisierte PCs</span> für Sie";
       } else {
         document.querySelector("#heading").innerHTML =
-          "<span class='text-Accent font-[600]' id='spans'>Benutzerdefinierte PCs</span> sind in Sicht";
+          "<span class='text-Accent font-[600]' id='spans'>Personalisierte PCs </span> für Sie";
       }
       document.querySelectorAll("[data-home]").forEach((items, i) => {
         items.innerText = "Startseite";
@@ -140,28 +142,28 @@ toggler.forEach((items) => {
         items.innerText = "Über uns";
       });
       document.querySelectorAll("[data-legal]").forEach((items, i) => {
-        items.innerText = "Legal Notice";
+        items.innerText = "Impressum";
       });
-
+      document.querySelector("[data-daten]").innerText = "Datenschutz";
       document.querySelector("#titleP").innerText =
-        "Keine Notwendigkeit für überteuerte Sonderanfertigungen. Pro Kunde erstellt, keine versteckten Kosten.";
+        "Nie wieder zu viel für einen PC bezahlen. Individuell zusammengestellt für jeden Kunden.";
       document.querySelector("#quoteBtn").innerText =
         "Holen Sie sich ein Angebot";
       document.querySelector("#serviceweprovideHeading").innerText =
-        "Dienstleistungen, die wir anbieten";
+        "Einblick in unsere Arbeit";
       document.querySelector("#ourservices").innerText = "unsere Leistungen";
       document.querySelector("#servicesPara").innerText =
-        "Wir bieten viele Dienstleistungen an. Sie können den Service auswählen, den Sie benötigen, indem Sie uns kontaktieren. Wir sind seit 2 Jahren im Einsatz.";
+        "Wir bieten eine Vielzahl an Reparatur- und Anpassungsservices. Egal, ob dueine schnelle Reparatur oder einen individuellen PC-Bau benötigst – wir helfendir weiter. Schau dir hier an, was wir anbieten, und finde die passende Lösung für dich.";
       document.querySelector("#servicesBtn").innerHTML =
         "Dienstleistungen<i class='fa-solid fa-arrow-right'></i>";
       document.querySelector("#ourgallery").innerHTML = "Unsere Galerie";
       document.querySelector("#galleryPara").innerHTML =
-        "Schauen Sie sich unsere Galerie an. Die Galerie zeigt die Projekte, die wir bisher realisiert haben. Unsere RIGs enthalten viele PCs.";
+        "Werfe einen Blick auf unsere bisherigen Projekte! Unsere Galerie zeigt die PCBuilds und Reparaturen, die wir bereits durchgeführt haben. Lass dich inspirieren!";
       document.querySelector("#galleryBtn").innerHTML =
         "Galerie<i class='fa-solid fa-arrow-right'></i>";
       document.querySelector("#aboutusText").innerHTML = "Über uns";
       document.querySelector("#aboutusPara").innerHTML =
-        "Wir sind EPC-Tech. Wir bauen seit 2019 PCs. Bisher haben wir über 3000 Kunden betreut.";
+        "Bei EPC-Tech bauen und reparieren wir PCs seit 2019. Mit jedem Projekt wächst unsere Erfahrung, sodass wir stets hochwertige Ergebnisse liefern können. Deine Technik ist bei uns in guten Händen.";
       document.querySelector("#aboutusBtn").innerHTML =
         "Über uns<i class='fa-solid fa-arrow-right'></i>";
       document.querySelector("#contacHeading").innerText =
@@ -169,10 +171,11 @@ toggler.forEach((items) => {
       document.querySelector("#getintouch").innerText =
         "Nehmen Sie Kontakt auf";
       document.querySelector("#contactPara").innerText =
-        "Kontaktieren Sie uns über die unten angegebenen Methoden:";
+        "Kontaktieren Sie uns übe:";
+      document.querySelector("[data-call]").innerText = "Anruf";
+      document.querySelector("#textareaContact").placeholder = "Ihre Nachricht";
       document.querySelector("#messagePlaceholder").innerText = "Nachricht";
-      document.querySelector("#textareaContact").placeholder = "Nachricht";
-      document.querySelector("#contactBtn").innerText = "einreichen";
+      document.querySelector("#contactBtn").innerText = "Absenden";
     } else {
       if (localStorage.getItem("theme") === "white") {
         document.querySelector("#heading").innerHTML =
@@ -200,7 +203,7 @@ toggler.forEach((items) => {
       });
 
       document.querySelectorAll("[data-legal]").forEach((items, i) => {
-        items.innerText = "Impressum";
+        items.innerText = "Legal Notice";
       });
       document.querySelector("#titleP").innerText =
         "No need for overpriced custom builds. Built per customer, no hidden costs.";
@@ -226,11 +229,11 @@ toggler.forEach((items) => {
         "About Us<i class='fa-solid fa-arrow-right'></i>";
       document.querySelector("#contacHeading").innerText = "Contact Us";
       document.querySelector("#getintouch").innerText = "Get In Touch";
-      document.querySelector("#contactPara").innerText =
-        "Contact us via the methods provided below:";
+      document.querySelector("#contactPara").innerText = "Contact us via:";
       document.querySelector("#messagePlaceholder").innerText = "Message";
-      document.querySelector("#textareaContact").placeholder = "Message";
+      document.querySelector("#textareaContact").placeholder = "Your Message";
       document.querySelector("#contactBtn").innerText = "Submit";
+      document.querySelector("[data-call]").innerText = "Call";
     }
   });
 });
