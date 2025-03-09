@@ -1151,12 +1151,6 @@
       });
 
       if (localStorage.getItem("theme") === "dark") {
-        document
-          .querySelector("#buildingButton")
-          .classList.remove("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
-        document
-          .querySelector("#buildingButton")
-          .classList.add("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
         document.querySelectorAll("[data-tabs]").forEach((items) => {
           items.classList.add("lg:border-Accent");
           items.classList.remove("lg:border-Primary");
@@ -1167,29 +1161,23 @@
         });
         document
           .querySelector("#buildingButton")
-          .classList.remove("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
+          .classList.add("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
         document
           .querySelector("#buildingButton")
-          .classList.add("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+          .classList.remove("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
         document
           .querySelector("#upgradesButton")
-          .classList.remove("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
+          .classList.add("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
         document
           .querySelector("#upgradesButton")
-          .classList.add("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+          .classList.remove("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
         document
           .querySelector("#repairsButton")
-          .classList.remove("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
+          .classList.add("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
         document
           .querySelector("#repairsButton")
-          .classList.add("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+          .classList.remove("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
       } else if (localStorage.getItem("theme") === "white") {
-        document
-          .querySelector("#buildingButton")
-          .classList.add("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
-        document
-          .querySelector("#buildingButton")
-          .classList.remove("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
         document.querySelectorAll("[data-tabs]").forEach((items) => {
           items.classList.remove("lg:border-Accent");
           items.classList.add("lg:border-Primary");
@@ -1200,22 +1188,22 @@
         });
         document
           .querySelector("#buildingButton")
-          .classList.add("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
+          .classList.remove("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
         document
           .querySelector("#buildingButton")
-          .classList.remove("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+          .classList.add("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
         document
           .querySelector("#upgradesButton")
-          .classList.add("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
+          .classList.remove("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
         document
           .querySelector("#upgradesButton")
-          .classList.remove("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+          .classList.add("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
         document
           .querySelector("#repairsButton")
-          .classList.add("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
+          .classList.remove("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
         document
           .querySelector("#repairsButton")
-          .classList.remove("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+          .classList.add("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
       }
     });
 
