@@ -126,7 +126,7 @@
                 Gallery
               </li>
             </a>
-            <a href="non.html">
+            <a href="announcement.html">
               <li
                 class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
@@ -234,7 +234,7 @@
                 Gallery
               </li>
             </a>
-            <a href="non.html">
+            <a href="announcement.html">
               <li
                 class="lg:text-[13px] xl:text-[15px] w-fit relative after:absolute after:bg-white after:h-[2px] after:bottom-0 after:w-full after:left-0 hover:after:bg-Accent cursor-pointer"
                 data-allListItems=""
@@ -396,7 +396,7 @@
                   Gallery
                 </li>
               </a>
-              <a href="non.html">
+              <a href="announcement.html">
                 <li
                   class="text-md w-fit cursor-pointer text-gray-200 hover:scale-105 hover:text-white"
                   data-allListItems=""
@@ -479,7 +479,8 @@
       const toggler = document.querySelectorAll("[data-languageSelection]");
       toggler.forEach((items) => {
         if (items.value == "Deutsch") {
-          document.querySelector("#galleryHeading").innerText = "Galerie";
+          document.querySelector("#galleryHeading").innerText =
+            "Unsere Galerie";
           document.querySelectorAll("[data-home]").forEach((items, i) => {
             items.innerText = "Startseite";
           });
@@ -524,7 +525,8 @@
         }
         items.addEventListener("change", (e) => {
           if (items.value == "Deutsch") {
-            document.querySelector("#galleryHeading").innerText = "Galerie";
+            document.querySelector("#galleryHeading").innerText =
+              "Unsere Galerie";
             document.querySelectorAll("[data-home]").forEach((items, i) => {
               items.innerText = "Startseite";
             });
@@ -545,7 +547,8 @@
             });
             document.querySelector("[data-daten]").innerText = "Datenschutz";
           } else {
-            document.querySelector("#galleryHeading").innerText = "Gallery";
+            document.querySelector("#galleryHeading").innerText =
+              "Our Gallery Showroom";
             document.querySelectorAll("[data-home]").forEach((items, i) => {
               items.innerText = "Home";
             });
