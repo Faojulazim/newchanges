@@ -53,7 +53,7 @@
     <script type="text/javascript">
       (function () {
         emailjs.init({
-          publicKey: "t73ugZimhXqGDox_u",
+          publicKey: "TLT5RV3zQccRt4jjY",
         });
       })();
     </script>
@@ -780,22 +780,23 @@
     <script src="menu.js"></script>
     <script src="toggle.js"></script>
     <script>
-      function sendEmail(category) {
+      function sendEmail() {
         let params = {
-          subject: "Get a quote",
+          subject: "Contact Us",
           from: "mkvcinemas945@gmail.com",
           email: document.querySelector("#emailForContact").value,
           name: document.querySelector("#nameForContact").value,
-          message: document.querySelector("#messagePlaceholder").value,
+          message: document.querySelector("#textareaContact").value,
         };
         emailjs
-          .send("service_eeyxqg5", "<template-here-new>", params)
+          .send("service_tlxv4wh", "template_mrvbxt3", params)
           .then((message) => alert("Email Sent"));
       }
       document
         .querySelector("#formForContact")
         .addEventListener("submit", (e) => {
           e.preventDefault();
+          sendEmail();
           document.querySelector("#textareaContact").value = "";
           document.querySelectorAll("input").forEach((items) => {
             items.value = "";
