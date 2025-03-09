@@ -239,21 +239,6 @@ toggleBtn.forEach((items, index) => {
     }
   });
   if (localStorage.getItem("theme") === "dark") {
-    // document
-    //   .querySelector("[data-bgzinc300]")
-    //   .classList.add("shadow-[0_0px_30px_0px_hsl(233_8%_85%)]");
-    // document.querySelectorAll("[data-toggleDiv]").forEach((items2) => {
-    //   items2.classList.toggle("translate-x-[40px]");
-    //   items2.classList.remove("bg-white");
-    //   items2.classList.add("bg-slate-900");
-    // });
-    // document.querySelectorAll("#moonsun").forEach((items) => {
-    //   items.classList.toggle("fa-sun");
-    // });
-    // document.querySelectorAll("#moonsun").forEach((items) => {
-    //   items.classList.toggle("fa-moon");
-    // });
-
     document.querySelectorAll("[data-bggray500]").forEach((items) => {
       items.classList.toggle("bg-gray-500");
     });
@@ -356,17 +341,6 @@ toggleBtn.forEach((items, index) => {
     document
       .querySelector("[data-bgzinc300]")
       .classList.remove("shadow-[0_0px_30px_0px_hsl(233_8%_85%)]");
-    // document.querySelectorAll("[data-toggleDiv]").forEach((items2) => {
-    //   items2.classList.toggle("translate-x-[40px]");
-    //   items2.classList.add("bg-white");
-    //   items2.classList.remove("bg-slate-900");
-    // });
-    // document.querySelectorAll("#moonsun").forEach((items) => {
-    //   items.classList.toggle("fa-sun");
-    // });
-    // document.querySelectorAll("#moonsun").forEach((items) => {
-    //   items.classList.toggle("fa-moon");
-    // });
     document.querySelectorAll("[data-bggray500]").forEach((items) => {
       items.classList.toggle("bg-gray-500");
     });
