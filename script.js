@@ -33,14 +33,14 @@ toggler.forEach((items) => {
       "Holen Sie sich ein Angebot";
     document.querySelector("#serviceweprovideHeading").innerText =
       "Einblick in unsere Arbeit";
-    document.querySelector("#ourservices").innerText = "unsere Leistungen";
+    document.querySelector("#ourservices").innerText = "Unsere Leistungen";
     document.querySelector("#servicesPara").innerText =
       "Wir bieten eine Vielzahl an Reparatur- und Anpassungsservices. Egal, ob dueine schnelle Reparatur oder einen individuellen PC-Bau benötigst – wir helfendir weiter. Schau dir hier an, was wir anbieten, und finde die passende Lösung für dich.";
     document.querySelector("#servicesBtn").innerHTML =
       "Dienstleistungen<i class='fa-solid fa-arrow-right'></i>";
     document.querySelector("#ourgallery").innerHTML = "Unsere Galerie";
     document.querySelector("#galleryPara").innerHTML =
-      "Werfe einen Blick auf unsere bisherigen Projekte! Unsere Galerie zeigt die PCBuilds und Reparaturen, die wir bereits durchgeführt haben. Lass dich inspirieren!";
+      "Werfe einen Blick auf unsere bisherigen Projekte! Unsere Galerie zeigt die PC's Builds und Reparaturen, die wir bereits durchgeführt haben. Lass dich inspirieren!";
     document.querySelector("#galleryBtn").innerHTML =
       "Galerie<i class='fa-solid fa-arrow-right'></i>";
     document.querySelector("#aboutusText").innerHTML = "Über uns";
@@ -151,14 +151,14 @@ toggler.forEach((items) => {
         "Holen Sie sich ein Angebot";
       document.querySelector("#serviceweprovideHeading").innerText =
         "Einblick in unsere Arbeit";
-      document.querySelector("#ourservices").innerText = "unsere Leistungen";
+      document.querySelector("#ourservices").innerText = "Unsere Leistungen";
       document.querySelector("#servicesPara").innerText =
         "Wir bieten eine Vielzahl an Reparatur- und Anpassungsservices. Egal, ob dueine schnelle Reparatur oder einen individuellen PC-Bau benötigst – wir helfendir weiter. Schau dir hier an, was wir anbieten, und finde die passende Lösung für dich.";
       document.querySelector("#servicesBtn").innerHTML =
         "Dienstleistungen<i class='fa-solid fa-arrow-right'></i>";
       document.querySelector("#ourgallery").innerHTML = "Unsere Galerie";
       document.querySelector("#galleryPara").innerHTML =
-        "Werfe einen Blick auf unsere bisherigen Projekte! Unsere Galerie zeigt die PCBuilds und Reparaturen, die wir bereits durchgeführt haben. Lass dich inspirieren!";
+        "Werfe einen Blick auf unsere bisherigen Projekte! Unsere Galerie zeigt die PC's Builds und Reparaturen, die wir bereits durchgeführt haben. Lass dich inspirieren!";
       document.querySelector("#galleryBtn").innerHTML =
         "Galerie<i class='fa-solid fa-arrow-right'></i>";
       document.querySelector("#aboutusText").innerHTML = "Über uns";
