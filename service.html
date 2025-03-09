@@ -377,7 +377,13 @@
                       >Select Price Category</label
                     >
                   </div>
-                  <select
+                  <input
+                    type="text"
+                    id="pricecategoryforpcbuilding"
+                    placeholder="Enter Your Budget..."
+                    class="rounded-sm px-4 w-full py-3 text-black text-[17px] font-Inter outline-Primary"
+                  />
+                  <!-- <select
                     name=""
                     id="pricecategoryforpcbuilding"
                     class="rounded-sm px-4 w-full py-3 text-black text-[17px] font-Inter outline-Primary"
@@ -389,7 +395,7 @@
                       Mid-Range ($1000 - $2000)
                     </option>
                     <option value="High-End ($2000+)">High-End ($2000+)</option>
-                  </select>
+                  </select> -->
                 </div>
                 <div class="w-full">
                   <div class="flex items-center gap-x-2">
@@ -1159,6 +1165,24 @@
           items.classList.add("border-Accent");
           items.classList.remove("border-Primary");
         });
+        document
+          .querySelector("#buildingButton")
+          .classList.remove("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
+        document
+          .querySelector("#buildingButton")
+          .classList.add("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+        document
+          .querySelector("#upgradesButton")
+          .classList.remove("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
+        document
+          .querySelector("#upgradesButton")
+          .classList.add("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+        document
+          .querySelector("#repairsButton")
+          .classList.remove("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
+        document
+          .querySelector("#repairsButton")
+          .classList.add("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
       } else if (localStorage.getItem("theme") === "white") {
         document
           .querySelector("#buildingButton")
@@ -1174,6 +1198,24 @@
           items.classList.remove("border-Accent");
           items.classList.add("border-Primary");
         });
+        document
+          .querySelector("#buildingButton")
+          .classList.add("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
+        document
+          .querySelector("#buildingButton")
+          .classList.remove("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+        document
+          .querySelector("#upgradesButton")
+          .classList.add("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
+        document
+          .querySelector("#upgradesButton")
+          .classList.remove("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
+        document
+          .querySelector("#repairsButton")
+          .classList.add("hover:shadow-[0px_0px_30px_0px_#ce0d5e]");
+        document
+          .querySelector("#repairsButton")
+          .classList.remove("hover:shadow-[0px_0px_30px_0px_#1ccef2]");
       }
     });
 
@@ -1194,7 +1236,7 @@
             : "--",
         options:
           category === "PC-Building"
-            ? document.getElementById("pricecategoryforpcbuilding").value
+            ? document.getElementById("pricecategoryforpcbuilding").value + "$"
             : "--",
         custom:
           category === "PC-Building"
