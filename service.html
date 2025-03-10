@@ -314,9 +314,9 @@
           >
           <span
             data-services=""
-            id="repairText"
+            id="manageText"
             class="px-3 py-2 rounded-r-sm lg:px-6 lg:py-3 font-[500] cursor-pointer"
-            >Data Recovery</span
+            >Data Management</span
           >
         </div>
         <div
@@ -342,7 +342,7 @@
                 More Info
               </button>
             </div>
-            <p class="text-[17px] mt-5 lg:mt-5 lg:mb-0" id="pcbuildingPagePara">
+            <p class="text-[17px] mt-5 lg:mt-3 lg:mb-5" id="pcbuildingPagePara">
               Unable to build your first PC? Build your first pc from us and
               we'll take care of the rest.
             </p>
@@ -357,11 +357,11 @@
             data-changeColor=""
           >
             <form class="" id="buildingForm">
-              <div class="flex flex-col items-start gap-y-3 lg:gap-y-5">
+              <div class="flex flex-col items-start gap-y-3 lg:gap-y-8">
                 <div class="w-full">
                   <div class="flex items-center gap-x-2">
                     <div class="rounded-full text-Accent mt-1">&ast;</div>
-                    <label for="" class="">Email</label>
+                    <label for="" class="" id="emailTxt">Email</label>
                   </div>
                   <input
                     type="email"
@@ -375,7 +375,9 @@
                 <div class="w-full">
                   <div class="flex items-center gap-x-2">
                     <div class="rounded-full text-Accent mt-1">&ast;</div>
-                    <label for="" class="">Computer Details</label>
+                    <label for="" class="" id="cDetails"
+                      >Computer Details</label
+                    >
                   </div>
                   <input
                     type="text"
@@ -480,13 +482,33 @@
           >
             <form class="w-full" id="upgradesForm">
               <div class="flex gap-y-2 flex-col">
+                <label for="" id="upgradeapproval"
+                  >What part do you want to upgrade?</label
+                >
+                <div class="w-full mt- mb-2">
+                  <div class="flex items-center gap-x-2">
+                    <div class="rounded-full text-Accent mt-1">&ast;</div>
+                    <label for="" class="" id="aboutpc"
+                      >Tell us more about your pc</label
+                    >
+                  </div>
+                  <input
+                    type="number"
+                    required
+                    id="aboutpcholder"
+                    placeholder="Enter Your Budget..."
+                    class="px-5 py-2 w-full outline-none rounded-sm text-black text-lg mt-2"
+                  />
+                </div>
                 <div class="flex items-center gap-x-2">
                   <input
                     type="checkbox"
                     id="cpu"
                     class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
                   />
-                  <label for="cpu" class="cursor-pointer">CPU</label>
+                  <label for="cpu" class="cursor-pointer"
+                    >CPU (Processor)</label
+                  >
                 </div>
                 <div class="flex items-center gap-x-2">
                   <input
@@ -494,7 +516,7 @@
                     id="motherboard"
                     class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
                   />
-                  <label for="motherboard" class="cursor-pointer"
+                  <label for="motherboard" id="mb" class="cursor-pointer"
                     >Motherboard</label
                   >
                 </div>
@@ -504,7 +526,7 @@
                     id="gpu"
                     class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
                   />
-                  <label for="gpu" class="cursor-pointer"
+                  <label for="gpu" id="gpu" class="cursor-pointer"
                     >GPU (Graphics Card)</label
                   >
                 </div>
@@ -514,7 +536,9 @@
                     id="cooler"
                     class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
                   />
-                  <label for="cooler" class="cursor-pointer">Cooler</label>
+                  <label for="cooler" id="cooling" class="cursor-pointer"
+                    >Cooling / Fans</label
+                  >
                 </div>
                 <div class="flex items-center gap-x-2">
                   <input
@@ -522,7 +546,9 @@
                     id="ram"
                     class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
                   />
-                  <label for="ram" class="cursor-pointer">RAM</label>
+                  <label for="ram" id="ram" class="cursor-pointer"
+                    >Ram (Memory)</label
+                  >
                 </div>
                 <div class="flex items-center gap-x-2">
                   <input
@@ -530,13 +556,25 @@
                     id="casing"
                     class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
                   />
-                  <label for="casing" class="cursor-pointer">Casing</label>
+                  <label for="casing" id="case" class="cursor-pointer"
+                    >Case</label
+                  >
+                </div>
+                <div class="flex items-center gap-x-2">
+                  <input
+                    type="checkbox"
+                    id="casing"
+                    class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
+                  />
+                  <label for="psu" id="psu" class="cursor-pointer"
+                    >Power Supply</label
+                  >
                 </div>
               </div>
               <div class="w-full mt-5">
                 <div class="flex items-center gap-x-2">
                   <div class="rounded-full text-Accent mt-1">&ast;</div>
-                  <label for="" class="">Email</label>
+                  <label for="" class="" id="emailforup">Email</label>
                 </div>
                 <input
                   type="email"
@@ -1336,6 +1374,26 @@
     });
     toggler.forEach((items) => {
       if (items.value == "Deutsch") {
+        document.querySelector("#mb").innerText = "Mutterplatine";
+        document.querySelector("#gpu").innerText = "GPU (Grafikkarte)";
+        document.querySelector("#ram").innerText = "Ram (Arbeitsspeicher)";
+        document.querySelector("#case").innerText = "Gehäuse";
+        document.querySelector("#cooling").innerText = "Kühlung / Lüfter";
+        document.querySelector("#psu").innerText = "Netzteil";
+
+        document.querySelector("#emailforup").innerText =
+          "Email/ Telefon Nummer";
+        document.querySelector("#aboutpc").innerText =
+          "Beschreiben Sie ihren Computer";
+        document.querySelector("#aboutpcholder").placeholder =
+          "Beschreiben Sie ihren Computer";
+
+        document.querySelector("#upgradeapproval").innerText =
+          "Welches Teil wollen Sie upgraden?";
+
+        document.querySelector("#messageforpcbuilding").placeholder =
+          "Fügen Sie ihre Infos ein";
+
         document.querySelectorAll("[data-home]").forEach((items, i) => {
           items.innerText = "Startseite";
         });
@@ -1354,45 +1412,85 @@
         document.querySelectorAll("[data-legal]").forEach((items, i) => {
           items.innerText = "Impressum";
         });
+
+        document.querySelectorAll("#manageText").id = "datenverwaltung";
+        document.querySelectorAll("#manageText").innerText = "Daten Verwaltung";
+
         document.querySelector("[data-daten]").innerText = "Datenschutz";
-        document.querySelectorAll("[data-tabs]")[0].id = "pcgebäude";
-        document.querySelectorAll("[data-tabs]")[2].id = "kleinereparaturen";
-        document.querySelector("#pcbuildingText").innerText = "PC Gebäude";
-        document.querySelector("#pcbuildingPageText").innerText = "PC Gebäude";
-        document.querySelector("#repairText").innerText = "Kleine Reparaturen";
+
+        document.querySelectorAll("[data-tabs]")[0].id = "pcerstellung";
+        document.querySelector("#pcbuildingText").innerText = "PC Erstellung";
+        document.querySelector("#pcbuildingPageText").innerText =
+          "PC - Erstellung";
+        document.querySelector("#emailTxt").innerText = "Kontakt Information:";
+        document.querySelector("#emailfirst").placeholder =
+          "Email/Telefon Nummer";
+        document.querySelector("#cDetails").innerText =
+          "Wofür benutzt du deinen Computer:";
+
         document.querySelector("#pcbuildingPagePara").innerText =
-          "Sie können Ihren ersten PC nicht bauen? Bauen Sie Ihren ersten PC bei uns und wir kümmern uns um den Rest.";
-        document.querySelector("#emailfirst").placeholder = "Email Adresse";
+          "Jeder PC, den ich baue, ist komplett Maßgefertigt, genau für ihre Bedürfnisse angepasst – keine generisch vorgefertigten Systeme. Egal, ob Sie ein erstmaliger Käufer sind oder ein Technik Enthusiast, Ich leite Sie durch den Prozess und stelle sicher, dass sie das bestmögliche Setup erhalten.";
+
+        document.querySelectorAll("[data-tabs]")[2].id =
+          "elektronischereparaturen";
+        document.querySelector("#repairText").innerText =
+          "Elektronische Reparaturen";
+
         document.querySelector("#priceCatLabel").innerText =
-          "Wählen Sie die Preiskategorie aus";
-        document.querySelector("#customReqText").innerText =
-          "Benutzerdefinierte Anfragen";
-        document.querySelector("#custom").placeholder =
-          "Benutzerdefinierte Anfragen";
+          "Wähle deine Preis Kategorie";
+        document.querySelector("#pricecategoryforpcbuilding").placeholder =
+          "Füge dein Budget ein";
+        document.querySelector("#emailsecond").placeholder =
+          "Email/ Telefon Nummer";
+
+        document.querySelector("#customReqText").innerText = "Sonstige Wünsche";
+        document.querySelector("#custom").placeholder = "Weitere Anliegen";
+        document.querySelector("#buildingButton").innerText =
+          "Holen Sie sich Ihr  Angebot";
+
         document.querySelector("#priorExpText").innerText =
-          "Haben Sie bereits Erfahrungen mit PCs?";
+          "Haben Sie bereits Erfahrung mit PCs?";
+
         document.querySelector("#upgradesPara").innerText =
           "Warum bringen Sie Ihren Computer nicht zu uns? So können wir Ihren PC nach Ihren Wünschen aufrüsten.";
-        document.querySelector("#emailsecond").placeholder = "Email Adresse";
+
         document.querySelector("#enterbudgetText").innerText =
-          "Geben Sie Ihr Budget ein";
+          "Geben Sie Ihr Budget an";
         document.querySelector("#budget").placeholder =
-          "Geben Sie Ihr Budget ein";
+          "Geben Sie Ihr Budget an";
         document.querySelector("#upgradesButton").innerText =
           "Holen Sie sich ein Angebot";
         document.querySelector("#smallrepairsTxt").innerText =
           "Kleine Reparaturen";
         document.querySelector("#smallrepairsPara").innerText =
-          "Haben Sie ein Telefon, Tablet oder Laptop, das überprüft werden muss? Kontaktieren Sie uns oder bringen Sie Ihr Gerät zu uns.";
+          "Haben Sie ein Telefon, Tablet oder Laptop, das werden muss? Zögern Sie nicht uns zu Kontaktieren";
         document.querySelector("#emailthird").placeholder = "Email Adresse";
         document.querySelector("#deviceText").innerText = "Gerät";
         document.querySelector("#describeissueText").innerText =
-          "Beschreiben Sie das Problem";
-        document.querySelector("#issue").placeholder =
-          "Beschreiben Sie das Problem";
+          "Welches Problem haben Sie mit ihrem Computer/ Elektronischem Gerät?";
+        document.querySelector("#issue").placeholder = "Was ist Kaputt";
         document.querySelector("#repairsButton").innerText =
           "Holen Sie sich ein Angebot";
       } else {
+        document.querySelector("#mb").innerText = "Motherboard";
+        document.querySelector("#gpu").innerText = "GPU (Graphics Card)";
+        document.querySelector("#ram").innerText = "Ram (Memory)";
+        document.querySelector("#case").innerText = "Case";
+        document.querySelector("#cooling").innerText = "Cooling / Fans";
+        document.querySelector("#psu").innerText = "Power Supply";
+        document.querySelector("#emailforup").innerText = "Email/Phone number";
+
+        document.querySelector("#aboutpc").innerText =
+          "Tell us about your Computer";
+        document.querySelector("#aboutpcholder").placeholder =
+          "Tell us about your Computer";
+        document.querySelector("#upgradeapproval").innerText =
+          "What part do you want to upgrade?";
+        document.querySelectorAll("#manageText").innerText = "Data Mangement";
+        document.querySelector("#messageforpcbuilding").placeholder =
+          "Enter your Infos";
+        document.querySelector("#cDetails").innerText =
+          "What do you use your Computer for:";
         document.querySelector("[data-daten]").innerText = "Privacy Policy";
         document.querySelectorAll("[data-home]").forEach((items, i) => {
           items.innerText = "Home";
@@ -1414,41 +1512,85 @@
         document.querySelectorAll("[data-legal]").forEach((items, i) => {
           items.innerText = "Legal Notice";
         });
-        document.querySelectorAll("[data-tabs]")[0].id = "pcbuilding";
-        document.querySelectorAll("[data-tabs]")[2].id = "smallrepairs";
-        document.querySelector("#pcbuildingText").innerText = "PC Building";
-        document.querySelector("#repairText").innerText = "Small Repairs";
-        document.querySelector("#pcbuildingPageText").innerText = "PC Building";
+
+        document.querySelectorAll("#manageText").id = "datemanagement";
+        document.querySelectorAll("#manageText").innerText = "Data Management";
+        document.querySelectorAll("[data-tabs]")[0].id = "buildingapc";
+        document.querySelector("#pcbuildingText").innerText = "Building a PC";
+
+        document.querySelectorAll("[data-tabs]")[2].id = "electronicrepairs";
+        document.querySelector("#repairText").innerText = "Electronic Repairs";
+        document.querySelector("#pcbuildingPageText").innerText = "PC-Building";
         document.querySelector("#pcbuildingPagePara").innerText =
-          "Unable to build your first PC? Build your first pc from us and we'll take care of the rest.";
-        document.querySelector("#emailfirst").placeholder = "Email Address";
+          "Every PC I build is fully custom-made, designed specifically for your needs—no generic pre-built systems. Whether you’re a first-time buyer or a tech enthusiast, I’ll guide you through the process to ensure you get the best possible setup.";
+        document.querySelector("#emailTxt").innerText = "Contact Information:";
+        document.querySelector("#emailfirst").placeholder =
+          "Email/Phone number";
+
         document.querySelector("#priceCatLabel").innerText =
-          "Select Price Category";
-        document.querySelector("#customReqText").innerText = "Custom Requests";
+          "Select your Price Category";
+        document.querySelector("#pricecategoryforpcbuilding").placeholder =
+          "Enter your Budget";
+
+        document.querySelector("#customReqText").innerText = "Other Notes";
+        document.querySelector("#custom").placeholder = "Further details";
+
         document.querySelector("#priorExpText").innerText =
-          "Do your have prior experience of PCs?";
+          "Do you have Expierence with PC’s already?";
         document.querySelector("#custom").placeholder = "Custom Request";
         document.querySelector("#upgradesPara").innerText =
           "Why not bring your computer to us? So, we can upgrade your pc to your liking.";
-        document.querySelector("#emailsecond").placeholder = "Email Address";
+
+        document.querySelector("#emailsecond").placeholder =
+          "Email/Phone number";
         document.querySelector("#enterbudgetText").innerText =
           "Enter Your Budget";
         document.querySelector("#budget").placeholder =
           "Geben Sie Ihr Budget ein";
         document.querySelector("#upgradesButton").innerText = "Get a quote";
 
+        document.querySelector("#buildingButton").innerText = "Get an offer";
         document.querySelector("#smallrepairsTxt").innerText = "Small Repaires";
-        document.querySelector("#smallrepairsPara").text =
-          "Have a phone, tablet or laptop that needs some checkup? Contact us or bring your device to us.";
+        document.querySelector("#smallrepairsPara").innerText =
+          "Have a phone, tablet or laptop that needs some checkup? Do not hesitate to contact us!";
         document.querySelector("#emailthird").placeholder = "Email Address";
         document.querySelector("#deviceText").innerText = "Device";
         document.querySelector("#describeissueText").innerText =
-          "Describe the issue";
+          "What problem do you have with your Computer / Electronic Device?";
         document.querySelector("#issue").placeholder = "Describe the issue";
         document.querySelector("#repairsButton").innerText = "Get a quote";
       }
       items.addEventListener("change", () => {
         if (items.value == "Deutsch") {
+          document.querySelector("#mb").innerText = "Mutterplatine";
+          document.querySelector("#gpu").innerText = "GPU (Grafikkarte)";
+          document.querySelector("#ram").innerText = "Ram (Arbeitsspeicher)";
+          document.querySelector("#case").innerText = "Gehäuse";
+          document.querySelector("#cooling").innerText = "Kühlung / Lüfter";
+          document.querySelector("#psu").innerText = "Netzteil";
+
+          document.querySelector("#emailforup").innerText =
+            "Email/ Telefon Nummer";
+
+          document.querySelector("#aboutpc").innerText =
+            "Beschreiben Sie ihren Computer";
+          document.querySelector("#aboutpcholder").placeholder =
+            "Beschreiben Sie ihren Computer";
+
+          document.querySelector("#upgradeapproval").innerText =
+            "Welches Teil wollen Sie upgraden?";
+
+          document.querySelectorAll("#manageText").innerText =
+            "Daten Verwaltung";
+
+          document.querySelector("#messageforpcbuilding").placeholder =
+            "Fügen Sie ihre Infos ein";
+
+          document.querySelector("#cDetails").innerText =
+            "Wofür benutzt du deinen Computer:";
+
+          document.querySelector("#emailTxt").innerText =
+            "Kontakt Information:";
           document.querySelector("[data-daten]").innerText = "Datenschutz";
           document.querySelectorAll("[data-home]").forEach((items, i) => {
             items.innerText = "Startseite";
@@ -1468,46 +1610,84 @@
           document.querySelectorAll("[data-legal]").forEach((items, i) => {
             items.innerText = "Impressum";
           });
-          document.querySelectorAll("[data-tabs]")[0].id = "pcgebäude";
-          document.querySelectorAll("[data-tabs]")[2].id = "kleinereparaturen";
-          document.querySelector("#pcbuildingText").innerText = "PC Gebäude";
-          document.querySelector("#pcbuildingPageText").innerText =
-            "PC Gebäude";
+          document.querySelectorAll("#manageText").id = "datenverwaltung";
+          document.querySelectorAll("#manageText").innerText =
+            "Daten Verwaltung";
+
+          document.querySelectorAll("[data-tabs]")[0].id = "pcerstellung";
+          document.querySelector("#pcbuildingText").innerText = "PC Erstellung";
+          document.querySelectorAll("[data-tabs]")[2].id =
+            "elektronischereparaturen";
           document.querySelector("#repairText").innerText =
-            "Kleine Reparaturen";
+            "Elektronische Reparaturen";
+
+          document.querySelector("#pcbuildingPageText").innerText =
+            "PC - Erstellung";
           document.querySelector("#pcbuildingPagePara").innerText =
-            "Sie können Ihren ersten PC nicht bauen? Bauen Sie Ihren ersten PC bei uns und wir kümmern uns um den Rest.";
-          document.querySelector("#emailfirst").placeholder = "Email Adresse";
+            "Jeder PC, den ich baue, ist komplett Maßgefertigt, genau für ihre Bedürfnisse angepasst – keine generisch vorgefertigten Systeme. Egal, ob Sie ein erstmaliger Käufer sind oder ein Technik Enthusiast, Ich leite Sie durch den Prozess und stelle sicher, dass sie das bestmögliche Setup erhalten.";
+
+          document.querySelector("#emailfirst").placeholder =
+            "Email/Telefon Nummer";
           document.querySelector("#priceCatLabel").innerText =
-            "Wählen Sie die Preiskategorie aus";
+            "Wähle deine Preis Kategorie";
+          document.querySelector("#pricecategoryforpcbuilding").placeholder =
+            "Füge dein Budget ein";
+
           document.querySelector("#customReqText").innerText =
-            "Benutzerdefinierte Anfragen";
-          document.querySelector("#custom").placeholder =
-            "Benutzerdefinierte Anfragen";
+            "Sonstige Wünsche";
+          document.querySelector("#custom").placeholder = "Weitere Anliegen";
+
           document.querySelector("#priorExpText").innerText =
-            "Haben Sie bereits Erfahrungen mit PCs?";
+            "Haben Sie bereits Erfahrung mit PCs?";
+          document.querySelector("#buildingButton").innerText =
+            "Holen Sie sich Ihr  Angebot";
+
           document.querySelector("#upgradesPara").innerText =
             "Warum bringen Sie Ihren Computer nicht zu uns? So können wir Ihren PC nach Ihren Wünschen aufrüsten.";
-          document.querySelector("#emailsecond").placeholder = "Email Adresse";
+          document.querySelector("#emailsecond").placeholder =
+            "Email/ Telefon Nummer";
           document.querySelector("#enterbudgetText").innerText =
-            "Geben Sie Ihr Budget ein";
+            "Geben Sie Ihr Budget an";
           document.querySelector("#budget").placeholder =
-            "Geben Sie Ihr Budget ein";
+            "Geben Sie Ihr Budget an";
           document.querySelector("#upgradesButton").innerText =
             "Holen Sie sich ein Angebot";
           document.querySelector("#smallrepairsTxt").innerText =
             "Kleine Reparaturen";
+          document.querySelector("#emailsecond").placeholder =
+            "Email/ Telefon Nummer";
+
           document.querySelector("#smallrepairsPara").innerText =
-            "Haben Sie ein Telefon, Tablet oder Laptop, das überprüft werden muss? Kontaktieren Sie uns oder bringen Sie Ihr Gerät zu uns.";
+            "Haben Sie ein Telefon, Tablet oder Laptop, das werden muss? Zögern Sie nicht uns zu Kontaktieren";
           document.querySelector("#emailthird").placeholder = "Email Adresse";
           document.querySelector("#deviceText").innerText = "Gerät";
           document.querySelector("#describeissueText").innerText =
-            "Beschreiben Sie das Problem";
-          document.querySelector("#issue").placeholder =
-            "Beschreiben Sie das Problem";
+            "Welches Problem haben Sie mit ihrem Computer/ Elektronischem Gerät?";
+          document.querySelector("#issue").placeholder = "Was ist Kaputt";
           document.querySelector("#repairsButton").innerText =
             "Holen Sie sich ein Angebot";
         } else {
+          document.querySelector("#mb").innerText = "Motherboard";
+          document.querySelector("#gpu").innerText = "GPU (Graphics Card)";
+          document.querySelector("#ram").innerText = "Ram (Memory)";
+          document.querySelector("#case").innerText = "Case";
+          document.querySelector("#cooling").innerText = "Cooling / Fans";
+          document.querySelector("#psu").innerText = "Power Supply";
+          document.querySelector("#emailforup").innerText =
+            "Email/Phone number";
+          document.querySelector("#emailsecond").placeholder =
+            "Email/Phone number";
+          document.querySelector("#aboutpc").innerText =
+            "Tell us about your Computer";
+          document.querySelector("#aboutpcholder").placeholder =
+            "Tell us about your Computer";
+          document.querySelector("#upgradeapproval").innerText =
+            "What part do you want to upgrade?";
+          document.querySelectorAll("#manageText").innerText = "Data Mangement";
+          document.querySelector("#messageforpcbuilding").placeholder =
+            "Enter your Infos";
+          document.querySelector("#cDetails").innerText =
+            "What do you use your Computer for:";
           document.querySelector("[data-daten]").innerText = "Privacy Policy";
           document.querySelectorAll("[data-home]").forEach((items, i) => {
             items.innerText = "Home";
@@ -1529,25 +1709,46 @@
           document.querySelectorAll("[data-legal]").forEach((items, i) => {
             items.innerText = "Legal Notice";
           });
-          document.querySelectorAll("[data-tabs]")[0].id = "pcbuilding";
-          document.querySelectorAll("[data-tabs]")[2].id = "smallrepairs";
-          document.querySelector("#pcbuildingText").innerText = "PC Building";
-          document.querySelector("#repairText").innerText = "Small Repairs";
+
+          document.querySelectorAll("#manageText").id = "datemanagement";
+          document.querySelectorAll("#manageText").innerText =
+            "Data Management";
+          document.querySelectorAll("[data-tabs]")[2].id = "electronicrepairs";
+          document.querySelector("#repairText").innerText =
+            "Electronic Repairs";
+
+          document.querySelectorAll("[data-tabs]")[0].id = "buildingapc";
+          document.querySelector("#pcbuildingText").innerText = "Building a PC";
+
           document.querySelector("#pcbuildingPageText").innerText =
-            "PC Building";
+            "PC-Building";
+
           document.querySelector("#pcbuildingPagePara").innerText =
-            "Unable to build your first PC? Build your first pc from us and we'll take care of the rest.";
-          document.querySelector("#emailfirst").placeholder = "Email Address";
+            "Every PC I build is fully custom-made, designed specifically for your needs—no generic pre-built systems. Whether you’re a first-time buyer or a tech enthusiast, I’ll guide you through the process to ensure you get the best possible setup.";
+          document.querySelector("#emailTxt").innerText =
+            "Contact Information:";
+          document.querySelector("#emailfirst").placeholder =
+            "Email/Phone number";
           document.querySelector("#priceCatLabel").innerText =
-            "Select Price Category";
-          document.querySelector("#customReqText").innerText =
-            "Custom Requests";
+            "Wähle deine Preis Kategorie";
+          document.querySelector("#pricecategoryforpcbuilding").placeholder =
+            "Füge dein Budget ein";
+          document.querySelector("#priceCatLabel").innerText =
+            "Select your Price Category";
+          document.querySelector("#pricecategoryforpcbuilding").placeholder =
+            "Enter your Budget";
+
+          document.querySelector("#customReqText").innerText = "Other Notes";
+          document.querySelector("#custom").placeholder = "Further details";
+
+          document.querySelector("#buildingButton").innerText = "Get an offer";
+
           document.querySelector("#priorExpText").innerText =
-            "Do your have prior experience of PCs?";
+            "Do you have Expierence with PC’s already?";
           document.querySelector("#custom").placeholder = "Custom Request";
           document.querySelector("#upgradesPara").innerText =
             "Why not bring your computer to us? So, we can upgrade your pc to your liking.";
-          document.querySelector("#emailsecond").placeholder = "Email Address";
+
           document.querySelector("#enterbudgetText").innerText =
             "Enter Your Budget";
           document.querySelector("#budget").placeholder =
@@ -1556,12 +1757,13 @@
 
           document.querySelector("#smallrepairsTxt").innerText =
             "Small Repaires";
-          document.querySelector("#smallrepairsPara").text =
-            "Have a phone, tablet or laptop that needs some checkup? Contact us or bring your device to us.";
+          document.querySelector("#smallrepairsPara").innerText =
+            "Have a phone, tablet or laptop that needs some checkup? Do not hesitate to contact us!";
+
           document.querySelector("#emailthird").placeholder = "Email Address";
           document.querySelector("#deviceText").innerText = "Device";
           document.querySelector("#describeissueText").innerText =
-            "Describe the issue";
+            "What problem do you have with your Computer / Electronic Device?";
           document.querySelector("#issue").placeholder = "Describe the issue";
           document.querySelector("#repairsButton").innerText = "Get a quote";
         }
@@ -1571,7 +1773,9 @@
     function getItems() {
       services.forEach((items) => {
         items.addEventListener("click", (e) => {
-          gtItems(items.innerText.replace(" ", "").toLowerCase());
+          console.log(items.innerText.replace(/\s+/g, "").toLowerCase().trim());
+
+          gtItems(items.innerText.replace(/\s+/g, "").toLowerCase().trim());
           if (!document.body.classList.contains("bg-white")) {
             items.classList.remove("bg-Primary");
             items.classList.add("bg-Accent");
