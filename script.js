@@ -54,7 +54,7 @@ toggler.forEach((items) => {
     document.querySelector("#contacHeading").innerText = "Kontaktieren Sie uns";
     document.querySelector("#getintouch").innerText = "Nehmen Sie Kontakt auf";
     document.querySelector("#contactPara").innerText =
-      "Kontaktieren Sie uns übe:";
+      "Kontaktieren Sie uns über:";
     document.querySelector("[data-call]").innerText = "Anruf";
 
     document.querySelector("#messagePlaceholder").innerText = "Nachricht";
@@ -100,17 +100,17 @@ toggler.forEach((items) => {
     document.querySelector("#serviceweprovideHeading").innerText =
       "Services We Provide";
     document.querySelector("#servicesPara").innerText =
-      "We provide a lot of services. You can choose the service you need by contacting us. we have been serving for 2 years.";
+      "We offer a range of repair and customization services. Whether you need a simple fix or a complete PC build, we’ve got you covered. Check out what we offer here and find the right service for your needs.";
     document.querySelector("#servicesBtn").innerHTML =
       "Services<i class='fa-solid fa-arrow-right'></i>";
     document.querySelector("#ourgallery").innerHTML = "Our Gallery";
     document.querySelector("#galleryPara").innerHTML =
-      "Check out our gallery. The gallery shows the projects we have done so far. Our RIG's contain a lot of PC's.";
+      "Take a look at our past projects! Our gallery showcases the custom PC builds and repairs we’ve completed. See what we’ve worked on and get inspired.";
     document.querySelector("#galleryBtn").innerHTML =
       "Gallery<i class='fa-solid fa-arrow-right'></i>";
     document.querySelector("#aboutusText").innerHTML = "About Us";
     document.querySelector("#aboutusPara").innerHTML =
-      "We are EPC-Tech. We have been building PC's since 2019. With over 3000+ customers served till now.";
+      "At EPC-Tech, we’ve been building and repairing PCs since 2019. Our experience grows with every project we take on, ensuring high-quality results for our customers. Your tech is in good hands.";
     document.querySelector("#aboutusBtn").innerHTML =
       "About Us<i class='fa-solid fa-arrow-right'></i>";
     document.querySelector("#contacHeading").innerText = "Contact Us";
@@ -179,7 +179,7 @@ toggler.forEach((items) => {
       document.querySelector("#getintouch").innerText =
         "Nehmen Sie Kontakt auf";
       document.querySelector("#contactPara").innerText =
-        "Kontaktieren Sie uns übe:";
+        "Kontaktieren Sie uns über:";
       document.querySelector("[data-call]").innerText = "Anruf";
       document.querySelector("#textareaContact").placeholder = "Ihre Nachricht";
       document.querySelector("#messagePlaceholder").innerText = "Nachricht";
@@ -224,17 +224,17 @@ toggler.forEach((items) => {
       document.querySelector("#serviceweprovideHeading").innerText =
         "Services We Provide";
       document.querySelector("#servicesPara").innerText =
-        "We provide a lot of services. You can choose the service you need by contacting us. we have been serving for 2 years.";
+        "We offer a range of repair and customization services. Whether you need a simple fix or a complete PC build, we’ve got you covered. Check out what we offer here and find the right service for your needs.";
       document.querySelector("#servicesBtn").innerHTML =
         "Services<i class='fa-solid fa-arrow-right'></i>";
       document.querySelector("#ourgallery").innerHTML = "Our Gallery";
       document.querySelector("#galleryPara").innerHTML =
-        "Check out our gallery. The gallery shows the projects we have done so far. Our RIG's contain a lot of PC's.";
+        "Take a look at our past projects! Our gallery showcases the custom PC builds and repairs we’ve completed. See what we’ve worked on and get inspired.";
       document.querySelector("#galleryBtn").innerHTML =
         "Gallery<i class='fa-solid fa-arrow-right'></i>";
       document.querySelector("#aboutusText").innerHTML = "About Us";
       document.querySelector("#aboutusPara").innerHTML =
-        "We are EPC-Tech. We have been building PC's since 2019. With over 3000+ customers served till now.";
+        "At EPC-Tech, we’ve been building and repairing PCs since 2019. Our experience grows with every project we take on, ensuring high-quality results for our customers. Your tech is in good hands.";
       document.querySelector("#aboutusBtn").innerHTML =
         "About Us<i class='fa-solid fa-arrow-right'></i>";
       document.querySelector("#contacHeading").innerText = "Contact Us";

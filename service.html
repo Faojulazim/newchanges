@@ -309,15 +309,15 @@
           ><span
             data-services=""
             id="repairText"
-            class="border-r px-3 py-2 lg:px-6 lg:py-3 font-[500] cursor-pointer"
+            class="px-3 py-2 lg:px-6 lg:py-3 font-[500] cursor-pointer"
             >Small Repairs</span
           >
-          <span
+          <!-- <span
             data-services=""
             id="manageText"
             class="px-3 py-2 rounded-r-sm lg:px-6 lg:py-3 font-[500] cursor-pointer"
             >Data Management</span
-          >
+          > -->
         </div>
         <div
           class="500:w-[90%] sm:w-[80%] md:w-full lg:max-w-[1000px] mx-auto lg:flex lg:border lg:border-Accent lg:rounded-[4px] lg:mt-10"
@@ -485,104 +485,106 @@
                 <label for="" id="upgradeapproval"
                   >What part do you want to upgrade?</label
                 >
-                <div class="w-full mt- mb-2">
+                <div class="w-full mt-0 flex flex-col gap-y-3">
+                  <div class="w-full mt-0">
+                    <div class="flex items-center gap-x-2">
+                      <div class="rounded-full text-Accent mt-1">&ast;</div>
+                      <label for="" class="" id="emailforup">Email</label>
+                    </div>
+                    <input
+                      type="email"
+                      required
+                      id="emailsecond"
+                      placeholder="Email Address"
+                      class="px-5 py-2 w-full outline-none rounded-sm text-black text-lg mt-2"
+                    />
+                  </div>
+                  <div class="w-full mt-0">
+                    <div class="flex items-center gap-x-2">
+                      <div class="rounded-full text-Accent mt-1">&ast;</div>
+                      <label for="" class="" id="aboutpc"
+                        >Tell us more about your pc</label
+                      >
+                    </div>
+                    <input
+                      type="number"
+                      required
+                      id="aboutpcholder"
+                      placeholder="Enter Your Budget..."
+                      class="px-5 py-2 w-full outline-none rounded-sm text-black text-lg mt-2"
+                    />
+                  </div>
                   <div class="flex items-center gap-x-2">
-                    <div class="rounded-full text-Accent mt-1">&ast;</div>
-                    <label for="" class="" id="aboutpc"
-                      >Tell us more about your pc</label
+                    <input
+                      type="checkbox"
+                      id="cpu"
+                      class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
+                    />
+                    <label for="cpu" class="cursor-pointer"
+                      >CPU (Processor)</label
                     >
                   </div>
-                  <input
-                    type="number"
-                    required
-                    id="aboutpcholder"
-                    placeholder="Enter Your Budget..."
-                    class="px-5 py-2 w-full outline-none rounded-sm text-black text-lg mt-2"
-                  />
+                  <div class="flex items-center gap-x-2">
+                    <input
+                      type="checkbox"
+                      id="motherboard"
+                      class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
+                    />
+                    <label for="motherboard" id="mb" class="cursor-pointer"
+                      >Motherboard</label
+                    >
+                  </div>
+                  <div class="flex items-center gap-x-2">
+                    <input
+                      type="checkbox"
+                      id="gpu"
+                      class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
+                    />
+                    <label for="gpu" id="gpu" class="cursor-pointer"
+                      >GPU (Graphics Card)</label
+                    >
+                  </div>
+                  <div class="flex items-center gap-x-2">
+                    <input
+                      type="checkbox"
+                      id="cooler"
+                      class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
+                    />
+                    <label for="cooler" id="cooling" class="cursor-pointer"
+                      >Cooling / Fans</label
+                    >
+                  </div>
+                  <div class="flex items-center gap-x-2">
+                    <input
+                      type="checkbox"
+                      id="ram"
+                      class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
+                    />
+                    <label for="ram" id="ram" class="cursor-pointer"
+                      >Ram (Memory)</label
+                    >
+                  </div>
+                  <div class="flex items-center gap-x-2">
+                    <input
+                      type="checkbox"
+                      id="casing"
+                      class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
+                    />
+                    <label for="casing" id="case" class="cursor-pointer"
+                      >Case</label
+                    >
+                  </div>
+                  <div class="flex items-center gap-x-2">
+                    <input
+                      type="checkbox"
+                      id="casing"
+                      class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
+                    />
+                    <label for="psu" id="psu" class="cursor-pointer"
+                      >Power Supply</label
+                    >
+                  </div>
                 </div>
-                <div class="flex items-center gap-x-2">
-                  <input
-                    type="checkbox"
-                    id="cpu"
-                    class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
-                  />
-                  <label for="cpu" class="cursor-pointer"
-                    >CPU (Processor)</label
-                  >
-                </div>
-                <div class="flex items-center gap-x-2">
-                  <input
-                    type="checkbox"
-                    id="motherboard"
-                    class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
-                  />
-                  <label for="motherboard" id="mb" class="cursor-pointer"
-                    >Motherboard</label
-                  >
-                </div>
-                <div class="flex items-center gap-x-2">
-                  <input
-                    type="checkbox"
-                    id="gpu"
-                    class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
-                  />
-                  <label for="gpu" id="gpu" class="cursor-pointer"
-                    >GPU (Graphics Card)</label
-                  >
-                </div>
-                <div class="flex items-center gap-x-2">
-                  <input
-                    type="checkbox"
-                    id="cooler"
-                    class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
-                  />
-                  <label for="cooler" id="cooling" class="cursor-pointer"
-                    >Cooling / Fans</label
-                  >
-                </div>
-                <div class="flex items-center gap-x-2">
-                  <input
-                    type="checkbox"
-                    id="ram"
-                    class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
-                  />
-                  <label for="ram" id="ram" class="cursor-pointer"
-                    >Ram (Memory)</label
-                  >
-                </div>
-                <div class="flex items-center gap-x-2">
-                  <input
-                    type="checkbox"
-                    id="casing"
-                    class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
-                  />
-                  <label for="casing" id="case" class="cursor-pointer"
-                    >Case</label
-                  >
-                </div>
-                <div class="flex items-center gap-x-2">
-                  <input
-                    type="checkbox"
-                    id="casing"
-                    class="outline-none rounded-sm text-black text-lg size-5 cursor-pointer"
-                  />
-                  <label for="psu" id="psu" class="cursor-pointer"
-                    >Power Supply</label
-                  >
-                </div>
-              </div>
-              <div class="w-full mt-5">
-                <div class="flex items-center gap-x-2">
-                  <div class="rounded-full text-Accent mt-1">&ast;</div>
-                  <label for="" class="" id="emailforup">Email</label>
-                </div>
-                <input
-                  type="email"
-                  required
-                  id="emailsecond"
-                  placeholder="Email Address"
-                  class="px-5 py-2 w-full outline-none rounded-sm text-black text-lg mt-2"
-                />
               </div>
               <div class="w-full mt-3">
                 <div class="flex items-center gap-x-2">
@@ -658,10 +660,10 @@
                     id="categoryofdevice"
                     class="rounded-sm px-4 w-full py-3 text-black text-[17px] font-Inter outline-Primary"
                   >
-                    <option value="Phone">Phone</option>
-                    <option value="Tablet">Tablet</option>
-                    <option value="Laptop">Laptop</option>
-                    <option value="Other">Other</option>
+                    <option id="phone" value="Phone">Phone</option>
+                    <option id="tablet" value="Tablet">Tablet</option>
+                    <option id="laptop" value="Laptop">Laptop</option>
+                    <option id="other" value="Other">Other</option>
                   </select>
                 </div>
 
@@ -1375,9 +1377,10 @@
     });
     toggler.forEach((items) => {
       if (items.value == "Deutsch") {
+        document.querySelector("#phone").innerText = "Handy";
+        document.querySelector("#other").innerText = "Andere Geräte";
         document.querySelector("#copyright").innerText =
           "Alle Rechte Vorbehalten -  EPC-Tech - 2025";
-
         document.querySelector("#mb").innerText = "Mutterplatine";
         document.querySelector("#gpu").innerText = "GPU (Grafikkarte)";
         document.querySelector("#ram").innerText = "Ram (Arbeitsspeicher)";
@@ -1476,6 +1479,8 @@
         document.querySelector("#repairsButton").innerText =
           "Holen Sie sich ein Angebot";
       } else {
+        document.querySelector("#phone").innerText = "Phone";
+        document.querySelector("#other").innerText = "Other";
         document.querySelector("#copyright").innerText =
           "Copyright 2025 EPC-Tech";
         document.querySelector("#mb").innerText = "Motherboard";
@@ -1568,6 +1573,8 @@
       }
       items.addEventListener("change", () => {
         if (items.value == "Deutsch") {
+          document.querySelector("#phone").innerText = "Handy";
+          document.querySelector("#other").innerText = "Andere Geräte";
           document.querySelector("#copyright").innerText =
             "Alle Rechte Vorbehalten -  EPC-Tech - 2025";
 
@@ -1676,6 +1683,8 @@
           document.querySelector("#repairsButton").innerText =
             "Holen Sie sich ein Angebot";
         } else {
+          document.querySelector("#phone").innerText = "Phone";
+          document.querySelector("#other").innerText = "Other";
           document.querySelector("#copyright").innerText =
             "Copyright 2025 EPC-Tech";
           document.querySelector("#mb").innerText = "Motherboard";
