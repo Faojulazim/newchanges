@@ -48,7 +48,7 @@
     />
     <script defer src="toggleOthers.js"></script>
     <script defer src="changeNav.js"></script>
-    <link href="style.css" rel="stylesheet" />
+    <link href="dist/style.css" rel="stylesheet" />
     <title>Document</title>
   </head>
   <body class="bg-black scroll-smooth transition-all duration-300" data-body="">
@@ -815,7 +815,8 @@
             </div>
           </div>
           <h1 class="mt-5 sm:mt-0 mx-auto sm:mx-0 font-Overpass">
-            <span>&#169;</span> Copyright 2025 EPC-Tech
+            <span>&#169;</span>
+            <span id="copyright">Copyright 2025 EPC-Tech</span>
           </h1>
         </div>
       </div>
@@ -824,6 +825,9 @@
       const toggler = document.querySelectorAll("[data-languageSelection]");
       toggler.forEach((items) => {
         if (items.value == "Deutsch") {
+          document.querySelector("#copyright").innerText =
+            "Alle Rechte Vorbehalten -  EPC-Tech - 2025";
+
           document.querySelectorAll("[data-home]").forEach((items, i) => {
             items.innerText = "Startseite";
           });
@@ -913,6 +917,8 @@
           document.querySelector("#warrantyAbout").innerHTML =
             "Ich biete auf jeden PC, den ich baue, eine zweijährige allgemeine Garantie, die sicherstellt, dass ich mich darum kümmere, wenn innerhalb dieses Zeitraums etwa schiefgeht. Ich gehe jedoch auch darüber hinaus – da jede Komponente mit einer eigenen Herstellergarantie ausgestattet ist, stelle ich sicher, dass Sie den bestmöglichen Schutz erhalten. Wenn für ein Teil wie Ihren RAM, Ihre CPU oder Ihre GPU eine Garantie gilt, die über meine zweijährige Abdeckung hinausgeht – beispielsweise eine fünfjährige Herstellergarantie –, prüfe ich persönlich beim Hersteller oder Händler, ob es noch repariert oder ersetzt werden kann. Mein Engagement endet nicht, wenn meine eigene Garantie endet. Ich werde Ihnen immer dabei helfen, sich im Garantieprozess zurechtzufinden, Probleme zu beheben und sicherzustellen, dass Sie das Beste aus Ihrem System herausholen. Ob es innerhalb meiner Garantiezeit liegt oder vom Hersteller abgedeckt wird, ich stelle sicher, dass Sie mit Problemen nicht allein gelassen werden";
         } else {
+          document.querySelector("#copyright").innerText =
+            "Copyright 2025 EPC-Tech";
           document.querySelectorAll("[data-home]").forEach((items, i) => {
             items.innerText = "Home";
           });
@@ -1003,6 +1009,9 @@
 
         items.addEventListener("change", () => {
           if (items.value == "Deutsch") {
+            document.querySelector("#copyright").innerText =
+              "Alle Rechte Vorbehalten -  EPC-Tech - 2025";
+
             document.querySelectorAll("[data-home]").forEach((items, i) => {
               items.innerText = "Startseite";
             });
@@ -1091,6 +1100,8 @@
             document.querySelector("#warrantyAbout").innerHTML =
               "Ich biete auf jeden PC, den ich baue, eine zweijährige allgemeine Garantie, die sicherstellt, dass ich mich darum kümmere, wenn innerhalb dieses Zeitraums etwa schiefgeht. Ich gehe jedoch auch darüber hinaus – da jede Komponente mit einer eigenen Herstellergarantie ausgestattet ist, stelle ich sicher, dass Sie den bestmöglichen Schutz erhalten. Wenn für ein Teil wie Ihren RAM, Ihre CPU oder Ihre GPU eine Garantie gilt, die über meine zweijährige Abdeckung hinausgeht – beispielsweise eine fünfjährige Herstellergarantie –, prüfe ich persönlich beim Hersteller oder Händler, ob es noch repariert oder ersetzt werden kann. Mein Engagement endet nicht, wenn meine eigene Garantie endet. Ich werde Ihnen immer dabei helfen, sich im Garantieprozess zurechtzufinden, Probleme zu beheben und sicherzustellen, dass Sie das Beste aus Ihrem System herausholen. Ob es innerhalb meiner Garantiezeit liegt oder vom Hersteller abgedeckt wird, ich stelle sicher, dass Sie mit Problemen nicht allein gelassen werden";
           } else {
+            document.querySelector("#copyright").innerText =
+              "Copyright 2025 EPC-Tech";
             document.querySelectorAll("[data-home]").forEach((items, i) => {
               items.innerText = "Home";
             });

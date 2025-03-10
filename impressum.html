@@ -433,7 +433,8 @@
             </div>
           </div>
           <h1 class="mt-5 sm:mt-0 mx-auto sm:mx-0 font-Overpass">
-            <span>&#169;</span> Copyright 2025 EPC-Tech
+            <span>&#169;</span>
+            <span id="copyright">Copyright 2025 EPC-Tech</span>
           </h1>
         </div>
       </div>
@@ -571,6 +572,8 @@
             items.innerText = "Impressum";
           });
           document.querySelector("[data-daten]").innerText = "Datenschutz";
+          document.querySelector("#copyright").innerText =
+            "Alle Rechte Vorbehalten -  EPC-Tech - 2025";
         } else {
           document.querySelectorAll("[data-home]").forEach((items, i) => {
             items.innerText = "Home";
@@ -593,6 +596,9 @@
             items.innerText = "Legal Notice";
           });
           document.querySelector("[data-daten]").innerText = "Privacy Policy";
+
+          document.querySelector("#copyright").innerText =
+            "Copyright 2025 EPC-Tech";
         }
         items.addEventListener("change", () => {
           if (items.value == "Deutsch") {
@@ -615,6 +621,8 @@
               items.innerText = "Impressum";
             });
             document.querySelector("[data-daten]").innerText = "Datenschutz";
+            document.querySelector("#copyright").innerText =
+              "Alle Rechte Vorbehalten -  EPC-Tech - 2025";
           } else {
             document.querySelectorAll("[data-home]").forEach((items, i) => {
               items.innerText = "Home";
@@ -637,6 +645,8 @@
               items.innerText = "Legal Notice";
             });
             document.querySelector("[data-daten]").innerText = "Privacy Policy";
+            document.querySelector("#copyright").innerText =
+              "Copyright 2025 EPC-Tech";
           }
         });
       });

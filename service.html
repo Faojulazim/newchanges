@@ -823,7 +823,8 @@
             </div>
           </div>
           <h1 class="mt-5 sm:mt-0 mx-auto sm:mx-0 font-Overpass">
-            <span>&#169;</span> Copyright 2025 EPC-Tech
+            <span>&#169;</span>
+            <span id="copyright">Copyright 2025 EPC-Tech</span>
           </h1>
         </div>
       </div>
@@ -1374,6 +1375,9 @@
     });
     toggler.forEach((items) => {
       if (items.value == "Deutsch") {
+        document.querySelector("#copyright").innerText =
+          "Alle Rechte Vorbehalten -  EPC-Tech - 2025";
+
         document.querySelector("#mb").innerText = "Mutterplatine";
         document.querySelector("#gpu").innerText = "GPU (Grafikkarte)";
         document.querySelector("#ram").innerText = "Ram (Arbeitsspeicher)";
@@ -1472,6 +1476,8 @@
         document.querySelector("#repairsButton").innerText =
           "Holen Sie sich ein Angebot";
       } else {
+        document.querySelector("#copyright").innerText =
+          "Copyright 2025 EPC-Tech";
         document.querySelector("#mb").innerText = "Motherboard";
         document.querySelector("#gpu").innerText = "GPU (Graphics Card)";
         document.querySelector("#ram").innerText = "Ram (Memory)";
@@ -1562,6 +1568,9 @@
       }
       items.addEventListener("change", () => {
         if (items.value == "Deutsch") {
+          document.querySelector("#copyright").innerText =
+            "Alle Rechte Vorbehalten -  EPC-Tech - 2025";
+
           document.querySelector("#mb").innerText = "Mutterplatine";
           document.querySelector("#gpu").innerText = "GPU (Grafikkarte)";
           document.querySelector("#ram").innerText = "Ram (Arbeitsspeicher)";
@@ -1667,6 +1676,8 @@
           document.querySelector("#repairsButton").innerText =
             "Holen Sie sich ein Angebot";
         } else {
+          document.querySelector("#copyright").innerText =
+            "Copyright 2025 EPC-Tech";
           document.querySelector("#mb").innerText = "Motherboard";
           document.querySelector("#gpu").innerText = "GPU (Graphics Card)";
           document.querySelector("#ram").innerText = "Ram (Memory)";

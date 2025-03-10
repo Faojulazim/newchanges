@@ -26,6 +26,9 @@ toggler.forEach((items) => {
     document.querySelectorAll("[data-legal]").forEach((items, i) => {
       items.innerText = "Impressum";
     });
+    document.querySelector("#copyright").innerText =
+      "Alle Rechte Vorbehalten -  EPC-Tech - 2025";
+
     document.querySelector("[data-daten]").innerText = "Datenschutz";
     document.querySelector("#titleP").innerText =
       "Nie wieder zu viel für einen PC bezahlen. Individuell zusammengestellt für jeden Kunden.";
@@ -86,6 +89,8 @@ toggler.forEach((items) => {
     document.querySelectorAll("[data-legal]").forEach((items, i) => {
       items.innerText = "Legal Notice";
     });
+
+    document.querySelector("#copyright").innerText = "Copyright 2025 EPC-Tech";
     document.querySelector("#titleP").innerText =
       "No need for overpriced custom builds. Built per customer, no hidden costs.";
     document.querySelector("#quoteBtn").innerText = "Get a quote";
@@ -126,6 +131,9 @@ toggler.forEach((items) => {
         document.querySelector("#heading").innerHTML =
           "<span class='text-Accent font-[600]' id='spans'>Personalisierte PCs </span> für Sie";
       }
+      document.querySelector("#copyright").innerText =
+        "Alle Rechte Vorbehalten -  EPC-Tech - 2025";
+
       document.querySelectorAll("[data-home]").forEach((items, i) => {
         items.innerText = "Startseite";
       });
@@ -184,6 +192,8 @@ toggler.forEach((items) => {
         document.querySelector("#heading").innerHTML =
           "<span class='text-Accent font-[600]' id='spans'>Custom PCs</span> are on the horizon";
       }
+      document.querySelector("#copyright").innerText =
+        "Copyright 2025 EPC-Tech";
       document.querySelector("[data-daten]").innerText = "Privacy Policy";
       document.querySelectorAll("[data-home]").forEach((items, i) => {
         items.innerText = "Home";
