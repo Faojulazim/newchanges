@@ -61,7 +61,10 @@
     <link href="dist/style.css" rel="stylesheet" />
     <title>Document</title>
   </head>
-  <body class="bg-black scroll-smooth transition-all duration-300" data-body="">
+  <body
+    class="bg-black relative scroll-smooth transition-all duration-300"
+    data-body=""
+  >
     <main class="font-Overpass relative lg:px-10 xl:px-20 2xl:px-40" id="home">
       <nav
         class="flex items-center px-5 z-[200] justify-start lg:gap-x-0 2xl:gap-x-10 sticky top-0 text-white py-5 w-full lg:sticky bg-zinc-800 lg:left-0 lg:rounded-full lg:top-[25px] lg:py-3 lg:mt-0 lg:px-5 xl:px-10"
@@ -338,6 +341,7 @@
               <h1 class="text-3xl" id="pcbuildingPageText">PC Building</h1>
               <button
                 class="bg-blue-600 w-[100px] py-2 rounded-md hidden lg:block"
+                data-pcMoreInfo
               >
                 More Info
               </button>
@@ -348,6 +352,7 @@
             </p>
             <button
               class="bg-blue-600 w-[100px] py-2 rounded-md mt-3 lg:hidden"
+              data-pcMoreInfo
             >
               More Info
             </button>
@@ -470,11 +475,26 @@
               src="assets/services-asset/computer-motherboard-with-dolls.jpg"
               alt=""
             />
-            <h1 class="text-3xl lg:mt-5">Upgrades</h1>
+
+            <div class="flex items-center justify-between w-full">
+              <h1 class="text-3xl lg:mt-5">Upgrades</h1>
+              <button
+                class="bg-blue-600 w-[100px] py-2 mt-6 rounded-md hidden lg:block"
+                data-upgradeMoreInfo=""
+              >
+                More Info
+              </button>
+            </div>
             <p class="text-[17px] mt-3 lg:mt-5" id="upgradesPara">
               Why not bring your computer to us? So, we can upgrade your pc to
               your liking.
             </p>
+            <button
+              class="bg-blue-600 w-[100px] py-2 rounded-md mt-3 lg:hidden"
+              data-upgradeMoreInfo=""
+            >
+              More Info
+            </button>
           </div>
           <div
             class="flex lg:w-full flex-col gap-y-5 px-5 py-[20px] my-5 lg:my-0 lg:border-none rounded-[4px] border border-Accent lg:rounded-none lg:rounded-r-[4px] bg-zinc-800"
@@ -602,7 +622,7 @@
                 />
               </div>
               <button
-                class="bg-Accent w-full mt-5 py-3 rounded-sm lg:mt-10 hover:shadow-[0px_0px_30px_0px_#ce0d5e]"
+                class="bg-Accent w-full mt-5 py-3 rounded-sm hover:shadow-[0px_0px_30px_0px_#ce0d5e]"
                 id="upgradesButton"
               >
                 Get a quote
@@ -624,11 +644,27 @@
               src="assets/services-asset/laptop.jpg"
               alt=""
             />
-            <h1 class="text-3xl" id="smallrepairsTxt">Small Repaires</h1>
+
+            <div class="flex items-center justify-between w-full">
+              <h1 class="text-3xl" id="smallrepairsTxt">Small Repaires</h1>
+
+              <button
+                class="bg-blue-600 w-[100px] py-2 mt-0 rounded-md hidden lg:block"
+                data-smallMoreInfo=""
+              >
+                More Info
+              </button>
+            </div>
             <p class="text-[17px] mt-5 mb-6" id="smallrepairsPara">
               Have a phone, tablet or laptop that needs some checkup? Contact us
               or bring your device to us.
             </p>
+            <button
+              class="bg-blue-600 w-[100px] py-2 rounded-md mt-3 lg:hidden"
+              data-smallMoreInfo=""
+            >
+              More Info
+            </button>
           </div>
           <div
             class="flex lg:w-full flex-col gap-y-5 px-5 py-[20px] my-5 lg:my-0 lg:border-none rounded-[4px] border border-Accent lg:rounded-none lg:rounded-r-[4px] bg-zinc-800"
@@ -831,6 +867,158 @@
         </div>
       </div>
     </footer>
+    <section
+      class="fixed top-0 w-full flex items-center h-full z-[201] bg-[rgba(0_0_0/.8)] hidden"
+      id="pcSection"
+    >
+      <div
+        class="flex flex-col items-center max-h-[600px] w-full max-w-[650px] relative justify-start mx-auto bg-zinc-800 overflow-y-scroll text-white font-Overpass p-6 lg:p-10 mt-5 rounded-lg"
+        data-sectionColor=""
+      >
+        <i
+          class="fa-solid fa-xmark text-2xl absolute right-[30px] top-[25px]"
+          id="closeIconPc"
+        ></i>
+        <div class="w-full text-start md:text-left mt-6 md:mt-0">
+          <h2
+            class="text-4xl font-bold text-white"
+            data-whitemode=""
+            id="PcText"
+          >
+            Custom PC Building
+          </h2>
+          <div
+            class="text-lg text-gray-200 mt-4"
+            id="warrantyPara"
+            data-whitemodePara=""
+          >
+            <p id="secondAbout">
+              Every PC I build is <b>fully custom-made,</b> designed
+              specifically for your needs—no generic pre-built systems. Whether
+              you’re a first-time buyer or a tech enthusiast, I’ll guide you
+              through the process to ensure you get the best possible setup.
+            </p>
+          </div>
+          <div class="mt-5" data-whitemode="">
+            <p id="secondAboutTwo" class="mt-5 text-lg">
+              <b class="font-[700]">For Beginners</b>
+            </p>
+            <p class="mt-3" id="secondAboutThree">
+              Not sure what you need? No problem! You’ll simply
+              <b>check a box</b>
+              indicating that this is your <b>first PC,</b> and I’ll guide you
+              step by step. You’ll answer a few simple questions like:
+            </p>
+            <div>
+              <ul class="ml-10 mt-3 list-disc">
+                <li id="secondDiscOne">
+                  <b>What will you use the PC for?</b> (e.g., gaming, work,
+                  video editing, general use)
+                </li>
+                <li id="secondDiscTwo"><b>What’s your budget?</b></li>
+              </ul>
+              <p class="mt-5" id="secondAboutFour">
+                From there, I’ll recommend the best possible build for your
+                needs and explain everything in
+                <b>clear, easy-to-understand terms.</b> No overwhelming tech
+                jargon—just honest advice.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full text-start md:text-left mt-6 md:mt-0">
+          <h2
+            class="font-[700] text-white mt-7 text-lg"
+            data-whitemode=""
+            id="Expe"
+          >
+            For Experienced Users
+          </h2>
+          <div
+            class="text-lg text-gray-200 mt-2"
+            id="warrantyPara"
+            data-whitemodePara=""
+          >
+            <p id="thirdAbout">
+              If you already know what you want, you can select your
+              <b>preferred components</b> directly, including:
+            </p>
+            <ul class="ml-10 mt-3 list-disc">
+              <li><b>GPU</b></li>
+              <li><b>CPU</b></li>
+              <li><b>RAM</b></li>
+              <li id="storage"><b>Storage</b></li>
+              <li id="caseStyle"><b>Case style</b></li>
+              <li id="priceRange"><b>Overall price range</b></li>
+            </ul>
+            <p id="thirdAboutTwo" class="mt-5">
+              Once submitted, I’ll review your selections and fine-tune the
+              build to ensure compatibility, performance, and efficiency.
+            </p>
+          </div>
+        </div>
+        <div class="w-full text-start mt-5">
+          <h2
+            class="text-2xl font-bold text-white"
+            data-whitemode=""
+            id="includeText"
+          >
+            What's Included?
+          </h2>
+
+          <div
+            class="text-lg text-gray-200 mt-4"
+            id="warrantyPara"
+            data-whitemodePara=""
+          >
+            <p class="mt-5" id="fourAbout">Every PC comes with:</p>
+            <ul class="ml-10 mt-3 list-disc">
+              <li
+                class="flex items-center gap-2 before:content-['✔'] before:text-green-500 before:font-bold"
+                id="fourDisc"
+              >
+                <b>A full setup and stress test</b> before delivery
+              </li>
+              <li
+                class="flex items-center gap-2 before:content-['✔'] before:text-green-500 before:font-bold"
+                id="fourDiscTwo"
+              >
+                <b> Optional software installation</b> (upon request).
+              </li>
+              <li
+                class="flex items-center gap-2 before:content-['✔'] before:text-green-500 before:font-bold"
+                id="fourDiscThree"
+              >
+                <b>Direct support if you have any questions</b> after your
+                purchase
+              </li>
+            </ul>
+            <p class="mt-5" id="fourAboutTwo">
+              Your PC should work <b>exactly how you need it t</b>o—and I make
+              sure it does!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="fixed top-0 w-full flex items-center h-full z-[201] bg-[rgba(0_0_0/.8)] hidden"
+      id="upgradeSection"
+    >
+      <div
+        class="flex flex-col items-center max-h-[600px] w-full max-w-[650px] relative justify-start mx-auto bg-zinc-800 overflow-y-scroll text-white font-Overpass p-6 lg:p-10 mt-5 rounded-lg"
+        data-sectionColor=""
+      ></div>
+    </section>
+    <section
+      class="fixed top-0 w-full flex items-center h-full z-[201] bg-[rgba(0_0_0/.8)] hidden"
+      id="repairSection"
+    >
+      <div
+        class="flex flex-col items-center max-h-[600px] w-full max-w-[650px] relative justify-start mx-auto bg-zinc-800 overflow-y-scroll text-white font-Overpass p-6 lg:p-10 mt-5 rounded-lg"
+        data-sectionColor=""
+      ></div>
+    </section>
   </body>
   <script>
     const toggler = document.querySelectorAll("[data-languageSelection]");
@@ -1827,7 +2015,35 @@
         }
       });
     }
+    function changeApp(infoId, closeIconId, sectionId) {
+      document.querySelectorAll(`[data-${infoId}]`).forEach((items) => {
+        items.addEventListener("click", (e) => {
+          document.getElementById(`${sectionId}`).classList.remove("hidden");
+          document.body.classList.add("overflow-y-hidden");
+          if (
+            !document
+              .getElementById(`${sectionId}`)
+              .classList.contains("hidden")
+          ) {
+            document
+              .querySelector(`#${closeIconId}`)
+              .addEventListener("click", (e) => {
+                document.getElementById(`${sectionId}`).classList.add("hidden");
+                document.body.classList.remove("overflow-y-hidden");
+              });
+          }
+        });
+      });
+    }
+    document.querySelectorAll("[data-pcmoreInfo]").forEach((items) => {
+      changeApp("pcmoreInfo", "closeIconPc", "pcSection");
+    });
+    document.querySelectorAll("[data-pcmoreInfo]").forEach((items) => {
+      changeApp("upgrademoreInfo", "closeIconPcTwo", "upgadeSection");
+    });
+    document.querySelectorAll("[data-pcmoreInfo]").forEach((items) => {
+      changeApp("smallmoreInfo", "closeIconPcThree", "repairSection");
+    });
   </script>
-
   <script src="menu.js"></script>
 </html>
