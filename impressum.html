@@ -287,16 +287,75 @@
             Impressum
           </h1>
           <div class="mt-5">
-            <div
+            <!-- <div
               class="itrk-legaltext"
               data-itrk-legaltext-url="https://itrk.legal/PDp.0.JlS-iframe.html"
             ></div>
-            <script src="https://www.it-recht-kanzlei.de/js/itrk-legaltext.js"></script>
+            <script src="https://www.it-recht-kanzlei.de/js/itrk-legaltext.js"></script> -->
+            <p id="impressumFirstPara">
+              Elwan Bowens<br />
+              Nebengewerbe / Kleingewerbe<br />
+              Röthenbacher Hauptstr. 31<br />
+              90449 Nürnberg<br />
+              Deutschland
+            </p>
+            <p class="mt-5" id="impressumSecondPara">
+              Tel.: +4917641742121L<br />
+              E-Mail: info@epc-tech.de
+            </p>
+            <p class="mt-5" id="impressumThirdPara">
+              Umsatzsteuer-Identifikationsnummer: DE362204502
+              Umsatzsteuerbefreit (Kleinunternehmerregelung)
+            </p>
+
+            <p class="mt-5" id="impressumFourPara">
+              Plattform der EU-Kommission zur Online-Streitbeilegung:
+              <a
+                href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=EN"
+                target="_blank"
+                class="text-blue-600"
+                >https://ec.europa.eu/odr</a
+              >
+            </p>
+            <p class="mt-5" id="impressumFivePara">
+              Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor
+              einer Verbraucherschlichtungsstelle weder verpflichtet noch
+              bereit.
+            </p>
+            <!-- <p id="impressumFirstPara">
+              Elwan Bowens<br />
+              Secondary trade / small business b<br />Röthenbacher Hauptstr. 31
+              <br />90449 Nuremberg Nuremberg <br />Germany
+            </p>
+            <p class="mt-5" id="impressumSecondPara">
+              Phone: +491 7641742121 <br />E-mail: info@epc-tech.de
+            </p>
+            <p class="mt-5" id="impressumThirdPara">
+              Sales tax identification number. DE362204502 VAT exempt (small
+              business regulation)
+            </p>
+
+            <p class="mt-5" id="impressumFourPara">
+              Platform of the EU Commission for online dispute resolution:
+              https://ec.europa.eu/odr
+
+              <a
+                href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=EN"
+                target="_blank"
+                class="text-blue-600"
+                >https://ec.europa.eu/odr</a
+              >
+            </p>
+            <p class="mt-5" id="impressumFivePara">
+              We are neither obliged nor willing to participate in a dispute
+              resolution procedure before a consumer arbitration board.
+            </p> -->
           </div>
         </div>
         <a href="datenschutz.html">
           <button
             class="text-white bg-Primary px-10 py-3 mt-5 rounded-md font-[500]"
+            id="datenButton"
           >
             Datenschutz
           </button></a
@@ -552,7 +611,50 @@
       });
       const toggler = document.querySelectorAll("[data-languageSelection]");
       toggler.forEach((items) => {
+        document.querySelector("#datenButton").innerText = "Datenschutz";
+
         if (items.value == "Deutsch") {
+          document.querySelector(
+            "#impressumFirstPara"
+          ).innerHTML = ` <p id='impressumFirstPara'>
+              Elwan Bowens<br />
+              Nebengewerbe / Kleingewerbe<br />
+              Röthenbacher Hauptstr. 31<br />
+              90449 Nürnberg<br />
+              Deutschland
+            </p>`;
+          document.querySelector(
+            "#impressumSecondPara"
+          ).innerHTML = `<p class="mt-5" id="impressumSecondPara">
+              Tel.: +4917641742121L<br />
+              E-Mail: info@epc-tech.de
+            </p>`;
+          document.querySelector(
+            "#impressumThirdPara"
+          ).innerHTML = `<p class="mt-5" id="impressumThirdPara">
+              Umsatzsteuer-Identifikationsnummer: DE362204502
+              Umsatzsteuerbefreit (Kleinunternehmerregelung)
+            </p>`;
+          document.querySelector(
+            "#impressumFourPara"
+          ).innerHTML = `<p class="mt-5" id="impressumFourPara">
+              Plattform der EU-Kommission zur Online-Streitbeilegung:
+              <a
+                href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=EN"
+                target="_blank"
+                class="text-blue-600"
+                >https://ec.europa.eu/odr</a
+              >
+            </p>`;
+          document.querySelector(
+            "#impressumFivePara"
+          ).innerHTML = `<p class="mt-5" id="impressumFivePara">
+              Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor
+              einer Verbraucherschlichtungsstelle weder verpflichtet noch
+              bereit.
+            </p>`;
+          ////////first
+
           document.querySelectorAll("[data-home]").forEach((items, i) => {
             items.innerText = "Startseite";
           });
@@ -575,6 +677,44 @@
           document.querySelector("#copyright").innerText =
             "Alle Rechte Vorbehalten -  EPC-Tech - 2025";
         } else {
+          document.querySelector("#datenButton").innerText = "Privacy Policy";
+          document.querySelector(
+            "#impressumFirstPara"
+          ).innerHTML = `<p id="impressumFirstPara">
+              Elwan Bowens<br />
+              Secondary trade / small business b<br />Röthenbacher Hauptstr. 31
+              <br />90449 Nuremberg Nuremberg <br />Germany
+            </p>`;
+          document.querySelector(
+            "#impressumSecondPara"
+          ).innerHTML = `<p class="mt-5" id="impressumSecondPara">
+              Phone: +491 7641742121 <br />E-mail: info@epc-tech.de
+            </p>`;
+          document.querySelector(
+            "#impressumThirdPara"
+          ).innerHTML = `<p class="mt-5" id="impressumThirdPara">
+              Sales tax identification number. DE362204502 VAT exempt (small
+              business regulation)
+            </p>`;
+          document.querySelector(
+            "#impressumFourPara"
+          ).innerHTML = `<p class="mt-5" id="impressumFourPara">
+              Platform of the EU Commission for online dispute resolution:
+              https://ec.europa.eu/odr
+
+              <a
+                href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=EN"
+                target="_blank"
+                class="text-blue-600"
+                >https://ec.europa.eu/odr</a
+              >
+            </p>`;
+          document.querySelector(
+            "#impressumFivePara"
+          ).innerHTML = `<p class="mt-5" id="impressumFivePara">
+              We are neither obliged nor willing to participate in a dispute
+              resolution procedure before a consumer arbitration board.
+            </p>`;
           document.querySelectorAll("[data-home]").forEach((items, i) => {
             items.innerText = "Home";
           });
@@ -602,6 +742,48 @@
         }
         items.addEventListener("change", () => {
           if (items.value == "Deutsch") {
+            document.querySelector("#datenButton").innerText = "Datenschutz";
+
+            document.querySelector(
+              "#impressumFirstPara"
+            ).innerHTML = ` <p id='impressumFirstPara'>
+              Elwan Bowens<br />
+              Nebengewerbe / Kleingewerbe<br />
+              Röthenbacher Hauptstr. 31<br />
+              90449 Nürnberg<br />
+              Deutschland
+            </p>`;
+            document.querySelector(
+              "#impressumSecondPara"
+            ).innerHTML = `<p class="mt-5" id="impressumSecondPara">
+              Tel.: +4917641742121L<br />
+              E-Mail: info@epc-tech.de
+            </p>`;
+            document.querySelector(
+              "#impressumThirdPara"
+            ).innerHTML = `<p class="mt-5" id="impressumThirdPara">
+              Umsatzsteuer-Identifikationsnummer: DE362204502
+              Umsatzsteuerbefreit (Kleinunternehmerregelung)
+            </p>`;
+            document.querySelector(
+              "#impressumFourPara"
+            ).innerHTML = `<p class="mt-5" id="impressumFourPara">
+              Plattform der EU-Kommission zur Online-Streitbeilegung:
+              <a
+                href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=EN"
+                target="_blank"
+                class="text-blue-600"
+                >https://ec.europa.eu/odr</a
+              >
+            </p>`;
+            document.querySelector(
+              "#impressumFivePara"
+            ).innerHTML = `<p class="mt-5" id="impressumFivePara">
+              Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor
+              einer Verbraucherschlichtungsstelle weder verpflichtet noch
+              bereit.
+            </p>`;
+
             document.querySelectorAll("[data-home]").forEach((items, i) => {
               items.innerText = "Startseite";
             });
@@ -624,6 +806,44 @@
             document.querySelector("#copyright").innerText =
               "Alle Rechte Vorbehalten -  EPC-Tech - 2025";
           } else {
+            document.querySelector("#datenButton").innerText = "Privacy Policy";
+            document.querySelector(
+              "#impressumFirstPara"
+            ).innerHTML = `<p id="impressumFirstPara">
+              Elwan Bowens<br />
+              Secondary trade / small business b<br />Röthenbacher Hauptstr. 31
+              <br />90449 Nuremberg Nuremberg <br />Germany
+            </p>`;
+            document.querySelector(
+              "#impressumSecondPara"
+            ).innerHTML = `<p class="mt-5" id="impressumSecondPara">
+              Phone: +491 7641742121 <br />E-mail: info@epc-tech.de
+            </p>`;
+            document.querySelector(
+              "#impressumThirdPara"
+            ).innerHTML = `<p class="mt-5" id="impressumThirdPara">
+              Sales tax identification number. DE362204502 VAT exempt (small
+              business regulation)
+            </p>`;
+            document.querySelector(
+              "#impressumFourPara"
+            ).innerHTML = `<p class="mt-5" id="impressumFourPara">
+              Platform of the EU Commission for online dispute resolution:
+              https://ec.europa.eu/odr
+
+              <a
+                href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=EN"
+                target="_blank"
+                class="text-blue-600"
+                >https://ec.europa.eu/odr</a
+              >
+            </p>`;
+            document.querySelector(
+              "#impressumFivePara"
+            ).innerHTML = `<p class="mt-5" id="impressumFivePara">
+              We are neither obliged nor willing to participate in a dispute
+              resolution procedure before a consumer arbitration board.
+            </p>`;
             document.querySelectorAll("[data-home]").forEach((items, i) => {
               items.innerText = "Home";
             });
